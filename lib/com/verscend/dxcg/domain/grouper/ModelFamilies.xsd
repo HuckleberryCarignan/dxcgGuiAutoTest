@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ModelFamilies" 
+           targetNamespace="http://www.dxcg.com/ModelFamilies.xsd" 
+           elementFormDefault="qualified"
+           xmlns="http://www.dxcg.com/ModelFamilies.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+           jaxb:version="2.1">
+  
+  <xs:element name="ModelFamilies" type="ModelFamilies" />
+
+  <xs:complexType name="ModelFamilies">
+    <xs:sequence>
+      <xs:element name="ModelFamily" type="ModelFamily" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ModelFamily">
+    <xs:sequence>
+      <xs:element name="Model" type="Model" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="FamilyID" type="xs:int" />
+    <xs:attribute name="Product" type="Product" />
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+
+  <xs:simpleType name="Product">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Commercial"/>
+      <xs:enumeration value="Pharmacy"/>
+      <xs:enumeration value="Medicaid"/>
+      <xs:enumeration value="Medicare FFS"/>
+      <xs:enumeration value="Medical Management"/>
+      <xs:enumeration value="DxCG Primary Care Payment"/>
+      <xs:enumeration value="DxCG Performance Assessment"/>
+      <xs:enumeration value="Medicare Advantage"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="Model">
+  	<xs:annotation>
+			<xs:appinfo>
+				<jaxb:class name="ValidatedModel" />
+			</xs:appinfo>
+		</xs:annotation>
+    <xs:attribute name="ModelID" type="xs:int" />
+    <xs:attribute name="Precedence" type="xs:int" />
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+
+  
+</xs:schema>

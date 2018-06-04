@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CustomOutputMapping xmlns="http://www.dxcg.com/CustomOutputMapping.xsd" >
+    <Parameter Name="OUT_ID" MinLength="1" MappingData="ID" ApplicableGrouping="NA" />
+    <Parameter Name="OUT_DOB" MinLength="8" MappingData="DOB" ApplicableGrouping="NA" Format="MMddyyyy" />
+    <Parameter Name="OUT_AGE" MinLength="3" MappingData="Age" ApplicableGrouping="NA" Format="{0,3}" />
+    <Parameter Name="OUT_SEX" MinLength="1" MappingData="Sex" ApplicableGrouping="NA" />
+    <Parameter Name="OUT_AGESEXGROUP" MinLength="2" MappingData="AgeSexGroup" ApplicableGrouping="NA" Format="{0,2}" />
+    <Parameter Name="OUT_ELIG1" MinLength="2" MappingData="ELG1" ApplicableGrouping="NA" Format="{0,2}" />
+    <Parameter Name="OUT_ELIGF1" MinLength="5" MappingData="ELIGF1" ApplicableGrouping="NA" Format="{0,5:f3}" />
+    <Parameter Name="OUT_EXP1" MinLength="14" MappingData="EXP1" ApplicableGrouping="NA" Format="{0:f2}" />
+    <Parameter Name="OUT_EXPRX1" MinLength="14" MappingData="ExpRx1" ApplicableGrouping="NA" Format="{0:f2}" />
+    <Parameter Name="OUT_ECAT" MinLength="2" MappingData="ECAT" ApplicableGrouping="NA" Format="{0,2}" />
+    <Parameter Name="OUT_MCAID" MinLength="1" MappingData="MCAID" ApplicableGrouping="NA" />
+    <Parameter Name="OUT_OREC" MinLength="1" MappingData="OREC" ApplicableGrouping="NA" Format="{0,1}" />
+    <Parameter Name="OUT_CHILD" MinLength="1" MappingData="Child" ApplicableGrouping="NA" />
+    <Parameter Name="OUT_MALE" MinLength="1" MappingData="Male" ApplicableGrouping="NA" />
+    <Parameter Name="OUT_ELDERLY" MinLength="1" MappingData="Elderly" ApplicableGrouping="NA" />
+    <Parameter Name="OUT_NOHCC" MinLength="1" MappingData="NoHCC" ApplicableGrouping="DX" />
+    <Parameter Name="OUT_NOVALID" MinLength="1" MappingData="NoValid" ApplicableGrouping="DX" />
+    <Parameter Name="OUT_NODIAG" MinLength="1" MappingData="NoDiag" ApplicableGrouping="DX" />
+    <Parameter Name="OUT_PREDID_Y" MinLength="8" MappingData="PredsHash" ApplicableGrouping="NA" Type="Model" Format="{0,8:f3}" />
+    <Parameter Name="OUT_PREDAG_Y" MinLength="8" MappingData="PredsHash" ApplicableGrouping="NA" Type="AgeGenderModel" Format="{0,8:f3}"/>
+    <Parameter Name="OUT_DCGID_Y" MinLength="6" MappingData="DCGs" Index="0" ApplicableGrouping="NA" Type="DCG" Format="{0,6:f2}" />
+    <Parameter Name="OUT_ADCGID_Y" MinLength="6" MappingData="ADCGs" Index="0" ApplicableGrouping="NA" Type="DCG" Format="{0,6:f2}" />
+    <Parameter Name="OUT_ACC" MinLength="31" MappingData="ArrayACCS" ApplicableGrouping="DX" />
+    <Parameter Name="OUT_RCC" MinLength="117" MappingData="ArrayRCCS" ApplicableGrouping="DX" />
+    <Parameter Name="OUT_CC" MinLength="394" MappingData="ArrayCCS" ApplicableGrouping="DX" />
+    <Parameter Name="OUT_ACHCC" MinLength="31" MappingData="ArrayHACCS" ApplicableGrouping="DX" />
+    <Parameter Name="OUT_RCHCC" MinLength="117" MappingData="ArrayHRCCS" ApplicableGrouping="DX" />
+    <Parameter Name="OUT_CHCC" MinLength="394" MappingData="ArrayHCCS" ApplicableGrouping="DX" />
+    <Parameter Name="OUT_APHCC" MinLength="31" MappingData="ArrayHACCSYear2" ApplicableGrouping="DX" />
+    <Parameter Name="OUT_RPHCC" MinLength="117" MappingData="ArrayHRCCSYear2" ApplicableGrouping="DX" />
+    <Parameter Name="OUT_PHCC" MinLength="394" MappingData="ArrayHCCSYear2" ApplicableGrouping="DX" />
+    <Parameter Name="OUT_DXG" MinLength="1013" MappingData="ArrayDXG" ApplicableGrouping="DX" />
+    <Parameter Name="OUT_NORX" MinLength="1" MappingData="NoRx" ApplicableGrouping="RX" />
+    <Parameter Name="OUT_NOVALIDRX" MinLength="1" MappingData="NoValidRx" ApplicableGrouping="RX" />
+    <Parameter Name="OUT_NORXGROUP" MinLength="1" MappingData="NoRxGroup" ApplicableGrouping="RX" />
+    <Parameter Name="OUT_ARXG" MinLength="21" MappingData="ArrayARXG" ApplicableGrouping="RX" />
+    <Parameter Name="OUT_RXG" MinLength="252" MappingData="ArrayRXG" ApplicableGrouping="RX" />
+    <Parameter Name="OUT_AHRXG" MinLength="21" MappingData="ArrayHARXG" ApplicableGrouping="RX" />
+    <Parameter Name="OUT_HRXG" MinLength="252" MappingData="ArrayHRXG" ApplicableGrouping="RX" />
+    <Parameter Name="OUT_GROUP_X" MinLength="1" MappingData="Groups" ApplicableGrouping="NA" Type="Group" />
+    <Parameter Name="OUT_PASS_X" MinLength="1" MappingData="PassThroughGroups" ApplicableGrouping="NA" Type="Group" />
+    <Parameter Name="OUT_RISKDRIVER_Y" MinLength="50" MappingData="Preds" ApplicableGrouping="NA" Type="RiskScore"/>
+</CustomOutputMapping>

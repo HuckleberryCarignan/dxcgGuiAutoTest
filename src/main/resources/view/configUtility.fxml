@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<BorderPane id="boarderPaneConfig" fx:id="boarderPaneConfig" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ConfigUtility">
+    <top>
+        <HBox spacing="10">
+            <Button fx:id="buttonRun" text="Run Type" onAction="#runClicked"/>
+            <Button fx:id="buttonModels" text="Models" onAction="#modelsClicked"/>
+            <Button fx:id="buttonInput" text="Input Files" onAction="#inputClicked"/>
+            <Button fx:id="buttonData" text="Data Fields" onAction="#dataClicked"/>
+            <Button fx:id="buttonOutput" text="Output Files" onAction="#outputClicked"/>
+            <Button fx:id="buttonReport" text="Report" onAction="#reportClicked"/>
+        </HBox>
+    </top>
+    <center>
+
+    </center>
+
+</BorderPane>

@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Interactions xmlns="http://dxcg.com/Interactions.xsd">
+  <Interaction Name="RxInteraction">
+	<TermMappings>
+		<TermMapping HCC="205" MinDays="0" MaxDays="INF" Term="1" Type="Hybrid" />
+		<TermMapping HCC="69-70" MinDays="-INF" MaxDays="INF" Term="2" Type="Clinical" />
+		<TermMapping HCC="73" MinDays="-INF" MaxDays="INF" Term="3" Type="Clinical" />
+		<TermMapping HCC="145" MinDays="-INF" MaxDays="INF" Term="4" Type="Clinical" />
+		<TermMapping HCC="206-215" MinDays="-INF" MaxDays="INF" Term="5" Type="Clinical" />
+		<TermMapping HCC="56" MinDays="-INF" MaxDays="INF" Term="6" Type="Clinical" />
+		<TermMapping HCC="56" MinDays="0" MaxDays="INF" Term="6" Type="Hybrid" />
+		<TermMapping HCC="194" MinDays="-INF" MaxDays="INF" Term="7" Type="Clinical" />
+		<TermMapping HCC="47" MinDays="0" MaxDays="INF" Term="8" Type="Hybrid" />
+		<TermMapping HCC="153-155" MinDays="-INF" MaxDays="INF" Term="9" Type="Clinical" />
+		<TermMapping HCC="23" MinDays="-INF" MaxDays="INF" Term="10" Type="Clinical" />
+		<TermMapping HCC="7" MinDays="-INF" MaxDays="INF" Term="11" Type="Clinical" />
+		<TermMapping HCC="6" MinDays="-INF" MaxDays="INF" Term="12" Type="Clinical" />
+		<TermMapping HCC="57" MinDays="-INF" MaxDays="INF" Term="13" Type="Clinical" />
+		<TermMapping HCC="56-58" MinDays="-INF" MaxDays="INF" Term="14" Type="Clinical" />
+		<TermMapping HCC="56-58" MinDays="0" MaxDays="INF" Term="14" Type="Hybrid" />
+		<TermMapping HCC="177" MinDays="-INF" MaxDays="INF" Term="15" Type="Clinical" />
+		<TermMapping HCC="60" MinDays="-INF" MaxDays="INF" Term="16" Type="Clinical" />
+		<TermMapping HCC="161" MinDays="-INF" MaxDays="INF" Term="17" Type="Clinical" />
+		<TermMapping HCC="161" MinDays="0" MaxDays="INF" Term="17" Type="Hybrid" />
+		<TermMapping HCC="162" MinDays="-INF" MaxDays="INF" Term="18" Type="Clinical" />
+		<TermMapping HCC="34-38" MinDays="-INF" MaxDays="INF" Term="19" Type="Clinical" />
+		<TermMapping HCC="34-38" MinDays="0" MaxDays="INF" Term="19" Type="Hybrid" />
+		<TermMapping HCC="144-145" MinDays="-INF" MaxDays="INF" Term="20" Type="Clinical" />
+		<TermMapping HCC="174-175" MinDays="-INF" MaxDays="INF" Term="21" Type="Clinical" />
+		<TermMapping HCC="167" MinDays="0" MaxDays="INF" Term="22" Type="Hybrid" />
+		<TermMapping HCC="13" MinDays="1" MaxDays="10" Term="23" Type="Hybrid" />
+		<TermMapping HCC="13" MinDays="11" MaxDays="60" Term="24" Type="Persistence" />
+		<TermMapping HCC="13" MinDays="11" MaxDays="60" Term="24" Type="Hybrid" />
+		<TermMapping HCC="13" MinDays="61" MaxDays="INF" Term="25" Type="Persistence" />
+		<TermMapping HCC="13" MinDays="61" MaxDays="INF" Term="25" Type="Hybrid" />
+		<TermMapping HCC="229" MinDays="1" MaxDays="29" Term="26" Type="Hybrid" />
+		<TermMapping HCC="170" MinDays="30" MaxDays="INF" Term="27" Type="Persistence" />
+		<TermMapping HCC="174" MinDays="1" MaxDays="9" Term="28" Type="Hybrid" />
+		<TermMapping HCC="174" MinDays="10" MaxDays="90" Term="29" Type="Persistence" />
+		<TermMapping HCC="174" MinDays="10" MaxDays="90" Term="29" Type="Hybrid" />
+		<TermMapping HCC="174" MinDays="91" MaxDays="INF" Term="30" Type="Persistence" />
+		<TermMapping HCC="174" MinDays="91" MaxDays="INF" Term="30" Type="Hybrid" />
+		<TermMapping HCC="175" MinDays="1" MaxDays="10" Term="31" Type="Hybrid" />
+		<TermMapping HCC="175" MinDays="11" MaxDays="INF" Term="32" Type="Persistence" />
+		<TermMapping HCC="3" MinDays="30" MaxDays="INF" Term="33" Type="Persistence" />
+		<TermMapping HCC="69" MinDays="30" MaxDays="INF" Term="34" Type="Persistence" />
+		<TermMapping HCC="69" MinDays="30" MaxDays="INF" Term="34" Type="Hybrid" />
+		<TermMapping HCC="196" MinDays="1" MaxDays="14" Term="35" Type="Hybrid" />
+		<TermMapping HCC="196" MinDays="15" MaxDays="60" Term="36" Type="Persistence" />
+		<TermMapping HCC="196" MinDays="61" MaxDays="INF" Term="37" Type="Persistence" />
+		<TermMapping HCC="196" MinDays="61" MaxDays="INF" Term="37" Type="Hybrid" />
+		<TermMapping HCC="184" MinDays="30" MaxDays="INF" Term="38" Type="Persistence" />
+		<TermMapping HCC="4" MinDays="30" MaxDays="INF" Term="39" Type="Persistence" />
+		<TermMapping HCC="4" MinDays="30" MaxDays="INF" Term="39" Type="Hybrid" />
+		<TermMapping HCC="6" MinDays="1" MaxDays="5" Term="40" Type="Hybrid" />
+		<TermMapping HCC="6" MinDays="6" MaxDays="29" Term="41" Type="Persistence" />
+		<TermMapping HCC="6" MinDays="6" MaxDays="29" Term="41" Type="Hybrid" />
+		<TermMapping HCC="6" MinDays="30" MaxDays="INF" Term="42" Type="Persistence" />
+		<TermMapping HCC="6" MinDays="30" MaxDays="INF" Term="42" Type="Hybrid" />
+		<TermMapping HCC="7" MinDays="6" MaxDays="29" Term="43" Type="Persistence" />
+		<TermMapping HCC="7" MinDays="6" MaxDays="29" Term="43" Type="Hybrid" />
+		<TermMapping HCC="7" MinDays="30" MaxDays="INF" Term="44" Type="Persistence" />
+		<TermMapping HCC="7" MinDays="30" MaxDays="INF" Term="44" Type="Hybrid" />
+		<TermMapping HCC="5" MinDays="181" MaxDays="INF" Term="45" Type="Persistence" />
+		<TermMapping HCC="39" MinDays="1" MaxDays="10" Term="46" Type="Hybrid" />
+		<TermMapping HCC="39" MinDays="11" MaxDays="150" Term="47" Type="Hybrid" />
+		<TermMapping HCC="25" MinDays="15" MaxDays="INF" Term="48" Type="Persistence" />
+		<TermMapping HCC="25" MinDays="15" MaxDays="INF" Term="48" Type="Hybrid" />
+		<TermMapping HCC="194" MinDays="30" MaxDays="89" Term="49" Type="Persistence" />
+		<TermMapping HCC="194" MinDays="90" MaxDays="INF" Term="50" Type="Hybrid" />
+		<TermMapping HCC="197" MinDays="30" MaxDays="INF" Term="51" Type="Persistence" />
+		<TermMapping HCC="83" MinDays="30" MaxDays="INF" Term="52" Type="Persistence" />
+		<TermMapping HCC="67" MinDays="1" MaxDays="9" Term="53" Type="Hybrid" />
+		<TermMapping HCC="67" MinDays="10" MaxDays="59" Term="54" Type="Hybrid" />
+		<TermMapping HCC="80" MinDays="30" MaxDays="INF" Term="55" Type="Hybrid" />
+		<TermMapping HCC="16" MinDays="30" MaxDays="INF" Term="56" Type="Persistence" />
+		<TermMapping HCC="16" MinDays="30" MaxDays="INF" Term="56" Type="Hybrid" />
+		<TermMapping HCC="153" MinDays="1" MaxDays="29" Term="57" Type="Hybrid" />
+		<TermMapping HCC="153" MinDays="30" MaxDays="INF" Term="58" Type="Hybrid" />
+		<TermMapping HCC="169" MinDays="30" MaxDays="INF" Term="59" Type="Persistence" />
+		<TermMapping HCC="30" MinDays="31" MaxDays="INF" Term="60" Type="Persistence" />
+		<TermMapping HCC="88" MinDays="181" MaxDays="INF" Term="61" Type="Persistence" />
+		<TermMapping HCC="145" MinDays="30" MaxDays="90" Term="62" Type="Persistence" />
+		<TermMapping HCC="145" MinDays="30" MaxDays="90" Term="62" Type="Hybrid" />
+		<TermMapping HCC="145" MinDays="91" MaxDays="INF" Term="63" Type="Persistence" />
+		<TermMapping HCC="171" MinDays="15" MaxDays="60" Term="64" Type="Persistence" />
+		<TermMapping HCC="171" MinDays="61" MaxDays="INF" Term="65" Type="Persistence" />
+		<TermMapping HCC="70" MinDays="30" MaxDays="INF" Term="66" Type="Hybrid" />
+	</TermMappings>
+	<InteractionMappings>
+		<InteractionMapping>
+			<Term>12</Term>
+			<Term>21</Term>
+			<ID>1</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>11</Term>
+			<Term>21</Term>
+			<ID>2</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>19</Term>
+			<Term>21</Term>
+			<ID>3</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>19</Term>
+			<Term>20</Term>
+			<ID>4</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>12</Term>
+			<Term>19</Term>
+			<ID>5</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>6</Term>
+			<Term>13</Term>
+			<ID>6</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>15</Term>
+			<Term>14</Term>
+			<ID>7</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>16</Term>
+			<Term>14</Term>
+			<ID>8</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>4</Term>
+			<Term>2</Term>
+			<ID>9</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>3</Term>
+			<Term>12</Term>
+			<ID>10</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>4</Term>
+			<Term>12</Term>
+			<ID>11</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>4</Term>
+			<Term>11</Term>
+			<ID>12</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>12</Term>
+			<Term>9</Term>
+			<ID>13</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>11</Term>
+			<Term>9</Term>
+			<ID>14</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>12</Term>
+			<Term>17</Term>
+			<ID>15</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>10</Term>
+			<Term>18</Term>
+			<ID>16</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>7</Term>
+			<Term>5</Term>
+			<ID>17</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>33</Term>
+			<ID>18</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>39</Term>
+			<ID>19</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>45</Term>
+			<ID>20</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>41</Term>
+			<ID>21</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>42</Term>
+			<ID>22</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>43</Term>
+			<ID>23</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>44</Term>
+			<ID>24</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>24</Term>
+			<ID>25</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>25</Term>
+			<ID>26</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>56</Term>
+			<ID>27</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>48</Term>
+			<ID>28</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>60</Term>
+			<ID>29</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>62</Term>
+			<ID>30</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>63</Term>
+			<ID>31</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>34</Term>
+			<ID>32</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>52</Term>
+			<ID>33</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>61</Term>
+			<ID>34</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>59</Term>
+			<ID>35</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>27</Term>
+			<ID>36</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>64</Term>
+			<ID>37</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>65</Term>
+			<ID>38</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>29</Term>
+			<ID>39</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>30</Term>
+			<ID>40</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>32</Term>
+			<ID>41</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>38</Term>
+			<ID>42</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>49</Term>
+			<ID>43</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>36</Term>
+			<ID>44</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>37</Term>
+			<ID>45</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>51</Term>
+			<ID>46</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>30</Term>
+			<Term>42</Term>
+			<ID>47</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>29</Term>
+			<Term>42</Term>
+			<ID>48</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>28</Term>
+			<Term>42</Term>
+			<ID>49</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>31</Term>
+			<Term>42</Term>
+			<ID>50</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>29</Term>
+			<Term>40</Term>
+			<ID>51</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>29</Term>
+			<Term>41</Term>
+			<ID>52</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>29</Term>
+			<Term>44</Term>
+			<ID>53</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>29</Term>
+			<Term>43</Term>
+			<ID>54</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>23</Term>
+			<Term>42</Term>
+			<ID>55</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>24</Term>
+			<Term>42</Term>
+			<ID>56</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>25</Term>
+			<Term>42</Term>
+			<ID>57</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>25</Term>
+			<Term>41</Term>
+			<ID>58</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>24</Term>
+			<Term>44</Term>
+			<ID>59</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>25</Term>
+			<Term>48</Term>
+			<ID>60</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>22</Term>
+			<Term>24</Term>
+			<ID>61</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>22</Term>
+			<Term>25</Term>
+			<ID>62</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>56</Term>
+			<Term>58</Term>
+			<ID>63</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>19</Term>
+			<Term>48</Term>
+			<ID>64</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>19</Term>
+			<Term>62</Term>
+			<ID>65</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>19</Term>
+			<Term>39</Term>
+			<ID>66</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>8</Term>
+			<Term>47</Term>
+			<ID>67</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>1</Term>
+			<Term>46</Term>
+			<ID>68</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>1</Term>
+			<Term>47</Term>
+			<ID>69</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>14</Term>
+			<Term>66</Term>
+			<ID>70</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>14</Term>
+			<Term>62</Term>
+			<ID>71</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>34</Term>
+			<Term>63</Term>
+			<ID>72</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>34</Term>
+			<Term>55</Term>
+			<ID>73</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>42</Term>
+			<Term>66</Term>
+			<ID>74</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>41</Term>
+			<Term>66</Term>
+			<ID>75</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>24</Term>
+			<Term>62</Term>
+			<ID>76</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>25</Term>
+			<Term>62</Term>
+			<ID>77</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>23</Term>
+			<Term>63</Term>
+			<ID>78</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>24</Term>
+			<Term>63</Term>
+			<ID>79</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>25</Term>
+			<Term>63</Term>
+			<ID>80</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>42</Term>
+			<Term>62</Term>
+			<ID>81</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>41</Term>
+			<Term>62</Term>
+			<ID>82</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>8</Term>
+			<Term>58</Term>
+			<ID>83</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>6</Term>
+			<Term>57</Term>
+			<ID>84</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>6</Term>
+			<Term>58</Term>
+			<ID>85</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>41</Term>
+			<Term>58</Term>
+			<ID>86</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>17</Term>
+			<Term>43</Term>
+			<ID>87</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>35</Term>
+			<Term>50</Term>
+			<ID>88</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>37</Term>
+			<Term>50</Term>
+			<ID>89</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>30</Term>
+			<Term>54</Term>
+			<ID>90</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>29</Term>
+			<Term>54</Term>
+			<ID>91</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>29</Term>
+			<Term>53</Term>
+			<ID>92</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>28</Term>
+			<Term>54</Term>
+			<ID>93</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>31</Term>
+			<Term>54</Term>
+			<ID>94</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>42</Term>
+			<Term>54</Term>
+			<ID>95</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>41</Term>
+			<Term>54</Term>
+			<ID>96</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>26</Term>
+			<Term>44</Term>
+			<ID>97</ID>
+		</InteractionMapping>
+		<InteractionMapping>
+			<Term>26</Term>
+			<Term>43</Term>
+			<ID>98</ID>
+		</InteractionMapping>
+	</InteractionMappings>
+  </Interaction>
+</Interactions>

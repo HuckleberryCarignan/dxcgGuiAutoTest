@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AgeSexMappings" 
+	elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AgeSexMappings" type="AgeSexMappings" />
+
+  <xs:complexType name="AgeSexMappings">
+    <xs:sequence>
+      <xs:element name="AgeSexMapping" type="AgeSexMapping" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AgeSexMapping">
+    <xs:attribute name="AgeSex_Seq_ID" type="xs:int" />
+    <xs:attribute name="Gender" type="gender" />
+    <xs:attribute name="LowAge" type="xs:int" />
+    <xs:attribute name="HighAge" type="xs:int" />
+    <xs:attribute name="OREC.OldAge" type="xs:boolean" />
+  </xs:complexType>
+	
+	<xs:simpleType name="gender">
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="1" />
+			<xs:enumeration value="2" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

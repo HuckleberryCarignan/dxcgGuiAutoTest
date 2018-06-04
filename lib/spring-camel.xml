@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xmlns:camel="http://camel.apache.org/schema/spring"
+    xmlns:prop="http://camel.apache.org/schema/placeholder"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Scan packages for Spring Beans -->
+    <context:component-scan base-package="com.verscend.dxcg.framework.config" />
+
+    <!-- Tracer, to enable set trace="true" in camelContext AND set the appropriate logging level for 
+        com.verscend.dxcg.tracer in logback.xml e.g.: <logger name="com.verscend.dxcg.tracer" level="debug" /> 
+        NOTE: This slows down processing significantly. -->
+    <bean id="camelTracer" class="org.apache.camel.processor.interceptor.Tracer">
+        <property name="traceExceptions" value="true" />
+        <property name="traceInterceptors" value="false" />
+        <property name="traceOutExchanges" value="false" />
+        <property name="logLevel" value="DEBUG" />
+        <property name="logName" value="com.verscend.dxcg.tracer" />
+    </bean>
+
+    <camelContext id="dxcgCamelContext" trace="false" messageHistory="false"
+        xmlns="http://camel.apache.org/schema/spring">
+        <!-- Load camel.properties file -->
+        <propertyPlaceholder id="properties" location="classpath:/conf/camel.properties" />
+
+        <!-- disable JMX agent -->
+        <jmxAgent id="agent" disabled="true" />
+
+        <!-- Producer template to send multiple member messages -->
+        <template id="buildMembersTemplate" defaultEndpoint="direct:memberRouter" />
+        <!-- Producer template for invalid diagnosis -->
+        <template id="invalidDiagnosisTemplate"
+            defaultEndpoint="seda:invalidDiagnosisQueue?size={{queue.invalidDiagnosis.size}}&amp;blockWhenFull=true&amp;discardIfNoConsumers=true" />
+        <!-- Producer template for invalid pharmacy -->
+        <template id="invalidPharmacyTemplate"
+            defaultEndpoint="seda:invalidPharmacyQueue?size={{queue.invalidPharmacy.size}}&amp;blockWhenFull=true&amp;discardIfNoConsumers=true" />
+        <!-- Producer template for intermediate output -->
+        <template id="intermediateOutputTemplate"
+            defaultEndpoint="seda:intermediateOutputQueue?size={{queue.intermediateOutput.size}}&amp;blockWhenFull=true&amp;discardIfNoConsumers=true" />   
+        <!-- Producer template for report -->             
+        <template id="reportTemplate"
+            defaultEndpoint="seda:reportQueue?size={{queue.report.size}}&amp;blockWhenFull=true&amp;discardIfNoConsumers=true" />   
+
+        <!-- Handle fatal exceptions -->
+        <onException>
+            <!-- the exception is full qualified names as plain strings -->
+            <exception>com.verscend.dxcg.exception.DxCGProcessorException</exception>
+            <exception>com.verscend.dxcg.exception.DxCGConfigException</exception>
+            <redeliveryPolicy maximumRedeliveries="0" />
+            <!-- mark this as handled -->
+            <handled>
+                <constant>true</constant>
+            </handled>
+            <bean ref="dxcgExceptionLoggerProcessor" />
+        </onException>
+
+        <route id="inputRoute" startupOrder="10">
+            <from uri="direct:start" />
+            <pipeline>
+                <bean ref="parseConfigProcessor" />
+                <bean ref="buildMembersProcessor" />
+                <bean ref="reportGenerationProcessor" />
+            </pipeline>
+        </route>
+
+        <!-- Route for deciding which output route for a member -->
+        <route id="memberRouterRoute" startupOrder="9" shutdownRoute="Defer">
+            <from uri="direct:memberRouter" />
+            <choice>
+                <when>
+                    <simple>${header.isMemberInvalid}</simple>
+                    <to
+                        uri="seda:invalidMemberQueue?size={{queue.invalidMember.size}}&amp;blockWhenFull=true&amp;discardIfNoConsumers=true" />
+                </when>
+                <otherwise>
+                    <to uri="seda:inputQueue?size={{queue.input.size}}&amp;blockWhenFull=true" />
+                </otherwise>
+            </choice>
+        </route>
+
+        <!-- Route for processing members from the input queue and placing them on the output queue -->
+        <route id="grouperRoute" startupOrder="8" shutdownRoute="Defer">
+            <from
+                uri="seda:inputQueue?concurrentConsumers={{queue.input.threads}}&amp;size={{queue.input.size}}&amp;blockWhenFull=true" />
+            <pipeline>
+                <bean ref="ageSexGroupingProcessor" />
+                <bean ref="icdGroupingProcessor" />
+                <bean ref="dxgGroupingProcessor" />
+                <bean ref="imposeDxHierarchiesProcessor" />
+                <bean ref="ccGroupingProcessor" />
+                <bean ref="rccGroupingProcessor" />
+                <bean ref="rxCodeGroupingProcessor" />
+                <bean ref="imposeRxHierarchiesProcessor" />
+                <bean ref="rxgGroupingProcessor" />
+                <bean ref="admissionsProcessor" />
+                <to uri="direct:modeler" />
+            </pipeline>
+        </route>
+
+        <!-- Execute components in model pipeline -->
+        <route id="modelerRoute" startupOrder="7" shutdownRoute="Defer">
+            <from uri="direct:modeler" />
+            <bean ref="modelInitializeProcessor" />
+            <loop>
+                <simple>${header.nmodels}</simple>
+                <bean ref="modelPipelineProcessor" />
+                <choice>
+                    <when>
+                        <simple>${header.modelPipelineId} == 1</simple>
+                        <pipeline>
+                            <bean ref="ageSexModelComponentProcessor" />
+                        </pipeline>
+                    </when>
+                    <when>
+                        <simple>${header.modelPipelineId} == 14</simple>
+                        <pipeline>
+                            <bean ref="interceptModelComponentProcessor" />
+                            <bean ref="priorUtilizationModelComponentProcessor" />
+                            <bean ref="ageSexSpliningModelComponentProcessor" />
+                        </pipeline>
+                    </when>
+
+                    <when>
+                        <simple>${header.modelPipelineId} == 20</simple>
+                        <pipeline>
+                            <bean ref="interceptModelComponentProcessor" />
+                            <bean ref="ageSexModelComponentProcessor"/>
+                            <bean ref="medicaidModelComponentProcessor"/>
+                            <bean ref="chronicPhccProcessor"/>
+                            <bean ref="likelihoodModelComponentProcessor"/>
+                        </pipeline>
+                    </when>
+                    <when>
+                        <simple>${header.modelPipelineId} == 25</simple>
+                        <pipeline>
+                            <bean ref="interceptModelComponentProcessor" />
+                            <bean ref="ageSexModelComponentProcessor"/>
+                            <bean ref="medicaidModelComponentProcessor"/>
+                            <bean ref="chronicPhccProcessor"/>
+                            <bean ref="likelihoodModelComponentProcessor"/>
+                        </pipeline>
+                    </when>
+                    <when>
+                        <simple>${header.modelPipelineId} == 101</simple>
+                        <pipeline>
+                            <setHeader headerName="hccType">
+                                <constant>DX</constant>
+                            </setHeader>
+                            <bean ref="ageSexModelComponentProcessor" />
+                            <bean ref="interceptModelComponentProcessor" />
+                            <bean ref="hccsModelComponentProcessor" />
+                            <bean ref="ihccsModelComponentProcessor" />
+                            <bean ref="khccsModelComponentProcessor" />
+                            <bean ref="dxInteractionsModelComponentProcessor" />
+                            <bean ref="resetNegativeModelComponentProcessor" />
+                            <bean ref="ageSexSpliningModelComponentProcessor" />
+                        </pipeline>
+                    </when>
+                    <when>
+                        <simple>${header.modelPipelineId} == 102</simple>
+                        <pipeline>
+                            <setHeader headerName="hccType">
+                                <constant>DX</constant>
+                            </setHeader>
+                            <bean ref="ageSexModelComponentProcessor" />
+                            <bean ref="interceptModelComponentProcessor" />
+                            <bean ref="hccsModelComponentProcessor" />
+                            <bean ref="dhccsModelComponentProcessor" />
+                            <bean ref="ehccsModelComponentProcessor" />
+                            <bean ref="medicareModelComponentProcessor" />
+                            <bean ref="dxInteractionsModelComponentProcessor" />
+                            <bean ref="resetNegativeModelComponentProcessor" />
+                            <bean ref="ageSexSpliningModelComponentProcessor" />
+                        </pipeline>
+                    </when>
+                    <when>
+                        <simple>${header.modelPipelineId} == 104</simple>
+                        <pipeline>
+                            <setHeader headerName="hccType">
+                                <constant>RX</constant>
+                            </setHeader>
+                            <bean ref="ageSexModelComponentProcessor" />
+                            <bean ref="interceptModelComponentProcessor" />
+                            <bean ref="rxHccsModelComponentProcessor" />
+                            <bean ref="ihccsModelComponentProcessor" />
+                            <bean ref="khccsModelComponentProcessor" />
+                            <bean ref="rxInteractionsModelComponentProcessor" />
+                            <bean ref="resetNegativeModelComponentProcessor" />
+                            <bean ref="ageSexSpliningModelComponentProcessor" />
+                        </pipeline>
+                    </when>
+                    <when>
+                        <simple>${header.modelPipelineId} == 106</simple>
+                        <pipeline>
+                            <bean ref="ageSexModelComponentProcessor" />
+                            <bean ref="interceptModelComponentProcessor" />
+                            <bean ref="chronicPhccProcessor" />
+                            <bean ref="likelihoodModelComponentProcessor" />
+                        </pipeline>
+                    </when>
+                    <when>
+                        <simple>${header.modelPipelineId} == 113</simple>
+                        <pipeline>
+                            <setHeader headerName="hccType">
+                                <constant>DX</constant>
+                            </setHeader>
+                            <bean ref="hccsModelComponentProcessor" />
+                            <bean ref="dhccsModelComponentProcessor" />
+                            <bean ref="ehccsModelComponentProcessor" />
+                            <bean ref="medicareModelComponentProcessor" />
+                            <bean ref="dxInteractionsModelComponentProcessor" />
+                            <bean ref="interceptModelComponentProcessor" />
+                            <bean ref="resetNegativeModelComponentProcessor" />
+                            <bean ref="ageSexSpliningModelComponentProcessor" />
+                        </pipeline>
+                    </when>
+                    <when>
+                        <simple>${header.modelPipelineId} == 114</simple>
+                        <pipeline>
+                            <setHeader headerName="hccType">
+                                <constant>DX</constant>
+                            </setHeader>
+                            <bean ref="interceptModelComponentProcessor" />
+                            <bean ref="hccsModelComponentProcessor" />
+                            <bean ref="ihccsModelComponentProcessor" />
+                            <bean ref="khccsModelComponentProcessor" />
+                            <bean ref="dxInteractionsModelComponentProcessor" />
+                            <bean ref="resetNegativeModelComponentProcessor" />
+                            <bean ref="ageSexSpliningModelComponentProcessor" />
+                        </pipeline>
+                    </when>
+                    <when>
+                        <simple>${header.modelPipelineId} == 115</simple>
+                        <pipeline>
+                            <setHeader headerName="hccType">
+                                <constant>DX</constant>
+                            </setHeader>
+                            <bean ref="interceptModelComponentProcessor" />
+                            <bean ref="hccsModelComponentProcessor" />
+                            <bean ref="dxInteractionsModelComponentProcessor" />
+                            <bean ref="ageSexAbcAdjustmentModelComponentProcessor" />
+                        </pipeline>
+                    </when>
+                    <when>
+                        <simple>${header.modelPipelineId} == 116</simple>
+                        <pipeline>
+                            <setHeader headerName="hccType">
+                                <constant>RX</constant>
+                            </setHeader>
+                            <bean ref="interceptModelComponentProcessor" />
+                            <bean ref="rxHccsModelComponentProcessor" />
+                            <bean ref="rxInteractionsModelComponentProcessor" />
+                            <bean ref="ageSexAbcAdjustmentModelComponentProcessor" />
+                        </pipeline>
+                    </when>
+                    <when>
+                        <simple>${header.modelPipelineId} == 120</simple>
+                        <pipeline>
+                            <setHeader headerName="hccType">
+                                <constant>DX</constant>
+                            </setHeader>
+                            <bean ref="interceptModelComponentProcessor" />
+                            <bean ref="hccsModelComponentProcessor" />
+                            <bean ref="ihccsModelComponentProcessor" />
+                            <bean ref="khccsModelComponentProcessor" />
+                            <bean ref="medicaidModelComponentProcessor" />
+                            <bean ref="dxInteractionsModelComponentProcessor" />
+                            <bean ref="resetNegativeModelComponentProcessor" />
+                            <bean ref="ageSexSpliningModelComponentProcessor" />
+                        </pipeline>
+                    </when>
+                     <when>
+                        <simple>${header.modelPipelineId} == 121</simple>
+                        <pipeline>
+                            <setHeader headerName="hccType">
+                                <constant>DX</constant>
+                            </setHeader>
+                            <bean ref="interceptModelComponentProcessor" />
+                            <bean ref="hccsModelComponentProcessor" />
+                            <bean ref="ihccsModelComponentProcessor" />
+                            <bean ref="khccsModelComponentProcessor" />
+                            <bean ref="medicaidModelComponentProcessor" />
+                            <bean ref="ageSexModelComponentProcessor" />
+                            <bean ref="dxInteractionsModelComponentProcessor" />
+                            <bean ref="resetNegativeModelComponentProcessor" />
+                            <bean ref="ageSexSpliningModelComponentProcessor" />
+                        </pipeline>
+                    </when>
+                    <when>
+                        <simple>${header.modelPipelineId} == 122</simple>
+                        <pipeline>
+                            <setHeader headerName="hccType">
+                                <constant>DX</constant>
+                            </setHeader>
+                            <bean ref="interceptModelComponentProcessor" />
+                            <bean ref="medicaidModelComponentProcessor" />
+                            <bean ref="ageSexModelComponentProcessor" />
+                            <bean ref="hccsModelComponentProcessor" />
+                            <bean ref="khccsModelComponentProcessor" />
+                            <bean ref="ihccsModelComponentProcessor" />
+                            <bean ref="dxInteractionsModelComponentProcessor" />
+                            <bean ref="resetNegativeModelComponentProcessor" />
+                            <bean ref="ageSexSpliningModelComponentProcessor" />
+                            <bean ref="ageSexAbcAdjustmentModelComponentProcessor" />
+                        </pipeline>
+                    </when>
+                    <when>
+                        <simple>${header.modelPipelineId} == 123</simple>
+                        <pipeline>
+                            <setHeader headerName="hccType">
+                                <constant>RX</constant>
+                            </setHeader>
+                            <bean ref="rxHccsModelComponentProcessor" />
+                            <bean ref="ihccsModelComponentProcessor" />
+                            <bean ref="khccsModelComponentProcessor" />
+                            <bean ref="rxInteractionsModelComponentProcessor" />
+                            <bean ref="interceptModelComponentProcessor" />
+                        </pipeline>
+                    </when>
+                    <when>
+                        <simple>${header.modelPipelineId} == 124</simple>
+                        <pipeline>
+                            <bean ref="ageSexModelComponentProcessor" />
+                            <bean ref="interceptModelComponentProcessor" />
+                            <bean ref="chronicPhccProcessor" />
+                            <bean ref="medicaidModelComponentProcessor" />
+                            <bean ref="likelihoodModelComponentProcessor"/>
+                        </pipeline>
+                    </when>
+                    <when>
+                        <simple>${header.modelPipelineId} == 125</simple>
+                        <pipeline>
+                            <setHeader headerName="hccType">
+                                <constant>DX</constant>
+                            </setHeader>
+                            <bean ref="ageSexModelComponentProcessor" />
+                            <bean ref="chronicPhccProcessor" />
+                            <bean ref="medicaidModelComponentProcessor" />
+                            <bean ref="likelihoodModelComponentProcessor"/>
+                        </pipeline>
+                    </when>
+                    <when>
+                        <simple>${header.modelPipelineId} == 126</simple>
+                        <pipeline>
+                            <setHeader headerName="hccType">
+                                <constant>DX</constant>
+                            </setHeader>
+                            <bean ref="interceptModelComponentProcessor" />
+                            <bean ref="hccsModelComponentProcessor" />
+                            <bean ref="dxInteractionsModelComponentProcessor" />
+                        </pipeline>
+                    </when>
+                    <when>
+                        <simple>${header.modelPipelineId} == 128</simple>
+                        <pipeline>
+                            <setHeader headerName="hccType">
+                                <constant>DX</constant>
+                            </setHeader>
+                            <bean ref="interceptModelComponentProcessor" />
+                            <bean ref="hccsModelComponentProcessor" />
+                            <bean ref="dxInteractionsModelComponentProcessor" />
+                            <bean ref="resetNegativeModelComponentProcessor" />
+                        </pipeline>
+                    </when>
+                </choice>
+                <choice>
+                    <when>
+                        <simple>${header.modelSubPipelineId} == 1001</simple>
+                        <pipeline>
+                            <bean ref="ageSexAbcAdjustmentModelComponentProcessor" />
+                        </pipeline>
+                    </when>
+                    <when>
+                        <simple>${header.modelSubPipelineId} == 1002</simple>
+                        <pipeline>
+                            <bean ref="eligibilitySpliningModelComponentProcessor" />
+                            <bean ref="eligibilityAbcAdjustmentModelComponentProcessor" />
+                        </pipeline>
+                    </when>
+                </choice>
+            </loop>
+            <bean ref="modelFinalizeProcessor" />
+            <bean ref="riskScoreGroupingProcessor" />
+            <bean ref="intermediateOutputProcessor" />
+            <bean ref="riskDriversOutputProcessor" />           
+            <to uri="seda:outputQueue?size={{queue.output.size}}&amp;blockWhenFull=true" />
+        </route>
+
+
+        <!-- Route for outputting of invalid member file -->
+        <route id="invalidMemberRoute" startupOrder="6" shutdownRoute="Defer">
+            <from
+                uri="seda:invalidMemberQueue?concurrentConsumers={{queue.invalidMember.threads}}&amp;size={{queue.invalidMember.size}}&amp;blockWhenFull=true" />
+            <pipeline>
+                <aggregate strategyRef="pipelineContextInvalidMemberAggregationStrategy"
+                    prop:completionSize="file.invalidMember.batchSize" forceCompletionOnStop="true">
+                    <correlationExpression>
+                        <constant>true</constant>
+                    </correlationExpression>
+                    <toD
+                        uri="file:${header.fileInvalidmPath}?fileName=${header.fileInvalidmName}&amp;fileExist=Append" />
+                </aggregate>
+                <to uri="log:com.verscend.dxcg.routes.invalidMemberRoute?level=DEBUG" />
+                <to uri="direct:executionComplete" />
+            </pipeline>
+        </route>
+
+        <!-- Route for outputting of invalid diag file -->
+        <route id="invalidDiagnosisRoute" startupOrder="5" shutdownRoute="Defer">
+            <from
+                uri="seda:invalidDiagnosisQueue?concurrentConsumers={{queue.invalidDiagnosis.threads}}&amp;size={{queue.invalidDiagnosis.size}}&amp;blockWhenFull=true" />
+            <pipeline>
+                <aggregate strategyRef="pipelineContextInvalidDiagnosisAggregationStrategy"
+                    prop:completionSize="file.invalidDiagnosis.batchSize" forceCompletionOnStop="true">
+                    <correlationExpression>
+                        <constant>true</constant>
+                    </correlationExpression>
+                    <toD
+                        uri="file:${header.fileInvaliddiagPath}?fileName=${header.fileInvaliddiagName}&amp;fileExist=Append" />
+                </aggregate>
+                <to uri="log:com.verscend.dxcg.routes.invalidDiagnosisRoute?level=DEBUG" />
+                <to uri="direct:executionComplete" />
+            </pipeline>
+        </route>
+
+        <!-- Route for outputting of invalid rx file -->
+        <route id="invalidPharmacyRoute" startupOrder="4" shutdownRoute="Defer">
+            <from
+                uri="seda:invalidPharmacyQueue?concurrentConsumers={{queue.invalidPharmacy.threads}}&amp;size={{queue.invalidPharmacy.size}}&amp;blockWhenFull=true" />
+            <pipeline>
+                <aggregate strategyRef="pipelineContextInvalidPharmacyAggregationStrategy"
+                    prop:completionSize="file.invalidPharmacy.batchSize" forceCompletionOnStop="true">
+                    <correlationExpression>
+                        <constant>true</constant>
+                    </correlationExpression>
+                    <toD
+                        uri="file:${header.fileInvalidrxPath}?fileName=${header.fileInvalidrxName}&amp;fileExist=Append" />
+                </aggregate>
+                <to uri="log:com.verscend.dxcg.routes.invalidPharmacyRoute?level=DEBUG" />
+                <to uri="direct:executionComplete" />
+            </pipeline>
+        </route>
+
+        <!-- Route for outputting of intermediate result files -->
+        <route id="intermediateOutputRoute" startupOrder="3" shutdownRoute="Defer">
+            <from
+                uri="seda:intermediateOutputQueue?concurrentConsumers={{queue.intermediateOutput.threads}}&amp;size={{queue.intermediateOutput.size}}&amp;blockWhenFull=true" />
+            <pipeline>
+                <aggregate strategyRef="pipelineContextIntermediateOutputAggregationStrategy"
+                    prop:completionSize="file.output.batchSize" forceCompletionOnStop="true">
+                    <correlationExpression>
+                        <constant>true</constant>
+                    </correlationExpression>
+                    <toD
+                        uri="file:${header.fileIntvarsPath}?fileName=${header.fileIntvarsName}&amp;fileExist=Append" />
+                </aggregate>
+                <to uri="log:com.verscend.dxcg.routes.intermediateOutputRoute?level=DEBUG" />
+                <to uri="direct:executionComplete" />
+            </pipeline>
+        </route>
+
+        <!-- Route for outputting of result files -->
+        <route id="outputRoute" startupOrder="2" shutdownRoute="Defer">
+            <from
+                uri="seda:outputQueue?concurrentConsumers={{queue.output.threads}}&amp;size={{queue.output.size}}&amp;blockWhenFull=true" />
+            <pipeline>
+                <aggregate strategyRef="pipelineContextOutputAggregationStrategy"
+                    prop:completionSize="file.output.batchSize" forceCompletionOnStop="true">
+                    <correlationExpression>
+                        <constant>true</constant>
+                    </correlationExpression>
+                    <toD
+                        uri="file:${header.fileOutPath}?fileName=${header.fileOutName}&amp;fileExist=Append" />
+                </aggregate>
+                <to uri="log:com.verscend.dxcg.routes.outputRoute?level=DEBUG" />
+                <to uri="direct:executionComplete" />
+            </pipeline>
+        </route>
+
+    <!-- Route for outputting of report files -->
+	   <route id="reportRoute" startupOrder="11" shutdownRoute="Defer">
+		 <from
+			uri="seda:reportQueue?concurrentConsumers={{queue.report.threads}}&amp;size={{queue.report.size}}&amp;blockWhenFull=true" />
+		  <pipeline>
+			<toD
+					uri="file:${header.fileReportPath}?fileName=${header.fileReportNameHtml}&amp;fileExist=Append" />
+			<toD
+					uri="file:${header.fileReportPath}?fileName=${header.fileReportNameXml}&amp;fileExist=Append" />
+			<to uri="log:com.verscend.dxcg.routes.reportRoute?level=DEBUG" />
+			<to uri="direct:executionComplete" />
+		 </pipeline>
+	  </route>
+		
+        <route id="executionCompleteRoute" startupOrder="1">
+            <from uri="direct:executionComplete" />
+            <to uri="log:com.verscend.dxcg.routes.executionComplete?level=DEBUG" />
+        </route>
+    </camelContext>
+</beans>

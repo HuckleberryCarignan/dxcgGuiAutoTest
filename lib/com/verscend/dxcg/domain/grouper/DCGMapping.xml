@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DCGMappings xmlns="http://www.dxcg.com/DCGMapping.xsd">
+    <DCGMapping MinRange="0.000" MaxRange="0.100" DCG="0" ADCG="0" />
+    <DCGMapping MinRange="0.100" MaxRange="0.200" DCG="0.1" ADCG="0" />
+    <DCGMapping MinRange="0.200" MaxRange="0.300" DCG="0.2" ADCG="0" />
+    <DCGMapping MinRange="0.300" MaxRange="0.400" DCG="0.3" ADCG="0" />
+    <DCGMapping MinRange="0.400" MaxRange="0.500" DCG="0.4" ADCG="0" />
+    <DCGMapping MinRange="0.500" MaxRange="0.700" DCG="0.5" ADCG="0.5" />
+    <DCGMapping MinRange="0.700" MaxRange="1.000" DCG="0.7" ADCG="0.5" />
+    <DCGMapping MinRange="1.000" MaxRange="1.500" DCG="1" ADCG="1" />
+    <DCGMapping MinRange="1.500" MaxRange="2.000" DCG="1.5" ADCG="1" />
+    <DCGMapping MinRange="2.000" MaxRange="2.500" DCG="2" ADCG="1" />
+    <DCGMapping MinRange="2.500" MaxRange="3.000" DCG="2.5" ADCG="2.5" />
+    <DCGMapping MinRange="3.000" MaxRange="4.000" DCG="3" ADCG="2.5" />
+    <DCGMapping MinRange="4.000" MaxRange="5.000" DCG="4" ADCG="2.5" />
+    <DCGMapping MinRange="5.000" MaxRange="6.000" DCG="5" ADCG="2.5" />
+    <DCGMapping MinRange="6.000" MaxRange="7.500" DCG="6" ADCG="2.5" />
+    <DCGMapping MinRange="7.500" MaxRange="10.000" DCG="7.5" ADCG="7.5" />
+    <DCGMapping MinRange="10.000" MaxRange="15.000" DCG="10" ADCG="7.5" />
+    <DCGMapping MinRange="15.000" MaxRange="20.000" DCG="15" ADCG="7.5" />
+    <DCGMapping MinRange="20.000" MaxRange="25.000" DCG="20" ADCG="7.5" />
+    <DCGMapping MinRange="25.000" MaxRange="30.000" DCG="25" ADCG="7.5" />
+    <DCGMapping MinRange="30.000" MaxRange="40.000" DCG="30" ADCG="7.5" />
+    <DCGMapping MinRange="40.000" MaxRange="50.000" DCG="40" ADCG="7.5" />
+    <DCGMapping MinRange="50.000" MaxRange="60.000" DCG="50" ADCG="7.5" />
+    <DCGMapping MinRange="60.000" MaxRange="70.000" DCG="60" ADCG="7.5" />
+    <DCGMapping MinRange="70.000" MaxRange="INF" DCG="70" ADCG="7.5" />
+</DCGMappings>

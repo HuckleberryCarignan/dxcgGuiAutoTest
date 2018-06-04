@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="ModelHierarchy"
+           targetNamespace="http://www.dxcg.com/ModelHierarchy.xsd"
+           elementFormDefault="qualified"
+           xmlns="http://www.dxcg.com/ModelHierarchy.xsd"
+           xmlns:mstns="http://www.dxcg.com/ModelHierarchy.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+	<xs:element name="Hierarchies" type="Hierarchies" />
+	
+  <xs:complexType name="Hierarchies">
+		<xs:sequence>
+			<xs:element name="Hierarchy" type="Hierarchy" minOccurs="1" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+  <xs:complexType name="Hierarchy">
+		<xs:sequence>
+			<xs:element name="Nodes" type="NodeList">
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Name" type="xs:string" use="required" />
+	</xs:complexType>
+	
+  <xs:complexType name="NodeList">
+		<xs:sequence>
+			<xs:element name="Node" type="Node" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+  <xs:complexType name="Node">
+		<xs:sequence>
+			<xs:element name="HCC" type="xs:int" />
+			<xs:element name="Children" type="NodeList" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

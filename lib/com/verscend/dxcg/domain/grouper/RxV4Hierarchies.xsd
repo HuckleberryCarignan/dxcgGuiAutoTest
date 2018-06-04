@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RxHierarchies" 
+	targetNamespace="http://dxcg.com/RxV4Hierarchies.xsd" 
+	elementFormDefault="qualified"
+	xmlns="http://dxcg.com/RxV4Hierarchies.xsd" 
+	xmlns:mstns="http://dxcg.com/RxV4Hierarchies.xsd" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+>
+	
+  <xs:element name="RxHierarchies" type="RxHierarchies" />
+  <xs:complexType name="RxHierarchies">
+  <xs:sequence>
+        <xs:element name="RxH" type="RxH" minOccurs="0" maxOccurs="unbounded" />
+   </xs:sequence>
+	</xs:complexType>	
+	<xs:complexType name="RxH">
+		<xs:attribute name="id" use="required" type="xs:int" />
+		<xs:attribute name="SuperiorRxG" use="required"  type="xs:int" />
+		<xs:attribute name="InferiorRxG" use="required"  type="xs:int" />
+	 </xs:complexType>
+</xs:schema>

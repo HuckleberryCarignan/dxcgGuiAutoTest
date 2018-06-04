@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="NDCRxGMappings" 
+	xmlns="http://www.dxcg.com/NDCRxGMapping.xsd" 
+	targetNamespace="http://www.dxcg.com/NDCRxGMapping.xsd"
+	elementFormDefault="qualified" 
+	xmlns:len="http://www.dxcg.com/Length.xsd" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+    xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+    jaxb:version="2.1">
+
+  <xs:import schemaLocation="Length.xsd" namespace="http://www.dxcg.com/Length.xsd" />
+		
+	<xs:element name="NDCRxGMappings" type="NDCRxGMappings" msdata:IsDataSet="true" />
+		
+	<xs:complexType name="NDCRxGMappings">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="Version" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="CUUVersion" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RxCount" type="xs:int" minOccurs="1" maxOccurs="1"  />
+			<xs:element name="RxGCount" type="xs:int" minOccurs="1" maxOccurs="1" />      
+			<xs:element name="Length">
+			<xs:complexType>
+			  <xs:sequence>
+          		<xs:element ref="len:Min" />
+          		<xs:element ref="len:Max" />
+			  </xs:sequence>
+			</xs:complexType>
+			</xs:element>
+			<xs:element name="Mappings" type="Mappings" maxOccurs="1" minOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Mappings">
+		<xs:annotation>
+			<xs:appinfo>
+				<jaxb:class name="MappingsInNDCRxg" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="rxm" type="rxm" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="rxm">
+		<xs:attribute name="nd" type="xs:string" use="required" />
+		<xs:attribute name="rx" type="xs:int" use="required" />
+	</xs:complexType>
+
+</xs:schema>

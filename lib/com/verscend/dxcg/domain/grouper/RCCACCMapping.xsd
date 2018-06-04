@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="RCCACCMappings" xmlns="http://www.dxcg.com/RCCACCMapping.xsd"
+	targetNamespace="http://www.dxcg.com/RCCACCMapping.xsd"
+	elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+           jaxb:version="2.1">
+
+	<xs:element name="RCCACCMappings" type="RCCACCMappings" />
+	<xs:complexType name="RCCACCMappings">
+		<xs:sequence>
+			<xs:element name="Version" type="xs:string" />
+			<xs:element name="ACCCount" type="xs:int" />
+			<xs:element name="Mappings" type="Mappings" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Mappings">
+		<xs:annotation>
+			<xs:appinfo>
+				<jaxb:class name="MappingsInRCCACC" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RCCACCMapping" type="RCCACCMapping" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="RCCACCMapping">
+		<xs:attribute name="RCC" type="xs:int" use="required" />
+		<xs:attribute name="ACC" type="xs:int" use="required" />
+	</xs:complexType>
+
+</xs:schema>

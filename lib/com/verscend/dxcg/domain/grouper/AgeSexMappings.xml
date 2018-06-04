@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AgeSexMappings>
+    <AgeSexMapping AgeSex_Seq_ID="1" Gender="2" LowAge="0" HighAge="1" />
+    <AgeSexMapping AgeSex_Seq_ID="2" Gender="2" LowAge="2" HighAge="5" />
+    <AgeSexMapping AgeSex_Seq_ID="3" Gender="2" LowAge="6" HighAge="12" />
+    <AgeSexMapping AgeSex_Seq_ID="4" Gender="2" LowAge="13" HighAge="17" />
+    <AgeSexMapping AgeSex_Seq_ID="5" Gender="2" LowAge="18" HighAge="24" />
+    <AgeSexMapping AgeSex_Seq_ID="6" Gender="2" LowAge="25" HighAge="34" />
+    <AgeSexMapping AgeSex_Seq_ID="7" Gender="2" LowAge="35" HighAge="44" />
+    <AgeSexMapping AgeSex_Seq_ID="8" Gender="2" LowAge="45" HighAge="54" />
+    <AgeSexMapping AgeSex_Seq_ID="9" Gender="2" LowAge="55" HighAge="59" />
+    <AgeSexMapping AgeSex_Seq_ID="10" Gender="2" LowAge="60" HighAge="64" />
+    <AgeSexMapping AgeSex_Seq_ID="11" Gender="2" LowAge="65" HighAge="69" />
+    <AgeSexMapping AgeSex_Seq_ID="12" Gender="2" LowAge="70" HighAge="74" />
+    <AgeSexMapping AgeSex_Seq_ID="13" Gender="2" LowAge="75" HighAge="79" />
+    <AgeSexMapping AgeSex_Seq_ID="14" Gender="2" LowAge="80" HighAge="84" />
+    <AgeSexMapping AgeSex_Seq_ID="15" Gender="2" LowAge="85" HighAge="89" />
+    <AgeSexMapping AgeSex_Seq_ID="16" Gender="2" LowAge="90" HighAge="94" />
+    <AgeSexMapping AgeSex_Seq_ID="17" Gender="2" LowAge="95" HighAge="124" />
+    <AgeSexMapping AgeSex_Seq_ID="18" Gender="1" LowAge="0" HighAge="1" />
+    <AgeSexMapping AgeSex_Seq_ID="19" Gender="1" LowAge="2" HighAge="5" />
+    <AgeSexMapping AgeSex_Seq_ID="20" Gender="1" LowAge="6" HighAge="12" />
+    <AgeSexMapping AgeSex_Seq_ID="21" Gender="1" LowAge="13" HighAge="17" />
+    <AgeSexMapping AgeSex_Seq_ID="22" Gender="1" LowAge="18" HighAge="24" />
+    <AgeSexMapping AgeSex_Seq_ID="23" Gender="1" LowAge="25" HighAge="34" />
+    <AgeSexMapping AgeSex_Seq_ID="24" Gender="1" LowAge="35" HighAge="44" />
+    <AgeSexMapping AgeSex_Seq_ID="25" Gender="1" LowAge="45" HighAge="54" />
+    <AgeSexMapping AgeSex_Seq_ID="26" Gender="1" LowAge="55" HighAge="59" />
+    <AgeSexMapping AgeSex_Seq_ID="27" Gender="1" LowAge="60" HighAge="64" />
+    <AgeSexMapping AgeSex_Seq_ID="28" Gender="1" LowAge="65" HighAge="69" />
+    <AgeSexMapping AgeSex_Seq_ID="29" Gender="1" LowAge="70" HighAge="74" />
+    <AgeSexMapping AgeSex_Seq_ID="30" Gender="1" LowAge="75" HighAge="79" />
+    <AgeSexMapping AgeSex_Seq_ID="31" Gender="1" LowAge="80" HighAge="84" />
+    <AgeSexMapping AgeSex_Seq_ID="32" Gender="1" LowAge="85" HighAge="89" />
+    <AgeSexMapping AgeSex_Seq_ID="33" Gender="1" LowAge="90" HighAge="94" />
+    <AgeSexMapping AgeSex_Seq_ID="34" Gender="1" LowAge="95" HighAge="124" />
+</AgeSexMappings>

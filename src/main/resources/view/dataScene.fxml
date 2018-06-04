@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane fx:id="tabPaneConfig"  xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DataScene">
+    <Tab fx:id="memberTabPage" text="Member">
+        <VBox>
+            <TextArea fx:id="txtMember"  style="-fx-font-size:10pt; -fx-font-family:Consolas"
+                      maxWidth="Infinity" maxHeight="Infinity" VBox.vgrow="ALWAYS" editable="false"/>
+
+            <GridPane>
+                <fx:define>
+                    <ToggleGroup fx:id="toggleGroup"/>
+                </fx:define>
+                <Label text="Member ID" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <Label text="DOB" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <Label text="Age" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <Label text="Gender" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <Label text="Months Eligible" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <Label text="Medical Expenditures" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+
+                <RadioButton fx:id="radioID"  GridPane.rowIndex="0" GridPane.columnIndex="1" toggleGroup="$toggleGroup" />
+                <RadioButton fx:id="radioDOB"  GridPane.rowIndex="1" GridPane.columnIndex="1" toggleGroup="$toggleGroup"/>
+                <RadioButton fx:id="radioAge"  GridPane.rowIndex="2" GridPane.columnIndex="1" toggleGroup="$toggleGroup"/>
+                <RadioButton fx:id="radioGender"  GridPane.rowIndex="3" GridPane.columnIndex="1" toggleGroup="$toggleGroup"/>
+                <RadioButton fx:id="radioMonthsElig" GridPane.rowIndex="4" GridPane.columnIndex="1" toggleGroup="$toggleGroup"/>
+                <RadioButton fx:id="radioMedExp"  GridPane.rowIndex="5" GridPane.columnIndex="1" toggleGroup="$toggleGroup"/>
+
+                <TextField fx:id="textFieldID" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                <TextField fx:id="textFieldDOB" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                <TextField fx:id="textFieldAge" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+                <TextField fx:id="textFieldGender" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+                <TextField fx:id="textFieldMonthsElig" GridPane.rowIndex="4" GridPane.columnIndex="2"/>
+                <TextField fx:id="textFieldMedExp" GridPane.rowIndex="5" GridPane.columnIndex="2"/>
+
+                <Label text="Eligibility Category" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+                <Label text="Medicaid Enrollment" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+                <Label text="Original Reason Entitled to Medicare" wrapText="true" prefWidth="120" GridPane.rowIndex="2" GridPane.columnIndex="3" />
+                <Label text="# of Group Variables" GridPane.rowIndex="3" GridPane.columnIndex="3"/>
+                <Label text="# of Pass Through Varibales" GridPane.rowIndex="4" GridPane.columnIndex="3"/>
+
+                <RadioButton fx:id="radioEligCat" GridPane.rowIndex="0" GridPane.columnIndex="4" toggleGroup="$toggleGroup"/>
+                <RadioButton fx:id="radioMedEnr"  GridPane.rowIndex="1" GridPane.columnIndex="4" toggleGroup="$toggleGroup"/>
+                <RadioButton fx:id="radioORETM"  GridPane.rowIndex="2" GridPane.columnIndex="4" toggleGroup="$toggleGroup"/>
+
+                <TextField fx:id="textFieldEligCat" GridPane.rowIndex="0" GridPane.columnIndex="5"/>
+                <TextField fx:id="textFieldMedEnr" GridPane.rowIndex="1" GridPane.columnIndex="5"/>
+                <TextField fx:id="textFieldORETM" GridPane.rowIndex="2" GridPane.columnIndex="5"/>
+                <TextField fx:id="textFieldGrpVar" GridPane.rowIndex="3" GridPane.columnIndex="5"/>
+                <TextField fx:id="textFieldPassThrVar" GridPane.rowIndex="4" GridPane.columnIndex="5"/>
+
+            </GridPane>
+        </VBox>
+    </Tab>
+    <Tab fx:id="diagnosisTabPage" text="Diagnosis">
+        <VBox>
+            <TextArea fx:id="txtDiagnosis"  style="-fx-font-size:10pt; -fx-font-family:Consolas"
+                      editable="false"/>
+            <GridPane>
+            </GridPane>
+        </VBox>
+    </Tab>
+    <Tab fx:id="pharmacyTabPage" text="Pharmacy">
+        <VBox>
+            <TextArea fx:id="txtPharmacy"  style="-fx-font-size:10pt; -fx-font-family:Consolas"
+                      maxWidth="Infinity" maxHeight="Infinity" VBox.vgrow="ALWAYS" editable="false"/>
+            <GridPane>
+
+            </GridPane>
+        </VBox>
+    </Tab>
+    <!-- <Tab fx:id="configTab" text="Config Utility">
+   <fx:include fx:id="configTabPage" source="configTabPage.fxml"/>
+</Tab>-->
+</TabPane>

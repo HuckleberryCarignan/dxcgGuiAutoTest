@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns="http://www.dxcg.com/ModelFileMapping.xsd"
+           xmlns:mstns="http://www.dxcg.com/ModelFileMapping.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.dxcg.com/ModelFileMapping.xsd">
+  
+  <xs:element name="ModelFileMapping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="ModelFile">
+          <xs:complexType>
+            <xs:attribute name="Id" type="xs:int" use="required" />
+            <xs:attribute name="DiagFile" type="xs:unsignedByte" use="required" />
+            <xs:attribute name="RxFile" type="xs:unsignedByte" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

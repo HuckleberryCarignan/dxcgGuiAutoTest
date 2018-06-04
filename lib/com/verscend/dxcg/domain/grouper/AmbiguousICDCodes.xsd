@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AmbiguousICDCodes"
+    targetNamespace="http://www.dxcg.com/AmbiguousICDCodes.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://www.dxcg.com/AmbiguousICDCodes.xsd"
+    xmlns:mstns="http://www.dxcg.com/AmbiguousICDCodes.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="AmbiguousICDCodes" type="AmbiguousICDCodes" />
+
+  <xs:complexType name="AmbiguousICDCodes">
+    <xs:sequence>
+      <xs:element name="Mappings" type="Mappings" maxOccurs="1" minOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Mappings">
+    <xs:sequence>
+      <xs:element name="icd" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ModelMapping" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Model" type="Model" />
+  <xs:complexType name="Model">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string" />
+      <xs:element name="ID" type="xs:int" />
+      <xs:element name="Version" type="xs:string" />
+      <xs:element name="SampleYear" type="xs:string"  maxOccurs="1" minOccurs="0"/>
+      <xs:element name="MeanValue" type="xs:double" />
+      <xs:element name="PipelineId" type="xs:int" />
+      <xs:element name="SubPipelines" type="SubPipelines" minOccurs="0"/>
+      <xs:element name="DxVersion" type="DxVersion" minOccurs="0"/>
+      <xs:element name="RxVersion" type="xs:string" minOccurs="0"/>
+      <!--Once all models implement  GroupingClassifiers, this should be a required parameter. (Expected during refactor)-->
+      <xs:element name="GroupingClassifiers" type="GroupingClassifiers" minOccurs="0" maxOccurs="1"/>   
+      <xs:element name="PopGroup" type="PopGroup" />
+      <xs:element name="Purpose" type="Purpose" />
+      <xs:element name="Variant" type="Variant" />
+      <xs:element name="Outcome" type="Outcome" />
+      <xs:element name="Year" type="ModelYear" />
+      <xs:element name="GroupingInformation" type="GroupingInformation" minOccurs="0"/>
+      <xs:element name="AppendixString" type="xs:string" minOccurs="0" />
+      <xs:element name="Mask" type="xs:unsignedLong" minOccurs="0" />
+      <xs:element name="DateCreated" type="xs:string" minOccurs="0"/>
+      <xs:element name="UnderlyingModels" type="UnderlyingModels" minOccurs="0" />
+      <xs:element name="CostLimit" type="xs:double" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ModelMappings" type="ModelMappings" minOccurs="0"/>
+      <xs:element name="Interactions" type="Interactions" minOccurs="0" />
+      <xs:element name="HighRiskGroups" type="HighRiskGroups" minOccurs="0" />
+      <xs:element name="DiseaseFlags" type="DiseaseFlags" minOccurs="0" />
+      <xs:element name="Intercept" type="Intercept" minOccurs="0" />
+      <xs:element name="PriorCost" type="PriorCost" minOccurs="0" />
+      <xs:element name="ModelInteractions" type="ModelInteractions" minOccurs="0" />
+      <xs:element name="Splining" type="Splining" minOccurs="0" />
+      <xs:element name="ABCAdjustments" type="ABCAdjustments" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubPipelines">
+    <xs:sequence>
+      <xs:element name="SubPipeline" type="SubPipeline" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GroupingClassifiers">
+    <xs:sequence>
+      <xs:element name="DxClassifier" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="RxClassifier" type="xs:string" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubPipeline">
+    <xs:attribute name="Name" type="xs:string" use="required" />
+    <xs:attribute name="ID" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="ModelMappings">
+    <xs:sequence>
+      <xs:element name="MappingGroup" type="MappingGroup" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MappingGroup">
+    <xs:sequence>
+      <xs:element name="Mapping" type="Mapping" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="Mapping">
+    <xs:sequence>
+      <xs:element name="IdKey" type="xs:string" />
+      <xs:element name="RiskScore" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Interactions">
+    <xs:sequence>
+      <xs:element name="Interaction" type="Interaction" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Interaction">
+    <xs:sequence>
+      <xs:element name="InteractionMappings" type="InteractionMappings" />
+      <xs:element name="TermMappings" type="TermMappings" />
+      <xs:element name="MaxOfMappings" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="AnyOfMappings" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="TermMappings">
+    <xs:sequence>
+      <xs:element name="TermMapping" type="TermMapping" minOccurs="0" maxOccurs="unbounded">
+        <xs:key name="UniqueTerm">
+          <xs:selector xpath="." />
+          <xs:field xpath="@Term" />
+        </xs:key>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TermMapping">
+    <xs:attribute name="HCC" type="IntegerRange" use="required" />
+    <xs:attribute name="Term" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="InteractionMappings">
+    <xs:sequence>
+      <xs:element name="InteractionMapping" type="InteractionMapping" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InteractionMapping">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:string" minOccurs="0" />
+      <xs:element name="Term" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="RiskScore" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DiseaseFlags">
+    <xs:sequence>
+      <xs:element name="DiseaseFlagGroup" type="DiseaseFlagGroup" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DiseaseFlagGroup">
+    <xs:sequence>
+      <xs:element name="DiseaseFlag" type="DiseaseFlag" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="DiseaseFlag">
+    <xs:sequence>
+      <xs:element name="Range" type="IntegerRange" />
+      <xs:element name="RiskScore" type="xs:double" />
+    </xs:sequence>
+    <xs:attribute name="Group" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="GroupingInformation">
+    <xs:sequence>
+      <xs:element name="RxGroupingOverride" type="xs:string" minOccurs="0" />
+      <xs:element name="MaxDxG" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="MaxCC" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="MaxACC" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="MaxRxG" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="MaxHCC" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="MaxARxG" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="MaxAgeSexGroup" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="MaxADCG" type="xs:int" minOccurs="0" maxOccurs="1" />
+      <xs:element name="MaxDCG" type="xs:int" minOccurs="0" maxOccurs="1" />
+      <xs:element name="UngroupedNDCRxG" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="MissingNDCRxG" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="NdcRxGMapping" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="RxgARxGMapping" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="RxgLookup" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ArxgLookup" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="DCGLookup" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ICDClassification" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="IntegerRange">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]+(((-|,)[0-9]+)?)*" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="HighRiskGroups">
+    <xs:sequence>
+      <xs:element name="HighRiskGroup" type="HighRiskGroup" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HighRiskGroup">
+    <xs:sequence>
+      <xs:element name="HighRiskHCC" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>  
+  <xs:simpleType name="PopGroup">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Medicare" />
+      <xs:enumeration value="Medicaid" />
+      <xs:enumeration value="Commercial" />
+      <xs:enumeration value="MedicaidMC" />
+      <xs:enumeration value="MedicaidFFS" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Variant">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NA" />
+      <xs:enumeration value="AgeSex" />
+      <xs:enumeration value="Inpatient" />
+      <xs:enumeration value="Rx" />
+      <xs:enumeration value="RxInpatient" />
+      <xs:enumeration value="AllEncounter" />
+      <xs:enumeration value="RxAllMedical"/>
+      <xs:enumeration value="RxDays"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DxVersion">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="V6" />
+      <xs:enumeration value="V7" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Purpose">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NA" />
+      <xs:enumeration value="Explanation" />
+      <xs:enumeration value="Payment" />
+      <xs:enumeration value="PerformanceAssessment" />
+      <xs:enumeration value="AgeGender" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Outcome">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NA" />
+      <xs:enumeration value="MedOnly" />
+      <xs:enumeration value="MedOnly25" />
+      <xs:enumeration value="MedOnly50" />
+      <xs:enumeration value="MedOnly100" />
+      <xs:enumeration value="MedOnly250" />
+      <xs:enumeration value="MedOnly400" />
+      <xs:enumeration value="RxOnly" />
+      <xs:enumeration value="MedRx" />
+      <xs:enumeration value="MedRx25" />
+      <xs:enumeration value="MedRx50" />
+      <xs:enumeration value="MedRx100" />
+      <xs:enumeration value="MedRx200" />
+      <xs:enumeration value="MedRx250" />
+      <xs:enumeration value="MedRx500" />
+      <xs:enumeration value="RateOfHospitalization" />
+      <xs:enumeration value="CountEDVisits" />
+      <xs:enumeration value="CountHospitalizations" />
+      <xs:enumeration value="AdvancedImagingRisk" />
+      <xs:enumeration value="PrimaryCareActivityLevel" />
+      <xs:enumeration value="CountAllAdmissionsExcludingObstetricsAndMentalHealth" />
+      <xs:enumeration value="CountAdmissionsDueToAmbulatoryCareSensitiveConditions" />
+      <xs:enumeration value="CountofAntibioticScripts" />
+      <xs:enumeration value="CountofAntibioticsofConcernScripts"/>
+      <xs:enumeration value="Readmissions"/>
+      <xs:enumeration value="OutpatientImagingRisk"/>
+      <xs:enumeration value="CountofAllAdmissionsExcludingOBAndNeonate"/>
+      <xs:enumeration value="NonImagingSpecialtyTesting"/>
+      <xs:enumeration value="SpecialtyAndOtherNonPrimaryCare"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ModelYear">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1" />
+      <xs:enumeration value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Splining">
+    <xs:sequence>
+      <xs:element name="SpliningGroup" type="SpliningGroup" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SpliningGroup">
+    <xs:sequence>
+      <xs:element name="Exclusions" type="Exclusions" minOccurs="0" maxOccurs="1" />
+      <xs:element name="SpliningCategories" type="SpliningCategories" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="Exclusions">
+    <xs:sequence>
+      <xs:element name="Exclude" type="xs:int" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SpliningCategories">
+    <xs:sequence>
+      <xs:element name="SpliningCategory" type="SpliningCategory" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SpliningCategory">
+    <xs:sequence>
+      <xs:element name="Intercept" type="xs:double" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Knot" type="Knot" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="ID" type="xs:int" />
+  </xs:complexType>
+  <xs:complexType name="Knot">
+    <xs:attribute name="ID" type="xs:int" />
+    <xs:attribute name="Value" type="xs:double" />
+    <xs:attribute name="RiskScore" type="xs:double" />
+  </xs:complexType>
+  <xs:complexType name="ABCAdjustments">
+    <xs:sequence>
+      <xs:element name="ABCAdjustment" type="ABCAdjustment" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ABCAdjustment">
+    <xs:sequence>
+      <xs:element name="MinPred" type="xs:double" minOccurs="1" maxOccurs="1" />
+      <xs:element name="MaxPred" type="xs:double" minOccurs="1" maxOccurs="1" />
+      <xs:element name="NormValue" type="xs:double" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="UnderlyingModels">
+    <xs:sequence>
+      <xs:element name="UnderlyingModel" type="UnderlyingModel" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UnderlyingModel">
+    <xs:sequence>
+      <xs:element name="ModelID" type="xs:int" />
+      <xs:element name="CapValue" type="xs:double" minOccurs="0" />
+      <xs:element name="RiskScore" type="xs:double" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Intercept">
+    <xs:sequence>
+      <xs:element name="InterceptGroup" type="InterceptGroup" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InterceptGroup">
+    <xs:sequence>
+      <xs:element name="IdKey" type="xs:string" />
+      <xs:element name="RiskScore" type="xs:double" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="PriorCost">
+    <xs:sequence>
+      <xs:element name="PriorCostGroup" type="PriorCostGroup" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PriorCostGroup">
+    <xs:sequence>
+      <xs:element name="CapValue" type="xs:int" minOccurs="0" />
+      <xs:element name="Mapping" type="Mapping" minOccurs="4" maxOccurs="4" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="PriorCostGroupName" use="required" />
+  </xs:complexType>
+  <xs:simpleType name="PriorCostGroupName">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Inpatient" />
+      <xs:enumeration value="Outpatient" />
+      <xs:enumeration value="Pharmacy" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ModelInteractions">
+    <xs:sequence>
+      <xs:element name="InteractionGroup" type="InteractionGroup" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InteractionGroup">
+    <xs:sequence>
+      <xs:element name="Models" type="Models" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="Models">
+    <xs:sequence>
+      <xs:element name="Model" type="xs:int" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="RiskScore" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

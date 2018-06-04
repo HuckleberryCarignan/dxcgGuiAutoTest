@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--// (C) DxCG Inc. Boston, MA 2007-->
+<!--  // -->
+<!--// All rights are reserved. Reproduction or transmission in -->
+<!--// whole or in part, in any form or by any means, electronic, -->
+<!--// mechanical or otherwise, is prohibited without the prior  -->
+<!-- // written permission of the copyright owner. -->
+<!--// -->
+<!--// $Author:  $-->
+<!--// $Date:  $ -->
+<!--// $Workfile:  $ -->
+<!-- // $Revision:  $-->
+<Model>
+  <Name>Medicaid MC AgeGender Predicting Concurrent Outpatient Imaging Risk</Name>
+  <ID>356</ID>
+  <Version>DX7_MSMDC0809</Version>
+  <MeanValue>2.1155433434</MeanValue>
+  <PipelineId>1</PipelineId>
+  <DxVersion>V7</DxVersion>
+  <PopGroup>MedicaidMC</PopGroup>
+  <Purpose>Performance Assessment</Purpose>
+  <InputData>AgeGender</InputData>
+  <Outcome>Outpatient Imaging Risk</Outcome>
+  <PredictionType>Concurrent</PredictionType>
+  <ModelMappings>
+    <MappingGroup Name="AgeSex">
+      <Mapping>
+        <IdKey>1</IdKey>
+        <RiskScore>0.7946072693</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>2</IdKey>
+        <RiskScore>0.4886100559</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>3</IdKey>
+        <RiskScore>0.5847166779</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>4</IdKey>
+        <RiskScore>1.5972496165</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>5</IdKey>
+        <RiskScore>4.6436320983</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>6</IdKey>
+        <RiskScore>5.7827272705</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>7</IdKey>
+        <RiskScore>6.7147884183</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>8</IdKey>
+        <RiskScore>8.8465037568</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>9</IdKey>
+        <RiskScore>10.406199272</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>10</IdKey>
+        <RiskScore>10.467816754</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>11</IdKey>
+        <RiskScore>8.1169666815</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>12</IdKey>
+        <RiskScore>8.1169666815</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>13</IdKey>
+        <RiskScore>8.1169666815</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>14</IdKey>
+        <RiskScore>8.1169666815</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>15</IdKey>
+        <RiskScore>8.1169666815</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>16</IdKey>
+        <RiskScore>8.1169666815</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>17</IdKey>
+        <RiskScore>8.1169666815</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>18</IdKey>
+        <RiskScore>0.8548238776</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>19</IdKey>
+        <RiskScore>0.5494972141</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>20</IdKey>
+        <RiskScore>0.6484579453</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>21</IdKey>
+        <RiskScore>1.1668990863</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>22</IdKey>
+        <RiskScore>1.2853089406</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>23</IdKey>
+        <RiskScore>2.4868705057</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>24</IdKey>
+        <RiskScore>3.7480303253</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>25</IdKey>
+        <RiskScore>5.5290698533</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>26</IdKey>
+        <RiskScore>6.8514737715</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>27</IdKey>
+        <RiskScore>7.4878080331</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>28</IdKey>
+        <RiskScore>6.9808228776</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>29</IdKey>
+        <RiskScore>6.9808228776</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>30</IdKey>
+        <RiskScore>6.9808228776</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>31</IdKey>
+        <RiskScore>6.9808228776</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>32</IdKey>
+        <RiskScore>6.9808228776</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>33</IdKey>
+        <RiskScore>6.9808228776</RiskScore>
+      </Mapping>
+      <Mapping>
+        <IdKey>34</IdKey>
+        <RiskScore>6.9808228776</RiskScore>
+      </Mapping>
+    </MappingGroup>
+  </ModelMappings>
+</Model>

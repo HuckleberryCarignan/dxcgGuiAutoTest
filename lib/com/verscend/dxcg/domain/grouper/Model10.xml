@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--// (C) DxCG Inc. Boston, MA 2007 -->
+<!-- // -->
+<!--// All rights are reserved. Reproduction or transmission in -->
+<!--// whole or in part, in any form or by any means, electronic, -->
+<!--// mechanical or otherwise, is prohibited without the prior -->
+<!-- // written permission of the copyright owner. -->
+<!--// -->
+<!--// $Author: $ -->
+<!--// $Date: $ -->
+<!--// $Workfile: $ -->
+<!-- // $Revision: $ -->
+<Model>
+    <Name>AgeGender Predicting Prospective Total Risk</Name>
+    <ID>10</ID>
+    <Version>MS12.D00.R00</Version>
+    <SampleYear>2012</SampleYear>
+    <MeanValue>5034.7715027</MeanValue>
+    <PipelineId>1</PipelineId>
+    <PopGroup>Commercial</PopGroup>
+    <Purpose>Risk Adjustment</Purpose>
+    <InputData>AgeGender</InputData>
+    <Outcome>Total Risk</Outcome>
+    <PredictionType>Prospective</PredictionType>
+    <DateCreated>04/14/2015</DateCreated>
+    <ModelMappings>
+        <MappingGroup Name="AgeSex">
+            <Mapping>
+                <IdKey>1</IdKey>
+                <RiskScore>3344.8447875</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>2</IdKey>
+                <RiskScore>1720.7027992</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>3</IdKey>
+                <RiskScore>1606.9284165</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>4</IdKey>
+                <RiskScore>2798.1559224</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>5</IdKey>
+                <RiskScore>3489.7862704</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>6</IdKey>
+                <RiskScore>5582.7104601</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>7</IdKey>
+                <RiskScore>5941.7730349</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>8</IdKey>
+                <RiskScore>7282.5908668</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>9</IdKey>
+                <RiskScore>8840.8477686</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>10</IdKey>
+                <RiskScore>10231.057083</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>11</IdKey>
+                <RiskScore>11843.4614</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>12</IdKey>
+                <RiskScore>11843.4614</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>13</IdKey>
+                <RiskScore>11843.4614</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>14</IdKey>
+                <RiskScore>11843.4614</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>15</IdKey>
+                <RiskScore>11843.4614</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>16</IdKey>
+                <RiskScore>11843.4614</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>17</IdKey>
+                <RiskScore>11843.4614</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>18</IdKey>
+                <RiskScore>4069.2404705</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>19</IdKey>
+                <RiskScore>2128.6960907</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>20</IdKey>
+                <RiskScore>1942.6755664</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>21</IdKey>
+                <RiskScore>2647.7052313</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>22</IdKey>
+                <RiskScore>2226.315118</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>23</IdKey>
+                <RiskScore>2490.53181</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>24</IdKey>
+                <RiskScore>3698.8586846</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>25</IdKey>
+                <RiskScore>5970.3632788</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>26</IdKey>
+                <RiskScore>8661.267584</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>27</IdKey>
+                <RiskScore>10888.985269</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>28</IdKey>
+                <RiskScore>14221.969942</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>29</IdKey>
+                <RiskScore>14221.969942</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>30</IdKey>
+                <RiskScore>14221.969942</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>31</IdKey>
+                <RiskScore>14221.969942</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>32</IdKey>
+                <RiskScore>14221.969942</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>33</IdKey>
+                <RiskScore>14221.969942</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>34</IdKey>
+                <RiskScore>14221.969942</RiskScore>
+            </Mapping>
+        </MappingGroup>
+    </ModelMappings>
+</Model>

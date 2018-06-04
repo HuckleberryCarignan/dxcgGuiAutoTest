@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<xs:schema id="ModelChains"                   xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="ModelChains" type="ModelChains"/>
+	
+	<xs:complexType name="ModelChains">
+		<xs:sequence>
+			<xs:element name="ModelChain" type="ModelChain" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ModelChain">
+		<xs:attribute name="ModelId" type="xs:int" use="required" />
+		<xs:attribute name="Chain" type="IDChain" use="required" />
+		<xs:attribute name="LegacyChainModelId" type="IDChain" use="optional" />
+	</xs:complexType>
+	
+	<xs:simpleType name="IDChain">
+		<xs:list itemType="xs:int" />
+	</xs:simpleType>
+</xs:schema>

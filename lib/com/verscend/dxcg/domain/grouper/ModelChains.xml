@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ModelChains>
+
+	<!-- Medicare AgeSex -->
+	<ModelChain ModelId="1" Chain="1" />
+
+	<!-- Medicare All-Encounter Explanation, Year 1 -->
+	<ModelChain ModelId="2" Chain="122 2" />
+
+	<!-- Commercial AgeSex Med+Rx Trunc 100k, Year 1 -->
+	<ModelChain ModelId="4" Chain="4" />
+
+	<!-- Commercial AgeSex Med Only Trunc 100k, Year 1 -->
+	<ModelChain ModelId="7" Chain="7" />
+
+	<!-- Commercial AgeSex Med+Rx, Year 2 -->
+	<ModelChain ModelId="10" Chain="10" />
+
+	<!-- Commercial AgeSex Med Only, Year 2 -->
+	<ModelChain ModelId="11" Chain="11" />
+
+	<!-- Commercial All-Encounter Explanation Med+Rx, Year 1 -->
+	<ModelChain ModelId="18" Chain="99 18" LegacyChainModelId="26" />
+
+	<!-- Commercial All-Encounter Explanation Med+Rx Trunc 100k, Year 1 -->
+	<ModelChain ModelId="19" Chain="4 19" />
+
+	<!-- Commercial All-Encounter Explanation Med Only, Year 1 -->
+	<ModelChain ModelId="22" Chain="100 22" LegacyChainModelId="27" />
+
+	<!-- Commercial All-Encounter Explanation Med Only Trunc 100k, Year 1 -->
+	<ModelChain ModelId="23" Chain="7 23" />
+
+	<!-- Commercial All-Encounter Explanation Med+Rx, Year 2 -->
+	<ModelChain ModelId="26" Chain="10 26" LegacyChainModelId="18" />
+
+	<!-- Commercial All-Encounter Explanation Med Only, Year 2 -->
+	<ModelChain ModelId="27" Chain="11 27" LegacyChainModelId="22" />
+
+	<!-- High Cost Case ID Med Only Model, Yr2 -->
+	<ModelChain ModelId="51" Chain="11 51"  />
+
+	<!-- High Cost Case ID Med Only Truncated 250k Model, Yr2 -->
+	<ModelChain ModelId="52" Chain="102 52"  />
+
+	<!-- High Cost Case ID Med Only Truncated 100k Model, Yr2 -->
+	<ModelChain ModelId="53" Chain="103 53"  />
+
+	<!-- High Cost Case ID Med Only Truncated 25k Model, Yr2 -->
+	<ModelChain ModelId="55" Chain="104 55"  />
+
+	<!-- High Cost Case ID Med+Rx Model, Yr2 -->
+	<ModelChain ModelId="56" Chain="10 56"  />
+
+	<!-- High Cost Case ID Med+Rx Truncated 250k Model, Yr2 -->
+	<ModelChain ModelId="57" Chain="97 57"  />
+
+	<!-- High Cost Case ID Med+Rx Truncated 100k Model, Yr2 -->
+	<ModelChain ModelId="58" Chain="98 58"  />
+
+	<!-- High Cost Case ID Med+Rx Truncated 25k Model, Yr2 -->
+	<ModelChain ModelId="60" Chain="101 60"  />
+
+
+	<!-- Commercial Rx Only Explanation, Year 1 -->
+	<ModelChain ModelId="68" Chain="100 68" />
+
+	<!-- Commercial Rx Only Explanation, Year 2 -->
+	<ModelChain ModelId="69" Chain="10 69" />
+
+	<!-- Likelihood of Hospitalization Model V2 -->
+	<ModelChain ModelId="71" Chain="71"  />
+
+  <!--Rx + All Medical Predicting Prospective Likelihood of ED Visit-->
+  <ModelChain ModelId="126" Chain="126"  />
+
+  <!--Medicaid MC Rx + All Medical Predicting Prospective Likelihood of Outpatient ED Visit-->
+  <ModelChain ModelId="310" Chain="310"  />
+
+  <!--Medicaid FFS Rx + All Medical Predicting Prospective Likelihood of Outpatient ED Visit-->
+  <ModelChain ModelId="330" Chain="330"  />
+  
+	<!-- Medicaid FFS AgeSex Med + Rx, Year 2 -->
+	<ModelChain ModelId="72" Chain="72"  />
+
+	<!-- Medicaid FFS All-Encounter Explanation Med + Rx, Year 1 -->
+	<ModelChain ModelId="73" Chain="380 73"  />
+
+	<!-- Medicaid FFS All-Encounter Explanation Med + Rx, Year 2 -->
+	<ModelChain ModelId="74" Chain="72 74"  />
+
+	<!-- Medicaid MC AgeSex Med + Rx, Year 2 -->
+	<ModelChain ModelId="75" Chain="75"  />
+
+	<!-- Medicaid MC All-Encounter Explanation Med + Rx, Year 1 -->
+	<ModelChain ModelId="76" Chain="360 76"  />
+
+	<!-- Medicaid MC All-Encounter Explanation Med + Rx, Year 2 -->
+	<ModelChain ModelId="77" Chain="75 77"  />
+
+	<!-- Medicaid FFS Likelihood of Hospitalization -->
+	<ModelChain ModelId="79" Chain="79"  />
+
+	<!-- Commercial Rx Only Explanation Med+Rx Year 1 -->
+	<ModelChain ModelId="86" Chain="99 86"  />
+
+	<!-- Commercial Rx Only Explanation Rx Year 2 -->
+	<ModelChain ModelId="87" Chain="92 87"  />
+
+	<!-- Commercial All-Encounter Explanation Med+Rx Topcoded 250k Year 1 -->
+	<ModelChain ModelId="88" Chain="90 88"  />
+
+	<!-- Commercial All-Encounter Explanation Med Only Topcoded 250k Year 1 -->
+	<ModelChain ModelId="89" Chain="91 89"  />
+
+	<!-- Commercial AgeSex Med+Rx Topcoded 250k Year 1 -->
+	<ModelChain ModelId="90" Chain="90"  />
+
+	<!-- Commercial AgeSex Med Only Topcoded 250k Year 1 -->
+	<ModelChain ModelId="91" Chain="91"  />
+
+	<!-- Commercial AgeSex Rx Only Year 2 -->
+	<ModelChain ModelId="92" Chain="92"  />
+
+	<!-- Medicaid MC Likelihood of Hospitalization Model -->
+	<ModelChain ModelId="93" Chain="93"  />
+
+	<!-- KBV Concurrent Model (truncated at 20,000 euros) -->
+	<ModelChain ModelId="38" Chain="10 38" />
+
+	<!-- KBV Prospective Model (truncated at 20,000 euros) -->
+	<ModelChain ModelId="39" Chain="10 39" />
+
+  <!-- Primary care (Bonus payment) models, New for 3.0.1  -->
+  <ModelChain ModelId="201" Chain="211 201"  />
+ 
+  <ModelChain ModelId="204" Chain="214 204"  />
+
+  <ModelChain ModelId="206" Chain="216 206"  />
+
+  
+	<!-- CMS MODELS -->
+	<ModelChain ModelId="5011" Chain="5011"/>
+	<ModelChain ModelId="5012" Chain="5012"/>
+	<ModelChain ModelId="5013" Chain="5013"/>
+	<ModelChain ModelId="5014" Chain="5014"/>
+	<ModelChain ModelId="504" Chain="504"/>
+	<ModelChain ModelId="505" Chain="505"/>
+	<ModelChain ModelId="506" Chain="506"/>
+	<ModelChain ModelId="507" Chain="507"/>
+	<ModelChain ModelId="508" Chain="508"/>
+	<ModelChain ModelId="509" Chain="509"/>
+
+	<!-- Medical Home Models -->
+	<ModelChain ModelId="100001" Chain="100001"/>
+	<ModelChain ModelId="100010" Chain="100010"/>
+
+	<!-- New for 3.0 -->
+	<ModelChain ModelId="95" Chain="98 95"  />
+	<ModelChain ModelId="96" Chain="97 96"  />
+	<ModelChain ModelId="97" Chain="97"  />
+	<ModelChain ModelId="98" Chain="98"  />
+	<ModelChain ModelId="99" Chain="99"  />
+	<ModelChain ModelId="100" Chain="100"  />
+	<ModelChain ModelId="101" Chain="101"  />
+	<ModelChain ModelId="102" Chain="102"  />
+	<ModelChain ModelId="103" Chain="103"  />
+	<ModelChain ModelId="104" Chain="104"  />
+	<ModelChain ModelId="105" Chain="103 105"  />
+	<ModelChain ModelId="106" Chain="102 106"  />
+	<ModelChain ModelId="121" Chain="1 121"  />
+	<ModelChain ModelId="122" Chain="122"  />
+
+  <!--Medicare All Medical with Util Predicting Prospective Medical Risk-->
+  <ModelChain ModelId="125" Chain="1 125"/>   
+  
+  <!-- V4 Rx Models-->
+  <ModelChain ModelId="107" Chain="100 107" />
+  <ModelChain ModelId="108" Chain="10 108" />
+  <ModelChain ModelId="110" Chain="99 110" />
+  <ModelChain ModelId="111" Chain="92 111" />
+
+  <!--v4 Medicare Models -->
+  <ModelChain ModelId="226" Chain="246 226" />
+  <ModelChain ModelId="228" Chain="248 228" />
+  <ModelChain ModelId="229" Chain="249 229" />
+  <ModelChain ModelId="230" Chain="250 230" />
+  <ModelChain ModelId="231" Chain="251 231" />
+  <ModelChain ModelId="257" Chain="259 257" />
+  <ModelChain ModelId="234" Chain="254 234" />
+  <ModelChain ModelId="238" Chain="247 238" />
+
+  <!--Medicare LOH model -->
+  <ModelChain ModelId="236" Chain="236" />
+  <!-- Medicare LOED model -->
+  <ModelChain ModelId="237" Chain="237" />
+  
+  <!--New Commercial models in 4.0-->
+  <ModelChain ModelId="219" Chain="239 219" />
+  <ModelChain ModelId="221" Chain="241 221" />
+  <ModelChain ModelId="222" Chain="242 222" />
+  <ModelChain ModelId="223" Chain="243 223" />
+  <ModelChain ModelId="225" Chain="245 225" />
+  <ModelChain ModelId="256" Chain="258 256" />  
+  
+  <!--New AgeGender Models from RS 4.1-->
+  <ModelChain ModelId="360" Chain="360" />
+  <ModelChain ModelId="380" Chain="380" />
+  <!--New Medicaid Performance Assessment Models in 4.1-->
+  <ModelChain ModelId="301" Chain="351 301" />
+  <ModelChain ModelId="302" Chain="352 302" />
+  <ModelChain ModelId="303" Chain="353 303" />
+  <ModelChain ModelId="304" Chain="354 304" />
+  <ModelChain ModelId="305" Chain="355 305" />
+  <ModelChain ModelId="306" Chain="356 306" />
+  <ModelChain ModelId="307" Chain="357 307" />
+  <ModelChain ModelId="308" Chain="358 308" />
+  <ModelChain ModelId="309" Chain="359 309" />
+
+  <ModelChain ModelId="321" Chain="371 321" />
+  <ModelChain ModelId="322" Chain="372 322" />
+  <ModelChain ModelId="323" Chain="373 323" />
+  <ModelChain ModelId="324" Chain="374 324" />
+  <ModelChain ModelId="325" Chain="375 325" />
+  <ModelChain ModelId="326" Chain="376 326" />
+  <ModelChain ModelId="327" Chain="377 327" />
+  <ModelChain ModelId="328" Chain="378 328" />
+  <ModelChain ModelId="329" Chain="379 329" />
+  
+  <!-- New RS 4.1 Medicaid Utilization models-->
+  <ModelChain ModelId="311" Chain="75 311" />
+  <ModelChain ModelId="331" Chain="72 331" />
+  
+  <!--DI 4.1.4 new medicare and medicaid topcoded models-->
+  <ModelChain ModelId="332" Chain="381 332"/>
+  <ModelChain ModelId="312" Chain="361 312"/>
+  <ModelChain ModelId="132" Chain="123 132"/>  
+  
+  <!--DI 4.1.5 MassHealth Models-->
+  <ModelChain ModelId="100030" Chain="100033 100030"/>
+  <ModelChain ModelId="100031" Chain="100034 100031"/>
+  <ModelChain ModelId="100032" Chain="100035 100032"/>
+</ModelChains>

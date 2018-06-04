@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModelFamilies xmlns="http://www.dxcg.com/ModelFamilies.xsd">
+  <!-- Highest Family Id : 31-->
+  <!--Budgeting and UnderWriting Bundle Commercial-->
+  <ModelFamily FamilyID="1"  Product="Commercial" Name="Risk Adjustment using Inpatient Medical">
+    <Model ModelID="11" Precedence="2" Name="AgeGender Predicting Prospective Medical Risk" />
+    <Model ModelID="99" Precedence="2" Name="AgeGender Predicting Concurrent Total Risk" />
+    <Model ModelID="10" Precedence="2" Name="AgeGender Predicting Prospective Total Risk" />
+    <Model ModelID="100" Precedence="2" Name="AgeGender Predicting Concurrent Medical Risk" />
+  </ModelFamily>
+  <ModelFamily FamilyID="2" Product="Commercial" Name="Risk Adjustment using All Medical">
+    <Model ModelID="18" Precedence="1" Name="All Medical Predicting Concurrent Total Risk " />
+    <Model ModelID="26" Precedence="1" Name="All Medical Predicting Prospective Total Risk " />
+    <Model ModelID="88" Precedence="1" Name="All Medical Predicting 250k Concurrent Total Risk" />
+    <Model ModelID="96" Precedence="1" Name="All Medical Predicting 250k Prospective Total Risk" />
+    <Model ModelID="19" Precedence="1" Name="All Medical Predicting 100k Concurrent Total Risk" />
+    <Model ModelID="95" Precedence="1" Name="All Medical Predicting 100k Prospective Total Risk" />
+    <Model ModelID="22" Precedence="1" Name="All Medical Predicting Concurrent Medical Risk" />
+    <Model ModelID="27" Precedence="1" Name="All Medical Predicting Prospective Medical Risk" />
+    <Model ModelID="89" Precedence="1" Name="All Medical Predicting 250k Concurrent Medical Risk" />
+    <Model ModelID="106" Precedence="1" Name="All Medical Predicting 250k Prospective Medical Risk" />
+    <Model ModelID="23" Precedence="1" Name="All Medical Predicting 100k Concurrent Medical Risk" />
+    <Model ModelID="105" Precedence="1" Name="All Medical Predicting 100k Prospective Medical Risk" />
+    <Model ModelID="99" Precedence="2" Name="AgeGender Predicting Concurrent Total Risk" />
+    <Model ModelID="10" Precedence="2" Name="AgeGender Predicting Prospective Total Risk" />
+    <Model ModelID="90" Precedence="2" Name="AgeGender Predicting 250k Concurrent Total Risk" />
+    <Model ModelID="97" Precedence="2" Name="AgeGender Predicting 250k Prospective Total Risk" />
+    <Model ModelID="4" Precedence="2" Name="AgeGender Predicting 100k Concurrent Total Risk" />
+    <Model ModelID="98" Precedence="2" Name="AgeGender Predicting 100k Prospective Total Risk" />
+    <Model ModelID="100" Precedence="2" Name="AgeGender Predicting Concurrent Medical Risk" />
+    <Model ModelID="11" Precedence="2" Name="AgeGender Predicting Prospective Medical Risk " />
+    <Model ModelID="91" Precedence="2" Name="AgeGender Predicting 250k Concurrent Medical Risk" />
+    <Model ModelID="102" Precedence="2" Name="AgeGender Predicting 250k Prospective Medical Risk" />
+    <Model ModelID="7" Precedence="2" Name="AgeGender Predicting 100k Concurrent Medical Risk" />
+    <Model ModelID="103" Precedence="2" Name="AgeGender Predicting 100k Prospective Medical Risk" />
+  </ModelFamily>
+  <ModelFamily FamilyID="3" Product="Pharmacy" Name="Risk Adjustment using Rx">
+    <Model ModelID="68" Precedence="2" Name="Rx Predicting Concurrent Medical Risk" />
+    <Model ModelID="86" Precedence="2" Name="Rx Predicting Concurrent Total Risk" />
+    <Model ModelID="69" Precedence="2" Name="Rx Predicting Prospective Total Risk" />
+    <Model ModelID="87" Precedence="2" Name="Rx Predicting Prospective Pharmacy Risk" />
+    <Model ModelID="100" Precedence="3" Name="AgeGender Predicting Concurrent Medical Risk" />
+    <Model ModelID="99" Precedence="3" Name="AgeGender Predicting Concurrent Total Risk" />
+    <Model ModelID="10" Precedence="3" Name="AgeGender Predicting Prospective Total Risk" />
+    <Model ModelID="92" Precedence="3" Name="AgeGender Predicting Prospective Pharmacy" />
+  </ModelFamily>
+  <ModelFamily FamilyID="4" Product="Medical Management" Name="Predictive Modeling using All Medical">
+    <Model ModelID="51" Precedence="1" Name="All Medical Predicting Prospective Medical Risk" />
+    <Model ModelID="52" Precedence="1" Name="All Medical Predicting 250k Prospective Medical Risk" />
+    <Model ModelID="53" Precedence="1" Name="All Medical Predicting 100k Prospective Medical Risk" />
+    <Model ModelID="55" Precedence="1" Name="All Medical Predicting 25k Prospective Medical Risk" />
+    <Model ModelID="11" Precedence="2" Name="AgeGender Predicting Prospective Medical Risk" />
+    <Model ModelID="102" Precedence="2" Name="AgeGender Predicting 250k Prospective Medical Risk" />
+    <Model ModelID="103" Precedence="2" Name="AgeGender Predicting 100k Prospective Medical Risk" />
+    <Model ModelID="104" Precedence="2" Name="AgeGender Predicting 25k Prospective Medical Risk" />
+  </ModelFamily>
+  <ModelFamily FamilyID="5" Product="Medical Management" Name="Predictive Modeling using Rx + All Medical">
+    <Model ModelID="56" Precedence="1" Name="Rx + All Medical Predicting Prospective Total Risk" />
+    <Model ModelID="57" Precedence="1" Name="Rx + All Medical Predicting 250k Prospective Total Risk" />
+    <Model ModelID="58" Precedence="1" Name="Rx + All Medical Predicting 100k Prospective Total Risk" />
+    <Model ModelID="60" Precedence="1" Name="Rx + All Medical Predicting 25k Prospective Total Risk" />
+    <Model ModelID="10" Precedence="2" Name="AgeGender Predicting Prospective Total Risk" />
+    <Model ModelID="97" Precedence="2" Name="AgeGender Predicting 250k Prospective Total Risk" />
+    <Model ModelID="98" Precedence="2" Name="AgeGender Predicting 100k Prospective Total Risk" />
+    <Model ModelID="101" Precedence="2" Name="AgeGender Predicting 25k Prospective Total Risk" />
+  </ModelFamily>
+  <ModelFamily FamilyID="22" Product="Pharmacy" Name="Risk Adjustment using Rx + Days Supply">
+    <Model ModelID="107" Precedence="2" Name="Rx (Days) Predicting Concurrent Medical Risk" />
+    <Model ModelID="108" Precedence="2" Name="Rx (Days) Predicting Prospective Total Risk" />
+    <Model ModelID="110" Precedence="2" Name="Rx (Days) Predicting Concurrent Total Risk" />
+    <Model ModelID="111" Precedence="2" Name="Rx (Days) Predicting Prospective Pharmacy Risk" />
+    <Model ModelID="100" Precedence="3" Name="AgeGender Predicting Concurrent Medical Risk" />
+    <Model ModelID="99" Precedence="3" Name="AgeGender Predicting Concurrent Total Risk" />
+    <Model ModelID="10" Precedence="3" Name="AgeGender Predicting Prospective Total Risk" />
+    <Model ModelID="92" Precedence="3" Name="AgeGender Predicting Prospective Pharmacy" />
+  </ModelFamily>
+  
+  <!--Budgeting and UnderWrinting Bundle Medicaid-->
+  <ModelFamily FamilyID="7" Product="Medicaid" Name="FFS Medicaid Risk Adjustment using All Medical">
+    <Model ModelID="73" Precedence="1" Name="Medicaid FFS All Medical Predicting Concurrent Total Risk" />
+    <Model ModelID="74" Precedence="1" Name="Medicaid FFS All Medical Predicting Prospective Total Risk" />
+    <Model ModelID="72" Precedence="2" Name="Medicaid FFS AgeGender Predicting Prospective Total Risk" />
+    <Model ModelID="380" Precedence="2" Name="Medicaid FFS AgeGender Predicting Concurrent Total Risk" />
+    <Model ModelID="332" Precedence="1" Name="Medicaid FFS All Medical Predicting 500K Concurrent Total Risk" />
+    <Model ModelID="381" Precedence="2" Name="Medicaid FFS AgeGender Predicting 500K Concurrent Total Risk" />
+  </ModelFamily>
+  
+  <ModelFamily FamilyID="9" Product="Medicaid" Name="MC Medicaid Risk Adjustment using All Medical">
+    <Model ModelID="76" Precedence="1" Name="Medicaid MC All Medical Predicting Concurrent Total Risk" />
+    <Model ModelID="77" Precedence="1" Name="Medicaid MC All Medical Predicting Prospective Total Risk" />
+    <Model ModelID="75" Precedence="2" Name="Medicaid MC AgeGender Predicting Prospective Total Risk" />
+    <Model ModelID="360" Precedence="2" Name="Medicaid MC AgeGender Predicting Concurrent Total Risk" />
+    <Model ModelID="312" Precedence="1" Name="Medicaid MC All Medical Predicting 200K Concurrent Total Risk"/>
+    <Model ModelID="361" Precedence="2" Name="Medicaid MC AgeGender Predicting 200K Concurrent Total Risk"/>
+  </ModelFamily>
+  
+  <ModelFamily FamilyID="29" Product="Medicaid" Name="Medicaid MC Predictive Modeling using Rx+All Medical">
+    <Model ModelID="311" Precedence="1" Name="Medicaid MC Rx+ All Medical Predicting Prospective Total Risk" />
+  </ModelFamily>
+  <ModelFamily FamilyID="30" Product="Medicaid" Name="Medicaid FFS Predictive Modeling using Rx+All Medical">
+    <Model ModelID="331" Precedence="1" Name="Medicaid FFS Rx+ All Medical Predicting Prospective Total Risk" />
+  </ModelFamily>
+  <!--Budgeting and UnderWrinting Bundle Medicare-->
+  <ModelFamily FamilyID="11" Product="Medicare FFS" Name="Medicare Risk Adjustment">
+    <Model ModelID="2" Precedence="2" Name="Medicare All Medical Predicting Concurrent Medical Risk" />
+    <Model ModelID="122" Precedence="3" Name="Medicare AgeGender Predicting Concurrent Medical Risk" />
+    <Model ModelID="121" Precedence="2" Name="Medicare All Medical Predicting Prospective Medical Risk" />
+    <Model ModelID="1" Precedence="3" Name="Medicare AgeGender Predicting Prospective Medical Risk" />
+
+    <Model ModelID="132" Precedence="2" Name="Medicare All Medical Predicting 400K Concurrent Medical Risk"/>
+    <Model ModelID="123" Precedence="3" Name="Medicare AgeGender Predicting Concurrent 400K Medical Risk"/>
+  </ModelFamily>
+  <ModelFamily FamilyID="31" Product="Medicare Advantage" Name="Medicare Predictive Modeling using All Medical">
+    <Model ModelID="125" Precedence="1" Name="Medicare All Medical with Util Predicting Prospective Medical Risk" />
+  </ModelFamily>
+  <!--Medical Management Bundle Commercial-->
+  <ModelFamily FamilyID="12" Product="Medical Management" Name="Predictive Modeling using All Medical">
+    <Model ModelID="51" Precedence="1" Name="All Medical Predicting Prospective Medical Risk" />
+    <Model ModelID="52" Precedence="1" Name="All Medical Predicting 250k Prospective Medical Risk" />
+    <Model ModelID="53" Precedence="1" Name="All Medical Predicting 100k Prospective Medical Risk" />
+    <Model ModelID="55" Precedence="1" Name="All Medical Predicting 25k Prospective Medical Risk" />
+    <Model ModelID="11" Precedence="2" Name="AgeGender Predicting Prospective Medical Risk" />
+    <Model ModelID="102" Precedence="2" Name="AgeGender Predicting 250k Prospective Medical Risk" />
+    <Model ModelID="103" Precedence="2" Name="AgeGender Predicting 100k Prospective Medical Risk" />
+    <Model ModelID="104" Precedence="2" Name="AgeGender Predicting 25k Prospective Medical Risk" />
+  </ModelFamily>
+  <ModelFamily FamilyID="13" Product="Medical Management" Name="Predictive Modeling using Rx + All Medical">
+    <Model ModelID="56" Precedence="1" Name="Rx + All Medical Predicting Prospective Total Risk" />
+    <Model ModelID="57" Precedence="1" Name="Rx + All Medical Predicting 250k Prospective Total Risk" />
+    <Model ModelID="58" Precedence="1" Name="Rx + All Medical Predicting 100k Prospective Total Risk" />
+    <Model ModelID="60" Precedence="1" Name="Rx + All Medical Predicting 25k Prospective Total Risk" />
+    <Model ModelID="71" Precedence="1" Name="Rx + All Medical Predicting Prospective Likelihood of Hospitalization Excluding OB and Neonate" />
+    <Model ModelID="126" Precedence="1" Name="Rx + All Medical Predicting Prospective Likelihood of Outpatient ED Visit" />
+    <Model ModelID="10" Precedence="2" Name="AgeGender Predicting Prospective Total Risk" />
+    <Model ModelID="97" Precedence="2" Name="AgeGender Predicting 250k Prospective Total Risk" />
+    <Model ModelID="98" Precedence="2" Name="AgeGender Predicting 100k Prospective Total Risk" />
+    <Model ModelID="101" Precedence="2" Name="AgeGender Predicting 25k Prospective Total Risk" />
+  </ModelFamily>
+  <!--Medical Management Bundle Medicaid-->
+  <ModelFamily FamilyID="14" Product="Medicaid" Name="Medicaid MC Predictive Modeling using Rx+All Medical">
+    <Model ModelID="93" Precedence="1" Name="Medicaid MC Rx + All Medical Predicting Prospective Likelihood of Hospitalization" />
+    <Model ModelID="310" Precedence="1" Name="Medicaid MC Rx + All Medical Predicting Prospective Likelihood of Outpatient ED Visit" />
+    <Model ModelID="311" Precedence="3" Name="Medicaid MC Rx+All Medical Predicting Prospective Total Risk" />
+  </ModelFamily>
+  <ModelFamily FamilyID="15" Product="Medicaid" Name="Medicaid FFS Predictive Modeling using Rx+All Medical">
+    <Model ModelID="79" Precedence="1" Name="Medicaid FFS Rx + All Medical Predicting Prospective Likelihood of Hospitalization" />
+    <Model ModelID="330" Precedence="1" Name="Medicaid FFS Rx + All Medical Predicting Prospective Likelihood of Outpatient ED Visit" />
+    <Model ModelID="331" Precedence="3" Name="Medicaid FFS Rx+All Medical Predicting Prospective Total Risk" />
+  </ModelFamily>
+  
+  <ModelFamily FamilyID="23" Product="Medicare Advantage" Name="Medicare Predictive Modeling using All Medical">
+    <Model ModelID="236" Precedence="1" Name="Medicare All Medical Predicting Prospective Likelihood of Hospitalization Excluding OB and Neonate" />
+    <Model ModelID="237" Precedence="1" Name="Medicare All Medical Predicting Prospective Likelihood of Outpatient ED Visit" />
+    <Model ModelID="125" Precedence="1" Name="Medicare All Medical with Util Predicting Prospective Medical Risk" />
+  </ModelFamily>  
+
+  <!--Performance Assessment Bundle Commercial-->
+  <ModelFamily FamilyID="17" Product="DxCG Performance Assessment" Name="Performance Assessment Solutions">
+    <Model ModelID="201" Precedence="1" Name="All Medical Predicting Concurrent Count of Outpatient ED Visits" />
+    <Model ModelID="211" Precedence="3" Name="AgeGender Predicting Concurrent Count of Outpatient ED Visits" />
+    <Model ModelID="206" Precedence="1" Name="All Medical Predicting Concurrent Count of Admissions Due to Ambulatory Care Sensitive Conditions" />
+    <Model ModelID="216" Precedence="3" Name="AgeGender Predicting Concurrent Count of Admissions Due to Ambulatory Care Sensitive Conditions" />
+
+    <Model ModelID="219" Precedence="1" Name="All Medical Predicting Concurrent Readmissions" />
+    <Model ModelID="239" Precedence="3" Name="AgeGender Predicting Concurrent Readmissions" />
+    <Model ModelID="221" Precedence="1" Name="All Medical Predicting Concurrent Outpatient Imaging Risk" />
+    <Model ModelID="241" Precedence="3" Name="AgeGender Predicting Concurrent Outpatient Imaging Risk" />
+    <Model ModelID="222" Precedence="1" Name="All Medical Predicting Concurrent Count of All Admissions Excluding OB and Neonate" />
+    <Model ModelID="242" Precedence="3" Name="AgeGender Predicting Concurrent Count of All Admissions Excluding OB and Neonate" />
+    <Model ModelID="223" Precedence="1" Name="All Medical Predicting Concurrent Specialty &amp; Other Non-Primary Care" />
+    <Model ModelID="243" Precedence="3" Name="AgeGender Predicting Concurrent Specialty &amp; Other Non-Primary Care" />
+    <Model ModelID="225" Precedence="1" Name="All Medical Predicting Concurrent Pharmacy Risk" />
+    <Model ModelID="245" Precedence="3" Name="AgeGender Predicting Concurrent Pharmacy Risk" />
+    <Model ModelID="256" Precedence="1" Name="All Medical Predicting Concurrent Non-imaging Specialty Testing" />
+    <Model ModelID="258" Precedence="3" Name="AgeGender Predicting Concurrent Non-Imaging Specialty Care Testing" />
+
+    <Model ModelID="18" Precedence="2" Name="All Medical Predicting Concurrent Total Risk" />
+    <Model ModelID="99" Precedence="3" Name="AgeGender Predicting Concurrent Total Risk" />
+    <Model ModelID="19" Precedence="2" Name="All Medical Predicting 100k Concurrent Total Risk" />
+    <Model ModelID="4" Precedence="3" Name="AgeGender Predicting 100k Concurrent Total Risk" />
+    <Model ModelID="88" Precedence="2" Name="All Medical Predicting 250k Concurrent Total Risk" />
+    <Model ModelID="90" Precedence="3" Name="AgeGender Predicting 250k Concurrent Total Risk" />
+  </ModelFamily>
+  <ModelFamily FamilyID="18" Product="DxCG Primary Care Payment" Name="Primary Care Solutions">
+    <Model ModelID="204" Precedence="1" Name="All Medical Predicting Concurrent Primary Care Activity Level" />
+    <Model ModelID="214" Precedence="2" Name="AgeGender Predicting Concurrent Primary Care Activity Level" />
+  </ModelFamily>
+  <!--Performance Assessment Bundle Medicare-->
+  <ModelFamily FamilyID="25" Product="Medicare Advantage" Name="Medicare Performance Assessment Solutions">
+    <Model ModelID="226" Precedence="1" Name="Medicare All Medical Predicting Concurrent Count of Outpatient ED Visits" />
+    <Model ModelID="228" Precedence="1" Name="Medicare All Medical Predicting Concurrent Readmissions" />
+    <Model ModelID="229" Precedence="1" Name="Medicare All Medical Predicting Concurrent Outpatient Imaging Risk" />
+    <Model ModelID="230" Precedence="1" Name="Medicare All Medical Predicting Concurrent Count of All Admissions Excluding OB and Neonate" />
+    <Model ModelID="231" Precedence="1" Name="Medicare All Medical Predicting Concurrent Count of Admissions Due to Ambulatory Care Sensitive Conditions (ACSC)" />
+    <Model ModelID="248" Precedence="1" Name="Medicare AgeGender Predicting Concurrent Readmissions" />
+    <Model ModelID="257" Precedence="1" Name="Medicare All Medical Predicting Concurrent Non-Imaging Specialty Testing" />
+    <Model ModelID="234" Precedence="1" Name="Medicare All Medical Predicting Concurrent Specialty &amp; Other Non-Primary Care" />
+    <Model ModelID="2" Precedence="2" Name="Medicare All Medical Predicting Concurrent Medical Risk" />
+    <Model ModelID="132" Precedence="2" Name="Medicare All Medical Predicting 400K Concurrent Medical Risk"/>
+    <Model ModelID="122" Precedence="3" Name="Medicare AgeGender Predicting Concurrent Medical Risk" />    
+    <Model ModelID="123" Precedence="3" Name="Medicare AgeGender Predicting Concurrent 400K Medical Risk"/>
+    <Model ModelID="246" Precedence="3" Name="Medicare AgeGender Predicting Concurrent Count of All Outpatient ED Visits"/>
+    <Model ModelID="249" Precedence="3" Name="Medicare AgeGender Predicting Concurrent Outpatient Imaging Risk"/>
+    <Model ModelID="250" Precedence="3" Name="Medicare AgeGender Predicting Concurrent Count of All Admissions Excluding OB and Neonates"/>
+    <Model ModelID="251" Precedence="3" Name="Medicare AgeGender Predicting Concurrent Count of Admissions Due to Ambulatory Care Sensitive Conditions (ACSC)"/>
+    <Model ModelID="254" Precedence="3" Name="Medicare AgeGender Predicting Concurrent Specialty and Non-Primary Care"/>
+    <Model ModelID="259" Precedence="3" Name="Medicare AgeGender Predicting Concurrent Non-Imaging Specialty Testing"/>
+  </ModelFamily>
+  <ModelFamily FamilyID="26" Product="Medicare Advantage" Name="Medicare Primary Care Solutions">
+    <Model ModelID="238" Precedence="1" Name="Medicare All Medical Predicting Concurrent Primary Care Activity Level" />
+    <Model ModelID="247" Precedence="2" Name="Medicare AgeGender Predicting Concurrent Primary Care Activity Level" />
+
+  </ModelFamily>
+  
+  
+  
+  <ModelFamily FamilyID="19" Product="Medicaid" Name="Mass Health">
+    <Model ModelID="100030" Precedence="1" Name="All Medical Predicting Concurrent Mass CPCP Tier 1" />
+    <Model ModelID="100031" Precedence="1" Name="All Medical Predicting Concurrent Mass CPCP Tier 2" />
+    <Model ModelID="100032" Precedence="1" Name="All Medical Predicting Concurrent Mass CPCP Tier 3" />
+    <Model ModelID="100033" Precedence="2" Name="Age/Gender Predicting Concurrent Mass CPCP Tier 1" />
+    <Model ModelID="100034" Precedence="2" Name="Age/Gender Predicting Concurrent Mass CPCP Tier 2" />
+    <Model ModelID="100035" Precedence="2" Name="Age/Gender Predicting Concurrent Mass CPCP Tier 3" />
+  </ModelFamily>                                 
+  
+  <!-- FamilyIDs 20 and 21 were dropped in RS 3.1-->
+  <!--Performance Assessment Bundle Medicaid Implemented in RS 4.1-->
+  <ModelFamily FamilyID="27" Product="Medicaid" Name="Medicaid MC Performance Assessment Solutions">
+    <Model ModelID="302" Precedence="1" Name="Medicaid MC All Medical Predicting Concurrent Count of All Admissions Excluding OB and Neonate" />
+    <Model ModelID="303" Precedence="1" Name="Medicaid MC All Medical Predicting Concurrent Count of Admissions Due to Ambulatory Care Sensitive Conditions (ACSC)" />
+    <Model ModelID="304" Precedence="1" Name="Medicaid MC All Medical Predicting Concurrent Readmissions" />
+    <Model ModelID="305" Precedence="1" Name="Medicaid MC All Medical Predicting Concurrent Count of Outpatient ED Visits" />
+    <Model ModelID="306" Precedence="1" Name="Medicaid MC All Medical Predicting Concurrent Outpatient Imaging Risk" />
+    <Model ModelID="307" Precedence="1" Name="Medicaid MC All Medical Predicting Concurrent Non-imaging Specialty Testing" />
+    <Model ModelID="308" Precedence="1" Name="Medicaid MC All Medical Predicting Concurrent Specialty &amp; Other Non-Primary Care" />
+    <Model ModelID="309" Precedence="1" Name="Medicaid MC All Medical Predicting Concurrent Pharmacy Risk" />
+    <Model ModelID="76" Precedence="2" Name="Medicaid MC All Medical Predicting Concurrent Total Risk" />
+    <Model ModelID="312" Precedence="2" Name="Medicaid MC All Medical Predicting 200K Concurrent Total Risk"/>
+    <Model ModelID="351" Precedence="2" Name="Medicaid MC AgeGender Predicting Concurrent Primary Care Activity Level" />
+    <Model ModelID="352" Precedence="2" Name="Medicaid MC AgeGender Predicting Concurrent Count of All Admissions Excluding OB and Neonate" />
+    <Model ModelID="353" Precedence="2" Name="Medicaid MC AgeGender Predicting Concurrent Count of Admissions Due to Ambulatory Care Sensitive Conditions (ACSC)" />
+    <Model ModelID="354" Precedence="2" Name="Medicaid MC AgeGender Predicting Concurrent Readmissions" />
+    <Model ModelID="355" Precedence="2" Name="Medicaid MC AgeGender Predicting Concurrent Count of Outpatient ED Visits" />
+    <Model ModelID="356" Precedence="2" Name="Medicaid MC AgeGender Predicting Concurrent Outpatient Imaging Risk" />
+    <Model ModelID="357" Precedence="2" Name="Medicaid MC AgeGender Predicting Concurrent Non-imaging Specialty Testing" />
+    <Model ModelID="358" Precedence="2" Name="Medicaid MC AgeGender Predicting Concurrent Specialty &amp; Other Non-Primary Care" />
+    <Model ModelID="359" Precedence="2" Name="Medicaid MC AgeGender Predicting Concurrent Pharmacy Risk" />    
+    <Model ModelID="360" Precedence="3" Name="Medicaid MC AgeGender Predicting Concurrent Total Risk" />
+    <Model ModelID="361" Precedence="3" Name="Medicaid MC AgeGender Predicting 200K Concurrent Total Risk"/>    
+  </ModelFamily>
+  <ModelFamily FamilyID="28" Product="Medicaid" Name="Medicaid FFS Performance Assessment Solutions">    
+    <Model ModelID="322" Precedence="1" Name="Medicaid FFS All Medical Predicting Concurrent Count of All Admissions Excluding OB and Neonate" />
+    <Model ModelID="323" Precedence="1" Name="Medicaid FFS All Medical Predicting Concurrent Count of Admissions Due to Ambulatory Care Sensitive Conditions (ACSC)" />
+    <Model ModelID="324" Precedence="1" Name="Medicaid FFS All Medical Predicting Concurrent Readmissions" />
+    <Model ModelID="325" Precedence="1" Name="Medicaid FFS All Medical Predicting Concurrent Count of Outpatient ED Visits" />
+    <Model ModelID="326" Precedence="1" Name="Medicaid FFS All Medical Predicting Concurrent Outpatient Imaging Risk" />
+    <Model ModelID="327" Precedence="1" Name="Medicaid FFS All Medical Predicting Concurrent Non-imaging Specialty Testing" />
+    <Model ModelID="328" Precedence="1" Name="Medicaid FFS All Medical Predicting Concurrent Specialty &amp; Other Non-Primary Care" />
+    <Model ModelID="329" Precedence="1" Name="Medicaid FFS All Medical Predicting Concurrent Pharmacy Risk" />    
+    <Model ModelID="73" Precedence="2" Name="Medicaid FFS All Medical Predicting Concurrent Total Risk"/>
+    <Model ModelID="332" Precedence="2" Name="Medicaid FFS All Medical Predicting 500K Concurrent Total Risk" />
+    <Model ModelID="371" Precedence="2" Name="Medicaid FFS AgeGender Predicting Concurrent Primary Care Activity Level" />
+    <Model ModelID="372" Precedence="2" Name="Medicaid FFS AgeGender Predicting Concurrent Count of All Admissions Excluding OB and Neonate" />
+    <Model ModelID="373" Precedence="2" Name="Medicaid FFS AgeGender Predicting Concurrent Count of Admissions Due to Ambulatory Care Sensitive Conditions (ACSC)" />
+    <Model ModelID="374" Precedence="2" Name="Medicaid FFS AgeGender Predicting Concurrent Readmissions" />
+    <Model ModelID="375" Precedence="2" Name="Medicaid FFS AgeGender Predicting Concurrent Count of Outpatient ED Visits" />
+    <Model ModelID="376" Precedence="2" Name="Medicaid FFS AgeGender Predicting Concurrent Outpatient Imaging Risk" />
+    <Model ModelID="377" Precedence="2" Name="Medicaid FFS AgeGender Predicting Concurrent Non-imaging Specialty Testing" />
+    <Model ModelID="378" Precedence="2" Name="Medicaid FFS AgeGender Predicting Concurrent Specialty &amp; Other Non-Primary Care" />
+    <Model ModelID="379" Precedence="2" Name="Medicaid FFS AgeGender Predicting Concurrent Pharmacy Risk" />
+    <Model ModelID="380" Precedence="3" Name="Medicaid FFS AgeGender Predicting Concurrent Total Risk"/>    
+    <Model ModelID="381" Precedence="3" Name="Medicaid FFS AgeGender Predicting 500K Concurrent Total Risk" />
+  </ModelFamily>
+
+  <!--New Family 32 and 33 added in RS4.1.1-->
+  <ModelFamily FamilyID="32" Product="Medicaid" Name="Medicaid MC Primary Care Solutions">
+    <Model ModelID="301" Precedence="1" Name="Medicaid MC All Medical Predicting Concurrent Primary Care Activity Level" />
+  </ModelFamily>
+  <ModelFamily FamilyID="33" Product="Medicaid" Name="Medicaid FFS Primary Care Solutions">
+    <Model ModelID="321" Precedence="1" Name="Medicaid FFS All Medical Predicting Concurrent Primary Care Activity Level" />
+  </ModelFamily>
+  </ModelFamilies>

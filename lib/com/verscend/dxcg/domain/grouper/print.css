@@ -1,0 +1,275 @@
+/*****************************************
+          Global styles
+*****************************************/
+body {
+	font-family:Arial, verdana, Helvetica, sans-serif;
+	font-size:12px;
+	background:#fff;
+	color:#333333;
+}
+a img {
+	border:none;
+}
+a {
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:underline;
+}
+body, div, p, h1, h2, h3, h4, h5, h6, ul, form{
+	margin:0;
+	padding:0;
+}
+/*****************************************
+          layout styles
+*****************************************/
+#wrapper {
+	width:90%;
+	padding:0 30px;
+	background:#fff;
+	margin:0 auto;
+}
+#header {
+}
+.header-logo{
+	display:block;
+	width:100%;
+	height:44px;
+	padding-top:20px;
+	margin:0;
+	text-align:right;
+
+}
+.header-logo a {
+
+}
+.content{
+padding-bottom:20px;
+}
+.frm-details{
+margin:30px 0;
+}
+.frm-details td{
+padding-bottom:5px;
+font-size:12px;
+}
+.table-data{
+}
+.table-data .th2{
+background:#009088;
+padding:8px 10px 12px 10px;
+text-align:center;
+color:#fff;
+font-weight:bold;
+font-size:12px;
+border-top:2px solid #009088;
+border-bottom:1px solid #fff;
+
+}
+.table-data .th3{
+background:#009088;
+/*background:#77bd82 ;*/
+padding:8px 10px 12px 10px;
+text-align:center;
+color:#FFFFFF;
+font-weight:bold;
+font-size:12px;
+border:0;
+border-top:1px solid #009088;
+border-bottom:1px solid #fff;
+
+}
+.table-data th{
+background:#009088;
+padding:8px 10px 12px 10px;
+text-align:center;
+color:#fff;
+font-weight:bold;
+font-size:12px;
+border-top:1px solid #009088;
+border-bottom:2px solid #009088;
+}
+
+.table-data .subth{
+background:#F5FCFC;
+color:#009088;
+font-weight:bold;
+padding:5px 10px;
+border-bottom:2px solid #CAE9E7;
+}
+.table-data td{
+/*border-bottom:1px solid #BFEDE9;*/
+padding:5px 10px;
+text-align:right;
+font-size:12px;
+empty-cells:show;
+}
+.table-data .total td{
+background:#F1FAF9;
+padding:4px 10px 8px 10px;
+border:none;
+text-align:right;
+font-size:1.1em;
+font-weight:bold;
+font-size:13px;
+border-bottom:2px solid #CAE9E7;
+}
+.table-data .total_center td{
+background:#f0f7fb  url(data:image/gif;base64,R0lGODlhAgAEAIAAAP///+vs7SH5BAAAAAAALAAAAAACAAQAAAIEhBEZBQA7) bottom repeat-x;
+padding:4px 10px 8px 10px;
+border:none;
+text-align:center;
+font-size:1.1em;
+font-weight:bold;
+font-size:13px;
+}
+.table-data-wrapper{
+width:100%;
+overflow-y:hidden;
+overflow-x:auto;
+*padding-bottom:15px;
+}
+.table-data .txtdata{
+text-align:left;
+}
+.table-data .txtindentlevel1{
+background:url(data:image/gif;base64,R0lGODlhAgAEAIAAAP///+vs7SH5BAAAAAAALAAAAAACAAQAAAIEhBEZBQA7) no-repeat left top;
+text-align:left;
+padding-left:25px;
+}
+.table-data .txtindentlevel2{
+background:url(data:image/gif;base64,R0lGODlhBQAFAIAAAFm+vgAAACH5BAAAAAAALAAAAAAFAAUAAAIEhI+pWAA7) no-repeat 25px 50%;
+text-align:left;
+padding-left:35px;
+}
+.table-data .txtindentlevel3{
+background:url(data:image/gif;base64,R0lGODlhBQAFAIABAFm+vgAAACH5BAEAAAEALAAAAAAFAAUAAAIHDG6nywlRAAA7) no-repeat 45px 50%;
+text-align:left;
+padding-left:55px;
+}
+.txtblackbold{
+font-weight:bold;
+color:#929292;
+}
+.txtnormal{
+font-weight:normal;
+}
+.table-data .txtdatasubindent{
+text-align:left;
+padding-left:25px;
+}
+.table-data .numdata{
+text-align:right;
+}
+#footer {
+	width:90%;
+	padding:0 30px;
+	margin:0 auto;
+	padding:15px 0 35px 0;		
+}
+#footer .pagenumber {
+	width:55px;
+	margin:0 auto;
+	color:#999999;
+	background:#fff ;
+	text-align:center;
+	padding:6px;
+	font-size:12px;
+}
+#footer .filename {
+	white-space: pre;           /* CSS 2.0 */
+	white-space: pre-wrap;      /* CSS 2.1 */
+	white-space: pre-line;      /* CSS 3.0 */
+	white-space: -pre-wrap;     /* Opera 4-6 */
+	white-space: -o-pre-wrap;   /* Opera 7 */
+	white-space: -moz-pre-wrap; /* Mozilla */
+	white-space: -hp-pre-wrap;  /* HP Printers */
+	word-wrap: 	break-word;      /* IE 5+ */
+	word-break: break-all;	
+}
+#footer .date {
+	font-size:12px;
+}
+.maintabshow{
+	display: block; 
+	float:left; 
+	width:100%;
+	margin:0px; 
+	padding:0px;
+	cursor:pointer;
+}
+.maintabhide{
+	display:none; 
+	float:left; 
+	width:100%; 
+	margin:0px; 
+	padding:0px;
+}
+.hide{
+                background:#00ACA1 url(data:image/gif;base64,R0lGODlhCgDYAKIEAAByawYvLHGwe3e9gv///wAAAAAAAAAAACH5BAEAAAQALAAAAAAKANgAAAN3SLrc/jDKSau9OOvNu//gEA3iQ5bNiS7qSrTp6cizy4J4ru987//AkCpGYw0ZMOQxyGw6n9ColCGoOqrYBtZK3V6507B4TC47AREA+qFeN9ruBTxOmL/bDnyeLjf7/4CBgg4BhYaHBIeICooBDYuPjoOTlJWWQAkAOw==) no-repeat 10px -129px; 
+                display:block;
+                padding:9px 0 12px 25px; 
+                border-top:2px solid #00aca1;
+                border-bottom:0px;
+                color:#fff;
+                
+}
+.show{
+                background:transparent url(data:image/gif;base64,R0lGODlhCgDYAKIEAAByawYvLHGwe3e9gv///wAAAAAAAAAAACH5BAEAAAQALAAAAAAKANgAAAN3SLrc/jDKSau9OOvNu//gEA3iQ5bNiS7qSrTp6cizy4J4ru987//AkCpGYw0ZMOQxyGw6n9ColCGoOqrYBtZK3V6507B4TC47AREA+qFeN9ruBTxOmL/bDnyeLjf7/4CBgg4BhYaHBIeICooBDYuPjoOTlJWWQAkAOw==) no-repeat 10px -167px;
+                padding:9px 0 12px 30px; 
+                display:block;
+                cursor:pointer;
+                color:#fff;
+                border-top:2px solid #00aca1;
+}
+
+.nodisplay{
+display:none;
+}
+.table-data th.tab{
+background:url(data:image/gif;base64,R0lGODlhAQAjAMQAAAFqYwBgWgFyagFxagFwaQBoYQGQhgBdVgBmYAGMgwFpYgFvaAFuZwBfWABlXgBcVgBiXAFtZgBeVwBkXQBbVQBhWwFsZQFzawBaVAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAABACMAAAUY4GVcwkAsTGQBSoE4E1QFjXQ8FKbve4KFADs=) repeat-x;
+/*background:#e4e4e4 url(../support_files/border.gif) bottom repeat-x;*/
+padding:0px;
+/*padding:8px 10px 12px 10px;*/
+text-align:center;
+color:#595959;
+font-weight:bold;
+border:0px;
+}
+
+
+.table-data-wrapper {
+overflow:hidden;
+}
+
+/*****************************************
+          Defined styles
+*****************************************/
+h1 {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#0075AA;
+	margin-top:15px;
+	text-align:right;
+}
+h2{
+
+	font-size:16px;
+	color:#0075AA;
+	padding:5px 0;
+	border-bottom:2px solid #009088;
+}
+/*************** MULTI COLUMN SPECIFIC *************/
+.table-data table.multi-column th{
+padding:8px 0px 12px 0px;
+font-size:10px;
+font-weight:bold;
+}
+
+.table-data table.multi-column td{
+/*border-bottom:1px solid #BFEDE9;*/
+padding:5px 10px;
+text-align:right;
+font-size:10px;
+empty-cells:show;
+}

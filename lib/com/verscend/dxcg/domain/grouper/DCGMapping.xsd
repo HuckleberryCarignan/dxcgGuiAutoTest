@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<xs:schema id="DCGMappings"
+	targetNamespace="http://www.dxcg.com/DCGMapping.xsd"
+	xmlns:mstns="http://www.dxcg.com/DCGMapping.xsd"
+	xmlns="http://www.dxcg.com/DCGMapping.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	attributeFormDefault="qualified"
+	elementFormDefault="qualified">
+
+	<xs:element name="DCGMappings" type="DCGMappings" />
+
+	<xs:complexType name="DCGMappings">
+		<xs:sequence>
+			<xs:element name="DCGMapping" type="DCGMapping" minOccurs="25" maxOccurs="25" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DCGMapping">
+		<xs:attribute name="MinRange" form="unqualified" type="xs:double" use="required" />
+		<xs:attribute name="MaxRange" form="unqualified" type="xs:double" use="required" />
+		<xs:attribute name="DCG" form="unqualified" type="xs:float" use="required" />
+		<xs:attribute name="ADCG" form="unqualified" type="xs:float" use="required" />
+	</xs:complexType>
+
+</xs:schema>

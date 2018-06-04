@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox fx:id="configTabPage" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.ConfigTabPage" >
+    <TextArea fx:id="txtconfig"  style="-fx-font-size:10pt; -fx-font-family:Consolas"
+              maxWidth="Infinity" maxHeight="Infinity"  VBox.vgrow="SOMETIMES" editable="false"/>
+
+</VBox>

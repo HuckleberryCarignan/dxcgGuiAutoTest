@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="ValidModelSources"
+                  targetNamespace="http://www.dxcg.com/ValidModelSources.xsd"
+                  elementFormDefault="qualified"
+                  xmlns="http://www.dxcg.com/ValidModelSources.xsd"
+                  xmlns:mstns="http://www.dxcg.com/ValidModelSources.xsd"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ModelSources" type="ModelSources" />
+
+  <xs:complexType name="ModelSources">
+    <xs:sequence>
+      <xs:element name="ModelSource" type="ModelSource" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ModelSource">
+    <xs:sequence>
+      <xs:element name="SourceID" type="xs:int" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="ModelSourceType" type="xs:string"/>
+  </xs:complexType>
+
+</xs:schema>

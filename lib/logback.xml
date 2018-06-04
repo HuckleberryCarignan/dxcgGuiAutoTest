@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <!-- Change this to WARN when config output is not longer needed -->
+            <level>WARN</level>
+        </filter>
+        <filter class="com.verscend.dxcg.framework.log.ThresholdLoggerFilter">
+            <logger>com.verscend.dxcg.framework</logger>
+            <level>ERROR</level>
+        </filter>
+        <filter class="com.verscend.dxcg.framework.log.ThresholdLoggerFilter">
+            <logger>com.verscend.dxcg.domain.config.ConfigParser</logger>
+            <level>INFO</level>
+        </filter>
+        <filter class="com.verscend.dxcg.framework.log.ThresholdLoggerFilter">
+            <logger>ch.qos.logback</logger>
+            <level>ERROR</level>
+        </filter>
+        <filter class="com.verscend.dxcg.framework.log.ThresholdLoggerFilter">
+            <logger>org.springframework</logger>
+            <level>ERROR</level>
+        </filter>
+        <filter class="com.verscend.dxcg.framework.log.ThresholdLoggerFilter">
+            <logger>org.apache.camel</logger>
+            <level>ERROR</level>
+        </filter>
+        <encoder>
+            <pattern>%msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <filter class="com.verscend.dxcg.framework.log.ThresholdLoggerFilter">
+            <logger>ch.qos.logback</logger>
+            <level>ERROR</level>
+        </filter>
+        <filter class="com.verscend.dxcg.framework.log.ThresholdLoggerFilter">
+            <logger>org.springframework</logger>
+            <level>ERROR</level>
+        </filter>
+        <filter class="com.verscend.dxcg.framework.log.ThresholdLoggerFilter">
+            <logger>org.apache.camel</logger>
+            <level>ERROR</level>
+        </filter>
+        <!-- 
+        <filter class="com.verscend.dxcg.framework.log.ThresholdLoggerFilter">
+            <logger>com.verscend.dxcg.framework.eventnotifiers</logger>
+            <level>DEBUG</level>
+        </filter>
+        -->
+        <file>logs/dxcg_mocha-framework.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/dxcg_mocha-framework_%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+            <maxHistory>100</maxHistory>
+            <totalSizeCap>10GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{YYYY-MM-dd HH:mm:ss.SSS} | [%thread] | %-5level | %logger{36} | %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <appender name="GUI" class="log.GUIAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <!-- Change this to WARN when config output is not longer needed -->
+            <level>WARN</level>
+        </filter>
+        <filter class="com.verscend.dxcg.framework.log.ThresholdLoggerFilter">
+            <logger>com.verscend.dxcg.framework</logger>
+            <level>ERROR</level>
+        </filter>
+        <filter class="com.verscend.dxcg.framework.log.ThresholdLoggerFilter">
+            <logger>com.verscend.dxcg.domain.config.ConfigParser</logger>
+            <level>INFO</level>
+        </filter>
+        <filter class="com.verscend.dxcg.framework.log.ThresholdLoggerFilter">
+            <logger>ch.qos.logback</logger>
+            <level>ERROR</level>
+        </filter>
+        <filter class="com.verscend.dxcg.framework.log.ThresholdLoggerFilter">
+            <logger>org.springframework</logger>
+            <level>ERROR</level>
+        </filter>
+        <filter class="com.verscend.dxcg.framework.log.ThresholdLoggerFilter">
+            <logger>org.apache.camel</logger>
+            <level>ERROR</level>
+        </filter>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <root>
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+        <appender-ref ref="GUI" />
+    </root>
+</configuration>

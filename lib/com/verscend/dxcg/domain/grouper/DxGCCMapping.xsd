@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="DxGCCMappings"
+           xmlns="http://www.dxcg.com/DxGCCMapping.xsd"
+           targetNamespace="http://www.dxcg.com/DxGCCMapping.xsd"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+           jaxb:version="2.1">
+	
+	<xs:element name="DxGCCMappings" type="DxGCCMappings" />
+	<xs:complexType name="DxGCCMappings">
+		<xs:sequence>
+			<xs:element name="Version" type="xs:string" />
+			<xs:element name="CCCount" type="xs:int" />
+			<xs:element name="Mappings" type="Mappings" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Mappings">
+		<xs:annotation>
+			<xs:appinfo>
+				<jaxb:class name="MappingsInDxGCC"/>
+				</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DxGCCMapping" type="DxGCCMapping" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DxGCCMapping">
+		<xs:attribute name="DxG" type="xs:int" use="required" />		
+		<xs:attribute name="CC" type="xs:int" use="required" />		
+	</xs:complexType>
+
+</xs:schema>

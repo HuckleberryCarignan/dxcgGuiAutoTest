@@ -1,0 +1,4 @@
+<!DOCTYPE style [<!ENTITY x SYSTEM "./style_app.css">]>
+<style type="text/css">
+&x;
+</style>

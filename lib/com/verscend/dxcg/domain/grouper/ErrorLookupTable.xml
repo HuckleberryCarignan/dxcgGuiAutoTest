@@ -1,0 +1,1247 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+    0-1000 (Licensing, general framework, and API related error codes)
+    1002-1500 (Configuration) 
+    1501-2000 (Import)
+    2001-3000 (Grouper related errorcodes)
+    3500-4000 (Only java version related errorcodes) 
+    4001-5000 (Modeler related error codes)
+    6001-6100 (PostProcess)
+    6101-6200 (Appendix)
+    6201-6300 (RiskDriver output related)
+    7001-7100 (Summary statistics related error codes)
+    7101-7200 (Reports related)
+    7300-7400 (Report Merging Related)
+    8000-8100 (Usage log related)
+    9000-9999 (Threading
+-->
+<Messages>
+    <Message>
+        <Code>0</Code>
+        <Message>Success</Message>
+    </Message>
+    <Message>
+        <Code>101</Code>
+        <Message>Error: Error encountered in DxCG Intelligence - Exiting application. See log file for more information.</Message>
+    </Message>
+    <Message>
+        <Code>102</Code>
+        <Message>Error: Error generating appendix file. See log file for more information.</Message>
+    </Message>
+    <Message>
+        <Code>103</Code>
+        <Message>Error: Error encountered in DxCG Intelligence - Exiting application. See log file
+            for more information.
+        </Message>
+    </Message>
+    <Message>
+        <Code>104</Code>
+        <Message>Error: Fatal error encountered in DxCG Intelligence - Exiting application. See log
+            file for more information.
+        </Message>
+    </Message>
+    <Message>
+        <Code>105</Code>
+        <Message>Error: Error encountered in DxCG Intelligence - Could not insert Member {0} into
+            the Database. Please check your Database installation.
+        </Message>
+    </Message>
+    <Message>
+        <Code>106</Code>
+        <Message>Error: Error encountered in DxCG Intelligence - Could not locate Database instance
+            on this machine. Please check your Database installation.
+        </Message>
+    </Message>
+    <Message>
+        <Code>107</Code>
+        <Message>Error: Error encountered in DxCG Intelligence - Could not execute Stored Procedure
+            {0} for Member {1}. Please check your Database installation.
+        </Message>
+    </Message>
+    <Message>
+        <Code>108</Code>
+        <Message>Error: Error encountered in DxCG Intelligence - Could not load Database from file
+            {0}.
+        </Message>
+    </Message>
+    <Message>
+        <Code>109</Code>
+        <Message>Error: Error encountered in DxCG Intelligence - Could not save Database to file
+            {0}.
+        </Message>
+    </Message>
+    <Message>
+        <Code>110</Code>
+        <Message>Error: Could not load {0} pipeline file ID {1}.</Message>
+    </Message>
+    <Message>
+        <Code>111</Code>
+        <Message>Error: Assembly not found for {0}.</Message>
+    </Message>
+    <Message>
+        <Code>112</Code>
+        <Message>Error: Insufficient privileges loading assembly {0}.</Message>
+    </Message>
+    <Message>
+        <Code>113</Code>
+        <Message>Error: Could not load {0}.</Message>
+    </Message>
+    <Message>
+        <Code>114</Code>
+        <Message>Error: Error caught in ProcessRequest().</Message>
+    </Message>
+    <Message>
+        <Code>115</Code>
+        <Message>Error: Error opening {0} file: {1}.</Message>
+    </Message>
+    <Message>
+        <Code>116</Code>
+        <Message>Error: Could not connect to the Database for Report {0}.</Message>
+    </Message>
+    <Message>
+        <Code>117</Code>
+        <Message>Error: Member object does not exist as input in RSParams.Data in
+            MemberValidateCMD.Execute().
+        </Message>
+    </Message>
+    <Message>
+        <Code>118</Code>
+        <Message>Error: Null Input parameter to MemberValidateCMD.Execute().</Message>
+    </Message>
+    <Message>
+        <Code>120</Code>
+        <Message>Error: Errors were encountered during Configuration File parsing.</Message>
+    </Message>
+    <Message>
+        <Code>121</Code>
+        <Message>Error: Invalid path ({0}) specified for {1} file.</Message>
+    </Message>
+    <Message>
+        <Code>122</Code>
+        <Message>Error: Pipeline with ID {0} could not be found.</Message>
+    </Message>
+    <Message>
+        <Code>123</Code>
+        <Message>Error: Could not load program code for algorithm {0}. Please contact Verscend,
+            Inc. Customer Support. In order to continue processing, remove this ID from the list of
+            algorithms defined in your Configuration File and rerun.
+        </Message>
+    </Message>
+    <Message>
+        <Code>124</Code>
+        <Message>Error: Error opening {0} file or {0} file does not have any records.</Message>
+    </Message>
+    <Message>
+        <Code>125</Code>
+        <Message>Error: File path not found '{0}'.</Message>
+    </Message>
+    <Message>
+        <Code>126</Code>
+        <Message>Error: Invalid File or Path provided for {0}.</Message>
+    </Message>
+    <Message>
+        <Code>127</Code>
+        <Message>Error: Error deleting {0}: '{1}'. See log file for further information.</Message>
+    </Message>
+    <Message>
+        <Code>128</Code>
+        <Message>Error: Invalid data type.</Message>
+    </Message>
+    <Message>
+        <Code>129</Code>
+        <Message>Error: Fatal error encountered while executing the application.</Message>
+    </Message>
+    <Message>
+        <Code>130</Code>
+        <Message>Error: Process is unexpectedly cancelled.</Message>
+    </Message>
+    <Message>
+        <Code>131</Code>
+        <Message>Error: File(s) {0}, {1} and {2} are required for the options selected.</Message>
+    </Message>
+    <Message>
+        <Code>132</Code>
+        <Message>Error: File(s) {0}, {1}, {2} and {3} are required for the options selected.
+        </Message>
+    </Message>
+    <Message>
+        <Code>133</Code>
+        <Message>Error: Could not insert Member ID {0} into the reporting database.</Message>
+    </Message>
+    <Message>
+        <Code>201</Code>
+        <Message>Error: Invalid DataKey ({0}) passed to encountered in Front Controller.</Message>
+    </Message>
+    <Message>
+        <Code>202</Code>
+        <Message>Error: Invalid Mode ({0}) specified. Please refer to user documentation for proper
+            values.
+        </Message>
+    </Message>
+    <Message>
+        <Code>300</Code>
+        <Message>Error: The Intermediate Variable Output option, {0}, is currently not supported.
+            Please refer to the DxCG User Guide for a list of supported options.
+        </Message>
+    </Message>
+    <Message>
+        <Code>400</Code>
+        <Message>Error: Invalid arguments.</Message>
+    </Message>
+    <Message>
+        <Code>500</Code>
+        <Message>Error: The functionality you are trying to access ({0}) is currently not licensed.
+            Please contact Verscend, Inc. Customer Support for assistance.
+        </Message>
+    </Message>
+    <Message>
+        <Code>501</Code>
+        <Message>DxCG Intelligence is not currently licensed. Please contact Verscend Client
+            Services to request a valid license.
+        </Message>
+    </Message>
+    <Message>
+        <Code>502</Code>
+        <Message>Error: You are only licensed to process {0} members, your Input File contains more
+            members than you have licensed. Only {0} members were processed. Only the licensed
+            amount of members will be reflected in the results.
+        </Message>
+    </Message>
+    <Message>
+        <Code>503</Code>
+        <Message>Error: Unable to find mapping file: {0}</Message>
+    </Message>
+    <Message>
+        <Code>504</Code>
+        <Message>Error: Could not load mapping file: {0}.</Message>
+    </Message>
+    <Message>
+        <Code>505</Code>
+        <Message>Error: Could not find DxCG Intelligence license file.</Message>
+    </Message>
+    <Message>
+        <Code>506</Code>
+        <Message>Error: Could not read DxCG Intelligence license file.</Message>
+    </Message>
+    <Message>
+        <Code>507</Code>
+        <Message>Error: The license file is not configured to run on this machine. Please contact
+            Verscend, Inc. Customer Support.
+        </Message>
+    </Message>
+    <Message>
+        <Code>508</Code>
+        <Message>Error: License exceeded.</Message>
+    </Message>
+    <Message>
+        <Code>509</Code>
+        <Message>Error: Unable to validate the current time against the installed license. Please
+            ensure the system clock is accurate. If the problem persists, please contact DxCG
+            Support for assistance.
+        </Message>
+    </Message>
+    <Message>
+        <Code>510</Code>
+        <Message>Error: You are not licensed for historical processing. If you wish to access this
+            functionality, please contact Verscend, Inc. Customer Support.
+        </Message>
+    </Message>
+    <Message>
+        <Code>511</Code>
+        <Message>Error: You are not currently licensed for the Intermediate Variable Output {0}
+            option. Please contact DxCG Support for further assistance.
+        </Message>
+    </Message>
+    <Message>
+        <Code>600</Code>
+        <Message>Error: Configuration File validation error.</Message>
+    </Message>
+    <Message>
+        <Code>601</Code>
+        <Message>Error: Unable to reflect on Output parameter {0}. Please contact Verscend,
+            Inc. Customer Support.
+        </Message>
+    </Message>
+    <Message>
+        <Code>602</Code>
+        <Message>Error: OPT_OUTCONTENT was specified as CUSTOM in the Configuration File but no
+            Output parameters were included.
+        </Message>
+    </Message>
+    <Message>
+        <Code>604</Code>
+        <Message>Error: Invalid range format, '{0}', supplied to parameter {1}.</Message>
+    </Message>
+    <Message>
+        <Code>605</Code>
+        <Message>Error: Invalid range '{0}' supplied to parameter {1} -- {2} is less than {3}.</Message>
+    </Message>
+    <Message>
+        <Code>606</Code>
+        <Message>Error: Minimum column length for parameter {0} is {1}. Please adjust the range for this parameter in the Configuration File.</Message>
+    </Message>
+    <Message>
+        <Code>607</Code>
+        <Message>Error: Overlap detected in Output parameter {0} with a previously specified
+            parameter in columns {1}.
+        </Message>
+    </Message>
+    <Message>
+        <Code>608</Code>
+        <Message>Error: Index specified in parameter {0} (index {1}) is outside the bounds of the
+            number of models run. Verify an index greater than zero exists and does not exceed the
+            number of models being executed in OPT_MODELID.
+        </Message>
+    </Message>
+    <Message>
+        <Code>609</Code>
+        <Message>Error: Could not locate output for parameter {0}. Please verify this parameter
+            applies to the current model(s) being run.
+        </Message>
+    </Message>
+    <Message>
+        <Code>610</Code>
+        <Message>Error: Index specified in parameter {0} (index {1}) is outside the bounds of the
+            number of groups specified. Verify an index exists, is greater than zero, and does not
+            exceed the number of groups present in the input.
+        </Message>
+    </Message>
+    <Message>
+        <Code>611</Code>
+        <Message>Error: Parameter {0} has an invalid value ({1}) specified. Please consult the User Guide for further details. </Message>
+    </Message>
+    <Message>
+        <Code>612</Code>
+        <Message>Error: Member {0} has a value for Custom Output parameter {1} that is too big for
+            the field range specified ({2}). Please update your Configuration File with a range of
+            at least {3} in size for this parameter.
+        </Message>
+    </Message>
+    <Message>
+        <Code>613</Code>
+        <Message>Error: Model ID {0} does not exist in the list of Model IDs for {1}. Please update your Configuration File to access the correct Model ID.</Message>
+    </Message>
+    <Message>
+        <Code>614</Code>
+        <Message>Error: Score specified in RPT_FILTERVALUE must be greater than or equal to 0.
+        </Message>
+    </Message>
+    <Message>
+        <Code>615</Code>
+        <Message>Error: There are no valid Reports to be run for the filter options that have been
+            chosen.
+        </Message>
+    </Message>
+    <Message>
+        <Code>616</Code>
+        <Message>Error: File specified in RPT_OUTFILE '{0}' must exist in order to run in this mode.
+            Please verify the file exists.
+        </Message>
+    </Message>
+    <Message>
+        <Code>617</Code>
+        <Message>Error: The Configuration File is missing the required parameter {0}. This parameter must be specified for the options you have chosen.</Message>
+    </Message>
+    <Message>
+        <Code>618</Code>
+        <Message>Error: Compile Error. See the log file for more detailed information.</Message>
+    </Message>
+    <Message>
+        <Code>619</Code>
+        <Message>Error: Configuration File is missing one of the required parameters: {0}, {1}. Either {0} or {1} must be specified.
+        </Message>
+    </Message>
+    <Message>
+        <Code>620</Code>
+        <Message>Error: Minimum column length for parameter {0} for {1} is {2}. Please adjust the
+            range for this parameter in the Configuration File.
+        </Message>
+    </Message>
+    <Message>
+        <Code>622</Code>
+        <Message>Error: No parameter value specified for parameter {0}. Please consult the User Guide for more detail on this parameter.</Message>
+    </Message>
+    <Message>
+        <Code>623</Code>
+        <Message>Error: Parameter {0} specified is not correct. Please consult the User Guide for  more detail on this parameter.</Message>
+    </Message>
+    <Message>
+        <Code>624</Code>
+        <Message>Error: Same file specified for {0} and {1}. Please modify the Configuration File.</Message>
+    </Message>
+    <Message>
+        <Code>625</Code>
+        <Message>Error: Model ID {0} specified for OUT_PREDAG_Y is invalid as this model does not
+            have an AgeGender model. Please remove the parameter or change it to the correct Model
+            ID.
+        </Message>
+    </Message>
+    <Message>
+        <Code>626</Code>
+        <Message>Error: Column width for {0} can't be less than {1} (now {2}). Please adjust the
+            range for this parameter in the Configuration File.
+        </Message>
+    </Message>
+
+    <Message>
+        <Code>627</Code>
+        <Message>Error: Invalid File or Path provided for {0}.</Message>
+    </Message>
+
+    <Message>
+        <Code>628</Code>
+        <Message>Error: DxCG Multiprocessing: Database {0} is being used by another DxCG process.
+        </Message>
+    </Message>
+
+    <Message>
+        <Code>629</Code>
+        <Message>Error: DxCG Multiprocessing: Error in constructing Mutex for database
+            synchronization.
+        </Message>
+    </Message>
+
+    <Message>
+        <Code>630</Code>
+        <Message>Error: The DxCG reporting database '{0}' is not compatible with the current version
+            of the software. Please provide a unique database name using the DB_DATABASE_NAME
+            configuration option. Please consult the DxCG User Guide for further information.
+        </Message>
+    </Message>
+
+    <Message>
+        <Code>631</Code>
+        <Message>Error: Failed to create database '{0}' in this instance. Check if two configuration
+            files have the same value for DB_DATABASE_NAME or a valid value is provided.
+        </Message>
+    </Message>
+
+    <Message>
+        <Code>632</Code>
+        <Message>Error: Failed to connect to the database '{0}' requested by the login. Please
+            provide a valid connection string or provide a unique database name using the
+            DB_DATABASE_NAME configuration option.
+        </Message>
+    </Message>
+
+    <!-- API -->
+    <Message>
+        <Code>900</Code>
+        <Message>Error: Invalid IAPIMemberImport object: {0}</Message>
+    </Message>
+    <Message>
+        <Code>901</Code>
+        <Message>Error: Error encountered in DxCG API: {0}</Message>
+    </Message>
+    <Message>
+        <Code>902</Code>
+        <Message>Error: Error(s) encountered in DxCG API configuration: {0}</Message>
+    </Message>
+    <Message>
+        <Code>903</Code>
+        <Message>Error: Error encountered in call to {0}.</Message>
+    </Message>
+    <Message>
+        <Code>904</Code>
+        <Message>Error: API initialization error.</Message>
+    </Message>
+    <Message>
+        <Code>905</Code>
+        <Message>Error: GetClassifications is no longer supported, Please use ProcessMember instead.
+        </Message>
+    </Message>
+
+    <!-- Configuration -->
+    <Message>
+        <Code>1001</Code>
+        <Message>Error: Input File not sorted: The Input Files must be sorted in order of Member ID.
+        </Message>
+    </Message>
+    <Message>
+        <Code>1002</Code>
+        <Message>Error: Invalid integer range specified for Configuration option {0}.</Message>
+    </Message>
+    <Message>
+        <Code>1003</Code>
+        <Message>Error: Model(s) specified in Configuration File requires expenditures be located in the Diagnosis and/or Pharmacy Files. Please see OPT_EXPEND for further information.
+        </Message>
+    </Message>
+    <Message>
+        <Code>1004</Code>
+        <Message>Error: Group Column did not have 2 ranges specified. Please contact Verscend,
+            Inc. Customer Support.
+        </Message>
+    </Message>
+    <Message>
+        <Code>1005</Code>
+        <Message>Error: {0} File is not sorted. {1} is less than {2}. Please fix the error and rerun application.</Message>
+    </Message>
+    <Message>
+        <Code>1006</Code>
+        <Message>Error: Duplicate ID {0} found in Member File.</Message>
+    </Message>
+    <Message>
+        <Code>1008</Code>
+        <Message>Error: Unable to locate a valid Model ID matching the Models selected in the
+            Configuration File.
+        </Message>
+    </Message>
+    <Message>
+        <Code>1009</Code>
+        <Message>Error: OPT_PERSLIMIT was not defined and cannot be set automatically because model
+            level population limits are inconsistent.
+        </Message>
+    </Message>
+    <Message>
+        <Code>1010</Code>
+        <Message>Error: {0} Rx Classification is not supported in the selected model(s).</Message>
+    </Message>
+    <Message>
+        <Code>1011</Code>
+        <Message>Error: {0} ID '{1}' is incorrect for a numeric value. Please change your OPT_IDFORMAT in your Configuration File to CHARACTER.</Message>
+    </Message>
+    <Message>
+        <Code>1012</Code>
+        <Message>Error: Range specified for {0} is greater than 50 characters. Please adjust the range or try running in CUSTOM mode.
+        </Message>
+    </Message>
+    <Message>
+        <Code>1013</Code>
+        <Message>Error: Range specified for {0} is greater than 50 characters. Please adjust the
+            range and try again.
+        </Message>
+    </Message>
+    <Message>
+        <Code>1014</Code>
+        <Message>Error: Parameter {0} specified in the Configuration File is invalid because the
+            variable declaration required for this parameter is missing.
+        </Message>
+    </Message>
+    <Message>
+        <Code>1015</Code>
+        <Message>Error: Invalid integer value specified for configuration option {0}.</Message>
+    </Message>
+
+    <Message>
+        <Code>1016</Code>
+        <Message>Error:Model ID(s) in OPT_RISKDRIVER should match model(s) specified in OPT_MODELID.
+        </Message>
+    </Message>
+
+    <Message>
+        <Code>1017</Code>
+        <Message>Error:{0} is not specified. Please specify the file location.</Message>
+    </Message>
+
+    <Message>
+        <Code>1018</Code>
+        <Message>Error: Invalid format specified for the configuration parameter, {0}. Please
+            specify the correct format as outlined in the User's Guide.
+        </Message>
+    </Message>
+
+    <Message>
+        <Code>1019</Code>
+        <Message>Error: Overlap detected between one or more of the time periods specified in the
+            historical processing option, HST_ENDDATE. Please correct and rerun the application.
+        </Message>
+    </Message>
+
+    <Message>
+        <Code>1020</Code>
+        <Message>Error: Report Generation is currently not supported in historical mode. Please
+            remove any instances of reporting (RPT_) or risk driver options (_RISKDRIVER) from the
+            configuration file.
+        </Message>
+    </Message>
+
+    <Message>
+        <Code>1021</Code>
+        <Message>Error: The Intermediate Variable feature is only available in DxCG Intelligence
+            when running an LOH or LOED model. Please select an appropriate model in the
+            configuration file and rerun the application.
+        </Message>
+    </Message>
+
+    <Message>
+        <Code>1022</Code>
+        <Message>Error: The values supplied for HST_FREQUENCY_{0} ({1}) and HST_CYCLES_{0} ({2})
+            will result in an invalid model end date. Please adjust these values accordingly.
+        </Message>
+    </Message>
+
+    <Message>
+        <Code>1023</Code>
+        <Message>Error: The value supplied for HST_LAG_{0} ({1}) will result in an invalid lag date.
+            Please adjust this value accordingly.
+        </Message>
+    </Message>
+
+    <Message>
+        <Code>1024</Code>
+        <Message>Error: {0} is not a numeric value.</Message>
+    </Message>
+
+    <Message>
+        <Code>1025</Code>
+        <Message>Error: Missing Member ID.</Message>
+    </Message>
+
+    <Message>
+        <Code>1026</Code>
+        <Message>Error: {0} is missing. Please contact Verscend, Inc. Customer Support.</Message>
+    </Message>
+
+    <Message>
+        <Code>1027</Code>
+        <Message>Error: {0} is corrupt. Please contact Verscend, Inc. Customer Support.</Message>
+    </Message>
+    
+     <Message>
+        <Code>1028</Code>
+        <Message>Error: Could not find the specified configuration file.  Please check the file name and location and rerun the application.</Message>
+    </Message>
+
+    <!-- Importer -->
+    <Message>
+        <Code>1501</Code>
+        <Message>Error: DOB {0} occurs after {1} resulting in a negative age.</Message>
+    </Message>
+    <Message>
+        <Code>1502</Code>
+        <Message>Error: Ages greater than 124 are not modeled by the software.</Message>
+    </Message>
+    <Message>
+        <Code>1503</Code>
+        <Message>Error: Missing or invalid DOB.</Message>
+    </Message>
+    <Message>
+        <Code>1504</Code>
+        <Message>Error: Gender not specified.</Message>
+    </Message>
+    <Message>
+        <Code>1505</Code>
+        <Message>Error: Invalid Member ID.</Message>
+    </Message>
+    <Message>
+        <Code>1506</Code>
+        <Message>Error: Invalid Eligibility Begin Date of {0}.</Message>
+    </Message>
+    <Message>
+        <Code>1507</Code>
+        <Message>Error: OREC values of 2 (ESRD) or 3 (Disability and ESRD) are not modeled.
+        </Message>
+    </Message>
+    <Message>
+        <Code>1508</Code>
+        <Message>Error: Missing/Invalid {0} ID.</Message>
+    </Message>
+    <Message>
+        <Code>1509</Code>
+        <Message>Error: Invalid Procedure Code: {0} for Claim ID : {1}.</Message>
+    </Message>
+    <Message>
+        <Code>1510</Code>
+        <Message>Error: Diag Source of '{0}' is not compatible with {1} model for MemberID {2}.</Message>
+    </Message>
+    <Message>
+        <Code>1511</Code>
+        <Message>Error: Missing Diag Code for claim: {0}.</Message>
+    </Message>
+    <Message>
+        <Code>1512</Code>
+        <Message>Error: Invalid Diag Code: {0}.</Message>
+    </Message>
+    <Message>
+        <Code>1513</Code>
+        <Message>Error: Invalid Diag Sequence: {0}.</Message>
+    </Message>
+    <Message>
+        <Code>1514</Code>
+        <Message>Error: Invalid number of days supplied on Rx claim {0} (Rx code {1}) for Member ID
+            {2}.
+        </Message>
+    </Message>
+    <Message>
+        <Code>1515</Code>
+        <Message>Error: Rx claim {0} (Rx code {1}) for Member ID {2} had an invalid entry for days
+            supplied. The value must be greater than 0.
+        </Message>
+    </Message>
+    <Message>
+        <Code>1516</Code>
+        <Message>Error: Rx claim {0} (Rx code {1}) for Member ID {2} had an invalid entry for days
+            supplied. The value must be a number.
+        </Message>
+    </Message>
+    <Message>
+        <Code>1517</Code>
+        <Message>Error: {0} ID {1} is too large for a numeric value. Please change your OPT_IDFORMAT in your Configuration File to CHARACTER.</Message>
+    </Message>
+    <Message>
+        <Code>1519</Code>
+        <Message>Error: OREC value of 0 (Old Age) is invalid under age 64.</Message>
+    </Message>
+    <Message>
+        <Code>1520</Code>
+        <Message>Error: Missing or invalid value supplied on {0} for Member ID {1}.</Message>
+    </Message>
+    <Message>
+        <Code>1521</Code>
+        <Message>Error: Member {0}: Invalid DIAG_PAIDDATE ('{1}') specified. Please verify the
+            format against OPT_DATEFORMAT.
+        </Message>
+    </Message>
+    <Message>
+        <Code>1522</Code>
+        <Message>Error: Member {0}: Invalid RX_PAIDDATE ('{1}') specified. Please verify the format
+            against OPT_DATEFORMAT.
+        </Message>
+    </Message>
+    <Message>
+        <Code>1523</Code>
+        <Message>Error: Date {0} is invalid or incompatible for ELIG_ENDDATE with OPT_DATEFORMAT.</Message>
+    </Message>
+    <Message>
+        <Code>1524</Code>
+        <Message>Error: Invalid value of '{0}' supplied for {1}.</Message>
+    </Message>
+    <Message>
+        <Code>1525</Code>
+        <Message>Duplicate record found.</Message>
+    </Message>
+
+    <Message>
+        <Code>1526</Code>
+        <Message>Error: Missing or invalid value supplied for {0}.</Message>
+    </Message>
+
+    <Message>
+        <Code>1527</Code>
+        <Message>Error: OPT_YEARLEGAL must be a 4 digit year of 1991 or later.</Message>
+    </Message>
+    <Message>
+        <Code>1528</Code>
+        <Message>Error: Invalid Rx Code</Message>
+    </Message>
+
+    <!-- Grouper related error codes ! -->
+    <Message>
+        <Code>2001</Code>
+        <Message>Error: Invalid ICD Modification specified in the Configuration File.</Message>
+    </Message>
+    <Message>
+        <Code>2002</Code>
+        <Message>Error: Classification component is not licensed.</Message>
+    </Message>
+    <Message>
+        <Code>2003</Code>
+        <Message>Error: Classification component feature is not licensed or the license has expired.
+        </Message>
+    </Message>
+    <Message>
+        <Code>2004</Code>
+        <Message>Error: Invalid Rx Classification specified in Configuration File.</Message>
+    </Message>
+    <Message>
+        <Code>2005</Code>
+        <Message>Error: Invalid Grouping type specified in Configuration File.</Message>
+    </Message>
+    <Message>
+        <Code>2006</Code>
+        <Message>Error: Error running Grouping Component: {0}.</Message>
+    </Message>
+    <Message>
+        <Code>2007</Code>
+        <Message>Error: Invalid ICD Modification code ({0}) specified in Configuration File.
+        </Message>
+    </Message>
+    <Message>
+        <Code>2008</Code>
+        <Message>Error: Invalid Rx Classification code ({0}) specified in Configuration File.
+        </Message>
+    </Message>
+    <Message>
+        <Code>2009</Code>
+        <Message>Error: Could not load DxG mapping file {0}.</Message>
+    </Message>
+    <Message>
+        <Code>2100</Code>
+        <Message>Error: Invalid Diag due to ambiguous code set: {0}</Message>
+    </Message>
+    <Message>
+        <Code>2101</Code>
+        <Message>Error: Numerically invalid Diag Code: {0}</Message>
+    </Message>
+    <Message>
+        <Code>2102</Code>
+        <Message>Error: Diag incompatible with age or sex: {0}</Message>
+    </Message>
+    <Message>
+        <Code>3001</Code>
+        <Message>Error: Your license has expired. Please contact Verscend, Inc. Customer
+            Support to renew your license.
+        </Message>
+    </Message>
+
+    <!-- Unix related error codes -->
+    <Message>
+        <Code>3500</Code>
+        <Message>Error: Database reports are not supported on the Java version of DxCG.</Message>
+    </Message>
+
+
+    <!-- Modeler related error codes ! -->
+    <Message>
+        <Code>4001</Code>
+        <Message>Error: Exceeded maximum amount of licensed lives for Model {0}. You are only
+            licensed for {1} lives.
+        </Message>
+    </Message>
+    <Message>
+        <Code>4002</Code>
+        <Message>Error: Model component is not licensed.</Message>
+    </Message>
+    <Message>
+        <Code>4003</Code>
+        <Message>Error: Model component feature is not licensed or license has expired.</Message>
+    </Message>
+    <Message>
+        <Code>4004</Code>
+        <Message>Error: Rx models are only supported in Multi-Model mode with Custom Output.
+        </Message>
+    </Message>
+    <Message>
+        <Code>4005</Code>
+        <Message>Error: Models with specific groupings are only supported with Custom Output.
+        </Message>
+    </Message>
+    <Message>
+        <Code>4006</Code>
+        <Message>Error: Models with specific groupings are only supported in Multi-Model mode with
+            other models using the same groupings.
+        </Message>
+    </Message>
+    <Message>
+        <Code>4007</Code>
+        <Message>Error: AgeGender models cannot be directly specified. The appropriate AgeGender
+            model will run for each risk adjustment or predictive model selected.
+        </Message>
+    </Message>
+    <Message>
+        <Code>4008</Code>
+        <Message>Error: Model ID {0} is not a valid model. Check the Configuration File and select another model number.
+        </Message>
+    </Message>
+    <Message>
+        <Code>4009</Code>
+        <Message>Error: Model ID {0} is not compatible in Multi-Model mode with Model ID {1}.
+        </Message>
+    </Message>
+    <Message>
+        <Code>4010</Code>
+        <Message>Error: You are not licensed to run Model ID {0}. If you wish to run this model,
+            please contact Verscend, Inc. Customer Support.
+        </Message>
+    </Message>
+    <Message>
+        <Code>4011</Code>
+        <Message>Error: Code path did not lead to a valid CMS model for Member ID {0}.</Message>
+    </Message>
+    <Message>
+        <Code>4012</Code>
+        <Message>Error: Multi-Model mode is only supported using Custom or XML output.</Message>
+    </Message>
+    <Message>
+        <Code>4013</Code>
+        <Message>Error: Combination of models specified in OPT_MODELID are not compatible with one
+            another. Please see User Guide for further information.
+        </Message>
+    </Message>
+    <Message>
+        <Code>4014</Code>
+        <Message>Error: There is no corresponding CMS Model data for the payment year {0}. Please
+            validate the year in the Configuration parameter OPT_PMTMONTH.
+        </Message>
+    </Message>
+    <Message>
+        <Code>4015</Code>
+        <Message>Error: Could not determine the default county rates based on the year specified in
+            OPT_PMTMONTH.
+        </Message>
+    </Message>
+
+    <Message>
+        <Code>4016</Code>
+        <Message>Error: Specified Model ID(s)can not be modeled. Please update your Configuration
+            File.
+        </Message>
+    </Message>
+
+    <!-- Post Process Errors -->
+    <Message>
+        <Code>6001</Code>
+        <Message>Error: Error writing Output File ({0}) in post process command.</Message>
+    </Message>
+    <Message>
+        <Code>6002</Code>
+        <Message>Error: Error writing Output File ({0}) in post process command.</Message>
+    </Message>
+    <Message>
+        <Code>6003</Code>
+        <Message>Error: Could not cast the Config object to a LegacyConfig obejct</Message>
+    </Message>
+    <Message>
+        <Code>6004</Code>
+        <Message>Error: Fatal Exception occured during output.</Message>
+    </Message>
+    <Message>
+        <Code>6005</Code>
+        <Message>Error: Exception occured during output of field {0} for member {1}.</Message>
+    </Message>
+
+    <Message>
+        <Code>6201</Code>
+        <Message>Error: You are not licensed to generate riskdriver output in a separate file. If
+            you wish to generate this output, please contact Verscend, Inc. Customer Support.
+        </Message>
+    </Message>
+    <Message>
+        <Code>6202</Code>
+        <Message>Error: Fatal error encountered in DxCG while processing with the intermediate output
+            option. Please disable this feature in your configuration to continue using the software
+            and contact DxCG support for further assistance.
+        </Message>
+    </Message>
+
+    <!-- Report related error codes -->
+    <Message>
+        <Code>7101</Code>
+        <Message>Error: Report ID {0} not found.</Message>
+    </Message>
+    <Message>
+        <Code>7102</Code>
+        <Message>Error: XML validation error for {0}: {1}.</Message>
+    </Message>
+    <Message>
+        <Code>7103</Code>
+        <Message>Error: Error encountered generating HTML output for {0}.</Message>
+    </Message>
+    <Message>
+        <Code>7104</Code>
+        <Message>Error: Error encountered generating report {0}.</Message>
+    </Message>
+    <Message>
+        <Code>7105</Code>
+        <Message>Error: ReportComponent definition exists for the report, {0}, but the component
+            itself has either not been implemented or cannot be found. Please contact Verscend,
+            Inc. Customer Support.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7106</Code>
+        <Message>Error: The group variable specified for the Configuration option RPT_GROUP, {0},
+            does not exist in the grouping table. Please verify the spelling.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7107</Code>
+        <Message>Error: Only combination of Population Metrics report can run in Multi-Model mode.
+            Please update your Configuration File to reflect this.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7108</Code>
+        <Message>Error: The report data file {0} is either invalid or was created from a previous
+            version of DxCG Intelligence and is incompatible with this version. A new report data
+            file needs to be created. Please backup your current report data file, set the parameter
+            RPT_RUNMODEL to true in your Configuration File and rerun the model. You will then be
+            able to run Reports at a later time from the newly generated report file.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7109</Code>
+        <Message>Error: Failed to generate report data file {0}. Modeling will need to be run in
+            order to generate future reports.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7110</Code>
+        <Message>Error: Could not locate benchmark ID for report {0}, model {1}.</Message>
+    </Message>
+    <Message>
+        <Code>7111</Code>
+        <Message>Error: Could not locate benchmark information for report {0}.</Message>
+    </Message>
+    <Message>
+        <Code>7112</Code>
+        <Message>Error: You are currently not licensed to run the DxCG Intelligence reporting
+            component. Please contact Verscend, Inc. Customer Support for further assistance.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7113</Code>
+        <Message>Error: You are not currently licensed to run the DxCG {0}. Please contact Verisk
+            Health, Inc. Customer Support for further assistance.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7114</Code>
+        <Message>Error: {0} is not compatible with an Rx Model (model {1}) - Report not generated.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7115</Code>
+        <Message>Error: {0} is not compatible with AgeGender Model {1} - Report not generated.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7116</Code>
+        <Message>Error: {0} is only compatible with an Rx model - Report not generated.</Message>
+    </Message>
+    <Message>
+        <Code>7117</Code>
+        <Message>Error: No reports were generated since no members were processed by DxCG
+            Intelligence. Please check your main Output and Log files (application and Invalid
+            Member, Diagnosis, and/or Rx) for further information.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7119</Code>
+        <Message>Error: The Configuration parameter RPT_NORM for {0} Expenditure is set to: </Message>
+    </Message>
+    <Message>
+        <Code>7120</Code>
+        <Message>Error: Error reading results from Database.</Message>
+    </Message>
+    <Message>
+        <Code>7121</Code>
+        <Message>Error: {0} (Report {1}) is not compatible with the selected Model(s) (Model(s) -
+            {2}) - report not generated.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7122</Code>
+        <Message>Error: The Configuration parameter RPT_NORM for {0} Expenditure is set to: ${1}.
+            When predicting monthly cost this amount is divided by 12.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7123</Code>
+        <Message>Error: {0} parameter was not provided in the Configuration File. This is required
+            for the Reports ({1}) you have specified in Configuration option {2}.
+        </Message>
+    </Message>
+
+    <Message>
+        <Code>7124</Code>
+        <Message>Error: ReportID {0} specified in RPT_REPORTS is either invalid or incompatible with
+            ModelID(s) specified in OPT_MODELID.
+        </Message>
+    </Message>
+
+    <Message>
+        <Code>7125</Code>
+        <Message>Error: ReportIDs specified in RPT_REPORTS are either invalid or incompatible with
+            ModelID(s) specified in OPT_MODELID.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7126</Code>
+        <Message>Error: RPT_GROUP has been specified with no PERS_GROUPx. RPT_GROUP with matching
+            PERS_GROUPx is required for the reports ({0}) you have specified in the Configuration
+            option {1}.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7127</Code>
+        <Message>Error: Model(s) {2} not valid for the current version of the DxCG Intelligence
+            application. {0} (Report {1}) not generated.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7128</Code>
+        <Message>Error: Some of the selected models are not valid for the current version of the
+            DxCG Intelligence application and some are not compatible with the {0} (Report {1}).
+            (Model(s) - {2}) - report not generated.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7129</Code>
+        <Message>Error: The report data was generated using an obsolete version of Dx
+            Classification. Therefore, Reports are not generated for Model(s) {0}.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7130</Code>
+        <Message>Error: Selected Model {0} is not valid for the current version of the DxCG
+            Intelligence application. Therefore, Reports are not generated.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7131</Code>
+        <Message>Error: There are no .DAT files to merge in the folder {0}.</Message>
+    </Message>
+    <Message>
+        <Code>7132</Code>
+        <Message>Error: Too many unique values of a PERS_GROUP variable are defined and processing
+            has stopped. Reduce number of unique {0} values to {1} or re-define as a PERS_PASS
+            variable which is not used in report generation.
+        </Message>
+    </Message>
+
+    <Message>
+        <Code>7200</Code>
+        <Message>Error: Report database backup file '{0}' for the member level reports was not
+            found; member level reports, {1}, were not processed.
+        </Message>
+    </Message>
+
+    <!-- 7300-7400 (Report Merging Related) ! -->
+    <Message>
+        <Code>7300</Code>
+        <Message>Error: Database contains partial data.</Message>
+    </Message>
+    <!-- Summary statistics related error codes ! -->
+    <Message>
+        <Code>7001</Code>
+        <Message>Error: Summary Statistics is not licensed. Please contact Verscend, Inc.
+            Customer Support to get a license.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7002</Code>
+        <Message>Error: Summary Statistics is not licensed or the license has expired. Please
+            contact Verscend, Inc. Customer Support to upgrade your license.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7003</Code>
+        <Message>Error: Summary Statistics is not licensed for the given population group.</Message>
+    </Message>
+    <Message>
+        <Code>7004</Code>
+        <Message>Error: TBL_INFILE parameter was not provided in the Configuration File.</Message>
+    </Message>
+    <Message>
+        <Code>7005</Code>
+        <Message>Error: TBL_APPFILE parameter was not provided in the Configuration File.</Message>
+    </Message>
+    <Message>
+        <Code>7006</Code>
+        <Message>Error: TBL_OUTFILE parameter was not provided in the Configuration File.</Message>
+    </Message>
+    <Message>
+        <Code>7007</Code>
+        <Message>Error: Could not find specified file: {0}.</Message>
+    </Message>
+    <Message>
+        <Code>7008</Code>
+        <Message>Error: Appendix Result not found in ProcessCountCMD input.</Message>
+    </Message>
+    <Message>
+        <Code>7009</Code>
+        <Message>Error: Invalid value supplied for parameter: {0}.</Message>
+    </Message>
+    <Message>
+        <Code>7010</Code>
+        <Message>Error: Could not construct Result object due to missing data.</Message>
+    </Message>
+    <Message>
+        <Code>7012</Code>
+        <Message>Error: Invalid value of '{0}' supplied to the parameter {1}. Please verify the format against {2}.</Message>
+    </Message>
+    <Message>
+        <Code>7013</Code>
+        <Message>Error: DOB invalid or incompatible with {0}.</Message>
+    </Message>
+    <Message>
+        <Code>7015</Code>
+        <Message>Error: Invalid value of '{0}' supplied for {1}.</Message>
+    </Message>
+    <Message>
+        <Code>7016</Code>
+        <Message>Error: Invalid value '{0}' supplied for {1}. {1} must be greater than 0.</Message>
+    </Message>
+    <Message>
+        <Code>7017</Code>
+        <Message>Error: Invalid value of '{0}' supplied to the parameter {1}. Please verify the
+            directory exists.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7018</Code>
+        <Message>Error: Ineligible for Medicaid.</Message>
+    </Message>
+    <Message>
+        <Code>7019</Code>
+        <Message>Error: The saved .DAT file {0} was created with a previous version of DxCG
+            Intelligence and is incompatible with this version. Please modify your Configuration
+            File by changing the RPT_RUNMODEL parameter to true and rerun the Configuration File.
+            You will then be able to run reports at a later time from the newly generated .DAT file.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7020</Code>
+        <Message>Error: No flagged records exist in the Output File. The {0} will not be generated.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7021</Code>
+        <Message>Error: One or more person file variables were invalid. Check log file for details.
+        </Message>
+    </Message>
+    <Message>
+        <Code>7022</Code>
+        <Message>Error: Report ID {0} is not compatible with any of the model(s) configured.
+        </Message>
+    </Message>
+
+    <Message>
+        <Code>7023</Code>
+        <Message>Error: The value of '{0}' supplied for {1} is either too large or too small for a
+            numeric value.
+        </Message>
+    </Message>
+
+    <Message>
+        <Code>7024</Code>
+        <Message>Error: Parameter '{0}' is missing.</Message>
+    </Message>
+
+    <Message>
+        <Code>7025</Code>
+        <Message>Error: Member {0} does not have an eligibility record corresponding to the model
+            period.
+        </Message>
+    </Message>
+
+    <Message>
+        <Code>7027</Code>
+        <Message>Error: One or more person file variables are invalid.</Message>
+    </Message>
+
+    <Message>
+        <Code>7028</Code>
+        <Message>Error: Value of '{0}' is outside the range of a numeric value.</Message>
+    </Message>
+
+    <Message>
+        <Code>7029</Code>
+        <Message>Error: Configuration parameter, '{2}', is pointing to an invalid range, {0}-{1}.
+            Please update your configuration file to include only valid ranges.
+        </Message>
+    </Message>
+
+    <!--Usage log related error messages -->
+    <Message>
+        <Code>8000</Code>
+        <Message>Error: Failed to create Usage Log file: Permission denied.</Message>
+    </Message>
+
+    <!--Threading related error messages -->
+    <Message>
+        <Code>9999</Code>
+        <Message>Error: Thread abort exception.</Message>
+    </Message>
+</Messages>

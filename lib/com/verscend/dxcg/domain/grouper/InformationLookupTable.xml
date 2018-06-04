@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Messages>
+  <Message>
+    <Code>0</Code>
+    <Message>Success</Message>
+  </Message>
+    <Message>
+    <Code>1518</Code>
+    <Message>Member {0}: DIAG_FROMDATE ('{1}') greater than DIAG_TODATE ('{2}').</Message>
+  </Message>
+  <Message>
+    <Code>7118</Code>
+    <Message>This report may include slightly more than the Top X% of members due to tied scores at the cut-off point.</Message>
+  </Message>
+  <Message>
+    <Code>7119</Code>
+    <Message>The calculations used in this Report are weighted by eligibility.</Message>
+  </Message>
+  <Message>
+    <Code>7120</Code>
+    <Message>This Report does not support weighting for the selected model. Un-weighted results have been produced.</Message>
+  </Message>
+  <Message>
+    <Code>7121</Code>
+    <Message>Weighted calculations are performed for Concurrent models and unweighted calculations are performed for Prospective models.</Message>
+  </Message>
+  <Message>
+    <Code>7122</Code>
+    <Message>*Risk predictions normalized to population being analyzed.</Message>
+  </Message>
+<Message>
+  <Code>7123</Code>
+  <Message>Warning: Value '{2}' specified for field {0} for memberId {1} was invalid.</Message>
+</Message>
+</Messages>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Interactions"
+    targetNamespace="http://dxcg.com/Interactions.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://dxcg.com/Interactions.xsd"
+    xmlns:mstns="http://dxcg.com/Interactions.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+ <xs:element name="Interactions" type="Interactions" />
+ 
+  <xs:complexType name="Interactions">
+    <xs:sequence>
+      <xs:element name="Interaction" type="Interaction" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Interaction">
+    <xs:sequence>
+      <xs:element name="TermMappings" type="TermMappings" />
+      <xs:element name="InteractionMappings" type="InteractionMappings" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="TermMappings">
+    <xs:sequence>
+      <xs:element name="TermMapping" type="TermMapping" minOccurs="0" maxOccurs="unbounded">
+        <xs:key name="UniqueTerm">
+          <xs:selector xpath="." />
+          <xs:field xpath="@Term" />
+        </xs:key>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TermMapping">
+    <xs:attribute name="HCC" type="IntegerRange" use="required" />
+    <xs:attribute name="MinDays" type="xs:double" />
+    <xs:attribute name="MaxDays" type="xs:double" />
+    <xs:attribute name="Term" type="xs:string" use="required" />
+	<xs:attribute name="Type" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="InteractionMappings">
+    <xs:sequence>
+      <xs:element name="InteractionMapping" type="InteractionMapping" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+   <xs:complexType name="InteractionMapping">
+    <xs:sequence>
+      <xs:element name="Term" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="IntegerRange">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]+(((-|,)[0-9]+)?)*" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

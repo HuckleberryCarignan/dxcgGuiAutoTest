@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--// (C) DxCG Inc. Boston, MA 2007 -->
+<!-- // -->
+<!--// All rights are reserved. Reproduction or transmission in -->
+<!--// whole or in part, in any form or by any means, electronic, -->
+<!--// mechanical or otherwise, is prohibited without the prior -->
+<!-- // written permission of the copyright owner. -->
+<!--// -->
+<!--// $Author: $ -->
+<!--// $Date: $ -->
+<!--// $Workfile: $ -->
+<!-- // $Revision: $ -->
+<Model>
+    <Name>AgeGender Predicting Concurrent Non-Imaging Specialty Care Testing</Name>
+    <ID>258</ID>
+    <Version>MS13.D00.R00</Version>
+    <SampleYear>2013</SampleYear>
+    <MeanValue>0.9231083666</MeanValue>
+    <PipelineId>1</PipelineId>
+    <PopGroup>Commercial</PopGroup>
+    <Purpose>Performance Assessment</Purpose>
+    <InputData>AgeGender</InputData>
+    <Outcome>Non-Imaging Specialty Testing</Outcome>
+    <PredictionType>Concurrent</PredictionType>
+    <DateCreated>04/14/2015</DateCreated>
+    <ModelMappings>
+        <MappingGroup Name="AgeSex">
+            <Mapping>
+                <IdKey>1</IdKey>
+                <RiskScore>0.2222463816</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>2</IdKey>
+                <RiskScore>0.3361519676</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>3</IdKey>
+                <RiskScore>0.3026816615</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>4</IdKey>
+                <RiskScore>0.3512958213</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>5</IdKey>
+                <RiskScore>0.4803727756</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>6</IdKey>
+                <RiskScore>0.7417213403</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>7</IdKey>
+                <RiskScore>1.1760172077</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>8</IdKey>
+                <RiskScore>1.5868192474</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>9</IdKey>
+                <RiskScore>1.830592185</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>10</IdKey>
+                <RiskScore>2.0558948202</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>11</IdKey>
+                <RiskScore>1.6952767889</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>12</IdKey>
+                <RiskScore>1.6952767889</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>13</IdKey>
+                <RiskScore>1.6952767889</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>14</IdKey>
+                <RiskScore>1.6952767889</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>15</IdKey>
+                <RiskScore>1.6952767889</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>16</IdKey>
+                <RiskScore>1.6952767889</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>17</IdKey>
+                <RiskScore>1.6952767889</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>18</IdKey>
+                <RiskScore>0.2851258817</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>19</IdKey>
+                <RiskScore>0.4245044095</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>20</IdKey>
+                <RiskScore>0.3770516227</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>21</IdKey>
+                <RiskScore>0.3336204053</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>22</IdKey>
+                <RiskScore>0.2612473826</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>23</IdKey>
+                <RiskScore>0.3946013021</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>24</IdKey>
+                <RiskScore>0.7540775652</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>25</IdKey>
+                <RiskScore>1.188336772</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>26</IdKey>
+                <RiskScore>1.6303433498</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>27</IdKey>
+                <RiskScore>2.0850335397</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>28</IdKey>
+                <RiskScore>2.072563166</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>29</IdKey>
+                <RiskScore>2.072563166</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>30</IdKey>
+                <RiskScore>2.072563166</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>31</IdKey>
+                <RiskScore>2.072563166</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>32</IdKey>
+                <RiskScore>2.072563166</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>33</IdKey>
+                <RiskScore>2.072563166</RiskScore>
+            </Mapping>
+            <Mapping>
+                <IdKey>34</IdKey>
+                <RiskScore>2.072563166</RiskScore>
+            </Mapping>
+        </MappingGroup>
+    </ModelMappings>
+</Model>

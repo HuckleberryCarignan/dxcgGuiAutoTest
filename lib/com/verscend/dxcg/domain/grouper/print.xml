@@ -1,0 +1,4 @@
+<!DOCTYPE style [<!ENTITY x SYSTEM "./print.css">]>
+<style type="text/css" media="print">
+&x;
+</style>

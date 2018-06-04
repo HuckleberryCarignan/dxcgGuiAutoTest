@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+// (C) DxCG Inc. Boston, MA 2006
+//
+// All rights are reserved. Reproduction or transmission in
+// whole or in part, in any form or by any means, electronic, 
+// mechanical or otherwise, is prohibited without the prior 
+// written permission of the copyright owner.
+//
+// $Author: I62278 $
+// $Date: 8/23/07 2:54p $
+// $Workfile: Appendix.xsd $
+// $Revision: 5 $
+
+-->
+<xsd:schema targetNamespace="http://www.dxcg.com/Appendix.xsd"
+                  elementFormDefault="qualified"
+                  xmlns="http://www.dxcg.com/Appendix.xsd"
+                  xmlns:mstns="http://www.dxcg.com/Appendix.xsd"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="Appendix" type="Appendix" />
+	<xsd:complexType name="Appendix">
+		<xsd:sequence>
+			<xsd:element name="Header" type="Header" minOccurs="1" />
+			<xsd:element name="Files" type="Files" minOccurs="1" />
+      <xsd:element name="ProcessingOptions" type="ProcessingOptions" minOccurs="1"/>
+      <xsd:element name="DateComparison" type="DateComparison" minOccurs="1" />
+      <xsd:element name="FileComparison" type="FileComparison" minOccurs="1" />
+      <xsd:element name="FileStatistics" type="FileStatistics" minOccurs="1" maxOccurs="unbounded"/>
+      <xsd:element name="DataCleansing" type="DataCleansing" minOccurs="1" />
+      <xsd:element name="OutputFileStatistics" type="FileStatistics" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="Expenditures" type="Expenditures" minOccurs="1" />
+     <xsd:element name="RiskScores" type="RiskScores" minOccurs="1" /> 
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Header">
+		<xsd:sequence>
+			<xsd:element name="Date" type="xsd:string" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="CompletionTime" type="xsd:string" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="ElapsedTime" type="xsd:string" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="LicensedTo" type="xsd:string" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Release" type="xsd:string" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="CUUVersion" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Environment" type="xsd:string" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Expiration" type="xsd:string" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="MaximumPop" type="xsd:int" minOccurs="1" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Files">
+		<xsd:sequence>
+			<xsd:element name="FileType" type="FileType" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+  <xsd:complexType name="FileType">
+    <xsd:sequence>
+      <xsd:element name="File" type="File" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="Type" type="xsd:string" />
+  </xsd:complexType>
+  <xsd:complexType name="File">
+    <xsd:sequence>
+      <xsd:element name="Name" type="xsd:string" />
+      <xsd:element name="Location" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Folders">
+    <xsd:sequence>
+      <xsd:element name="FolderType" type="FolderType" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FolderType">
+    <xsd:sequence>
+      <xsd:element name="Folder" type="Folder" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="Type" type="xsd:string" />
+  </xsd:complexType>
+  <xsd:complexType name="Folder">
+    <xsd:sequence>
+      <xsd:element name="Name" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ProcessingOptions">
+    <xsd:sequence>
+      <xsd:element name="ClientName" type="xsd:string" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="Models" type="Models" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="Option" type="Label" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="CustomOutput" type="CustomOutput" minOccurs="0" maxOccurs="1" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Models">
+    <xsd:sequence>
+      <xsd:element name="Model" type="Model" minOccurs="1" maxOccurs="unbounded" />
+      <!--Needed to Decide Whether we should display the Benchmark Column or Not-->
+      <xsd:element name="ModelPopulation" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Model">
+    <xsd:attribute name="ID" type="xsd:integer"/>
+    <xsd:attribute name="Name" type="xsd:string" />
+  </xsd:complexType>
+  <xsd:complexType name="CustomOutput">
+    <xsd:sequence>
+      <xsd:element name="CustomOption" type="Label" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DateComparison">
+    <xsd:sequence>
+      <xsd:element name="Option" type="Details" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+    <xsd:attribute name="ModelBasePeriod" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:complexType name="FileComparison">
+    <xsd:sequence>
+      <xsd:element name="File" type="CountHeader" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileStatistics">
+    <xsd:sequence>
+      <xsd:element name="FileStatistic" type="DetailInformation" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CountHeader">
+    <xsd:sequence>
+      <xsd:element name="Information" type="Details" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="Name" type="xsd:string" />
+  </xsd:complexType>
+  <xsd:complexType name="Details">
+    <xsd:attribute name="Label" type="xsd:string"/>
+    <xsd:attribute name="Detail" type="xsd:string" use="optional"/>
+    <xsd:attribute name="Count" type="xsd:string" default="0" use="optional"/>
+    <xsd:attribute name="Percent" type="xsd:string" default="0" use="optional" />
+    <xsd:attribute name="ShowDollarSign" type="xsd:boolean" use="optional" />
+    <xsd:attribute name="BenchmarkValue" type="xsd:string" default="--" use="optional"/>
+    <xsd:attribute name="BenchmarkType" type="xsd:string" default="" use="optional"/>
+  </xsd:complexType>
+  <xsd:complexType name="DetailInformation">
+    <xsd:sequence>
+      <xsd:element name="DetailHeader" type="DetailHeader" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+    <xsd:attribute name="Name" type="xsd:string" use="optional" />
+  </xsd:complexType>
+  <xsd:complexType name="DetailHeader">
+    <xsd:sequence>
+      <xsd:element name="Information" type="Details" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+    <xsd:attribute name="Name" type="xsd:string" />
+    <xsd:attribute name="Subtitle" type="xsd:string" use="optional"/>
+  </xsd:complexType>
+  <xsd:complexType name="Expenditures">
+    <xsd:sequence>
+      <xsd:element name="ExpendituresHeader" type="ExpenditureHeader" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+    <xsd:attribute name="Name" type="xsd:string" use="optional" />
+  </xsd:complexType>
+  <xsd:complexType name="ExpenditureHeader">
+    <xsd:sequence>
+      <xsd:element name="ExpenditureInformation" type="ExpenditureInformation" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+    <xsd:attribute name="Name" type="xsd:string" />
+  </xsd:complexType>
+  <xsd:complexType name="ExpenditureInformation">
+    <xsd:attribute name="Label" type="xsd:string"/>
+    <xsd:attribute name="Medical" type="xsd:string" use="optional"/>
+    <xsd:attribute name="Pharmacy" type="xsd:string" default="0" use="optional"/>
+    <xsd:attribute name="MedicalPharmacy" type="xsd:string" default="0" use="optional" />
+    <xsd:attribute name="ShowDollarSign" type="xsd:boolean" default="true" use="optional"/>
+    <xsd:attribute name="Count" type="xsd:string" use="optional" />
+    <xsd:attribute name="BenchmarkValue" type="xsd:string" default="--" use="optional"/>
+    <xsd:attribute name="BenchmarkType" type="xsd:string" default="" use="optional"/>
+  </xsd:complexType>
+	<xsd:complexType name="RiskScores">
+		<xsd:sequence>
+			<xsd:element name="RiskScoreHeader" type="RiskScoreHeader" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+    <xsd:attribute name="Name" type="xsd:string"/>
+	</xsd:complexType>
+  <xsd:complexType name="RiskScoreHeader">
+    <xsd:sequence>
+      <xsd:element name="RiskScore" type="RiskScore" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="Label" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:complexType name="RiskScore">
+    <xsd:attribute name="Label" type="xsd:string" />
+    <xsd:attribute name="ID" type="xsd:int"/>
+    <xsd:attribute name="RiskScoreValue" type="xsd:string"/>
+    <xsd:attribute name="IsAgeGenderModel" type="xsd:boolean"/>    
+  </xsd:complexType>
+  <xsd:complexType name="Label">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+    <xsd:attribute name="Name" type="xsd:string" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="DataCleansing">
+    <xsd:sequence>
+      <xsd:element name="DetailHeader" type="CountHeader" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ModelSources xmlns="http://www.dxcg.com/ValidModelSources.xsd">
+  <ModelSource ModelSourceType="Inpatient">
+    <SourceID>1</SourceID>
+    <SourceID>2</SourceID>
+    <SourceID>11</SourceID>
+  </ModelSource>
+  <ModelSource ModelSourceType="All_Medical">
+    <SourceID>1</SourceID>
+    <SourceID>2</SourceID>
+    <SourceID>10</SourceID>
+    <SourceID>3</SourceID>
+    <SourceID>4</SourceID>
+    <SourceID>5</SourceID>
+    <SourceID>6</SourceID>
+    <SourceID>11</SourceID>
+  </ModelSource>
+  <ModelSource ModelSourceType="Medicare">
+    <SourceID>1</SourceID>
+    <SourceID>2</SourceID>
+    <SourceID>10</SourceID>
+    <SourceID>3</SourceID>
+    <SourceID>4</SourceID>
+    <SourceID>5</SourceID>
+    <SourceID>11</SourceID>
+  </ModelSource>
+</ModelSources>

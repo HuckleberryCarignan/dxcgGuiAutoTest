@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<xs:schema id="Length" targetNamespace="http://www.dxcg.com/Length.xsd" xmlns="http://www.dxcg.com/Length.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Min" type="xs:int" />
+  <xs:element name="Max" type="xs:int" />
+</xs:schema>

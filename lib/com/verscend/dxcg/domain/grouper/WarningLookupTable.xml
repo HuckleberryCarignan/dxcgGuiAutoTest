@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Messages>
+  <Message>
+    <Code>0</Code>
+    <Message>Success</Message>
+  </Message>
+  <Message>
+    <Code>1</Code>
+    <Message>Warning: The specified option for OPT_OUTFORMAT is currently not supported, defaulting to LEGACY output.</Message>
+  </Message>
+  <Message>
+    <Code>2</Code>
+    <Message>Warning: {0} is not valid in this version of DxCG Intelligence. It has been replaced with {1}.</Message>
+  </Message>
+  <Message>
+    <Code>3</Code>
+    <Message>Warning: {0} is not valid in this version of DxCG Intelligence.</Message>
+  </Message>
+  <Message>
+    <Code>4</Code>
+    <Message>Warning: {0} is being copied from {1}.</Message>
+  </Message>
+  <Message>
+    <Code>5</Code>
+    <Message>Warning: List of unmatched Risk Driver ID {0}.</Message>
+  </Message>
+  <Message>
+    <Code>6</Code>
+    <Message>Warning: {0} is not supported in this mode... Ignoring.</Message>
+  </Message>
+  <Message>
+    <Code>7</Code>
+    <Message>Warning: The DxCG Intelligence license is scheduled to expire in {0} days on {1}. Please contact Verscend Client Services to renew your license.</Message>
+  </Message>
+  <Message>
+    <Code>10</Code>
+    <Message>Warning: Configuration parameter {0} is not supported by DxCG.  Please see user documentation for further information.</Message>
+  </Message>
+  <Message>
+    <Code>119</Code>
+    <Message>Warning: Cannot run reports in Multithreaded mode. Changing to Single Threaded mode.</Message>
+  </Message>
+  <Message>
+    <Code>120</Code>
+    <Message>Warning: Setting number of threads to {0}. This is 3 times the number of processors (or cores) of this machine.</Message>
+  </Message>
+  <Message>
+    <Code>121</Code>
+    <Message>Warning: Cannot run {0} threads in Multithread mode. Changing to Single Threaded mode.</Message>
+  </Message>
+  <Message>
+    <Code>602</Code>
+    <Message>Warning: {0} value of {1} for Member ID {2} is outside the model date range... Ignoring claim.</Message>
+  </Message>
+  <Message>
+    <Code>603</Code>
+    <Message>Warning: No such Output parameter {0} defined... Ignoring.</Message>
+  </Message>
+  <Message>
+    <Code>604</Code>
+    <Message>Warning: Incorrect usage of parameter {0}. A positive integer value is expected in the parameter name... Ignoring.</Message>
+  </Message>
+  <Message>
+    <Code>1007</Code>
+    <Message>Warning: Model {0} already exists in the list, skipping...</Message>
+  </Message>
+  <Message>
+    <Code>1510</Code>
+    <Message>Warning: Diag Source of '{0}' is not compatible with {1} model for MemberID {2}.</Message>
+  </Message>
+  <Message>
+    <Code>4012</Code>
+    <Message>Warning: The member {0} did not have a valid county value. It has been set to the default county value: {1}.</Message>
+  </Message>
+  <Message>
+    <Code>5020</Code>
+    <Message>Warning: Encountered at least one bad member record.</Message>
+  </Message>
+  <Message>
+    <Code>5030</Code>
+    <Message>Warning: Encountered at least one member record that did not validate.</Message>
+  </Message>
+  <Message>
+    <Code>5040</Code>
+    <Message>Warning: Encountered at least one member record that did not validate.</Message>
+  </Message>
+  <Message>
+    <Code>7011</Code>
+    <Message>Warning: The {0} Configuration parameter is deprecated, please use the {1} parameter. The value specified for {2} will be used as {3}.</Message>
+  </Message>
+  <Message>
+    <Code>7014</Code>
+    <Message>Warning: {0} is no longer supported in DxCG Intelligence. The values will be ignored and not used in calculations.</Message>
+  </Message>
+  <Message>
+    <Code>7017</Code>
+    <Message>Warning: Member {0} did not have a value specified for {1}. Member will be assigned a value of {2}.</Message>
+  </Message>
+  <Message>
+    <Code>7019</Code>
+    <Message>Warning: Value '{2}' specified for field {0} for memberId {1} was invalid. Setting to {3}.</Message>
+  </Message>
+  <Message>
+    <Code>7020</Code>
+    <Message>Warning: Value '{2}' specified for field {0} for memberId {1} was invalid.</Message>
+  </Message>
+  <Message>
+    <Code>7021</Code>
+    <Message>Warning: Member {0} has a value '{1}' for parameter {2} that is not compatible with the value '{3}' for parameter {4}. Modeling will still occur, the values have not been changed.</Message>
+  </Message>
+
+  <Message>
+    <Code>7022</Code>
+    <Message>Warning: Member ID {0}: {1} ('{2}') is invalid... Ignoring claim.</Message>
+  </Message>
+
+  <Message>
+    <Code>7200</Code>
+    <Message>Warning: RPT_MEDINFLRATE and/or RPT_RXINFLRATE are incompatible with the option RPT_RUNMODEL = false. The previously set values will be used.</Message>
+  </Message>
+	<Message>
+	 <Code>7201</Code>
+	 <Message>Warning: Population metrics can only be produced for a single model at a time. Model {0} was used to produce the Population Metrics.</Message>
+	</Message>
+	
+  <Message>
+    <Code>7300</Code>
+    <Message>Warning: Partial data found during execution has been cleared.</Message>
+  </Message>
+  <Message>
+    <Code>7400</Code>
+    <Message>Warning: Setting the report option {0} to WEIGHTED is not compatible with prospective models. The report will be generated with the option set to UNWEIGHTED</Message>
+  </Message>
+  <Message>
+    <Code>7401</Code>
+    <Message>Warning: Setting the report option {0} to WEIGHTED is not supported in one or more models specified.The report(s) for those models will be generated with the option set to UNWEIGHTED.</Message>
+  </Message>
+    <Message>
+    <Code>7500</Code>
+    <Message>Warning: Parameter(s) {0} are not supported in historic processing mode. Please see user documentation for further information. </Message>
+  </Message>
+  <Message>
+    <Code>7700</Code>
+    <Message>Warning: Invalid value of '{0}' supplied to PERS_OREC for member {1}... Ignoring.</Message>
+  </Message>
+  <Message>
+    <Code>7701</Code>
+    <Message>Warning: Files FILE_DIAG and FILE_RXIN are recommended for the model selected and care should be taken when interpreting results without these files.</Message>
+  </Message>
+  <Message>
+    <Code>7702</Code>
+    <Message>Warning::File FILE_DIAG is recommended for the model selected and care should be taken when interpreting results without this file.</Message>
+  </Message>
+  <Message>
+    <Code>7703</Code>
+    <Message>Warning: File FILE_RXIN is recommended for the model selected and care should be taken when interpreting results without this file.</Message>
+  </Message>
+  <Message>
+    <Code>7704</Code>
+    <Message>Warning: RPT_GROUP has been specified with no PERS_GROUPx.</Message>
+  </Message>
+   <Message>
+    <Code>7705</Code>
+    <Message>Warning: {0} is recommended for Medicare models.  Default setting will be used.</Message>
+  </Message>
+ </Messages>
